@@ -184,6 +184,7 @@ export interface AtividadeEquipe {
 /* Imagens placeholder (Unsplash) — substituir por fotos do clube       */
 /* ------------------------------------------------------------------ */
 const LOCAL_PLACEHOLDERS = process.env.NEXT_PUBLIC_LOCAL_PLACEHOLDERS === "1";
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const U = (id: string, w = 1200) => `https://images.unsplash.com/${id}?w=${w}&q=80&auto=format&fit=crop`;
 
 const ADMIN_IMG_REMOTE = {
@@ -237,7 +238,7 @@ const ADMIN_IMG_REMOTE = {
   aniversario: U("photo-1464349095431-e9a21285b5f3"),
 } as const;
 export const ADMIN_IMG = (LOCAL_PLACEHOLDERS
-  ? Object.fromEntries(Object.keys(ADMIN_IMG_REMOTE).map((k) => [k, `/images/placeholder/${k}.svg`]))
+  ? Object.fromEntries(Object.keys(ADMIN_IMG_REMOTE).map((k) => [k, `${BASE_PATH}/images/placeholder/${k}.svg`]))
   : ADMIN_IMG_REMOTE) as typeof ADMIN_IMG_REMOTE;
 
 const POOL = Object.values(ADMIN_IMG);

@@ -1,4 +1,5 @@
 "use client";
+import { SITE } from "@/lib/site";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -94,7 +95,7 @@ export function AdminShell({ children }: { children: ReactNode }) {
 
       <aside className={cx(s.sidebar, collapsed && s.collapsed, mobileOpen && s.sidebarOpen)} aria-label="Navegação do painel">
         <Link href="/admin" className={s.brand}>
-          <img src="/logo-country-clube-formiga.png" alt="Country Clube de Formiga" className={s.brandLogo} />
+          <img src={SITE.logo} alt="Country Clube de Formiga" className={s.brandLogo} />
           {!collapsed && (
             <span className={s.brandText}>
               <span className={s.brandName}>Country Clube</span>

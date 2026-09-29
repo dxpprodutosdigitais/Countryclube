@@ -58,9 +58,14 @@ src/
 
 ## Prévia estática (Artifact)
 
-`npm run preview:export` gera em `out/` uma exportação estática do site e do painel com
-placeholders SVG locais no lugar das fotos (o visualizador de Artifacts do claude.ai bloqueia
-imagens externas) e com os assets em `/n/_next` (nomes iniciados por `_` são reservados lá).
+`npm run preview:export` gera em `out/` uma exportação estática do site e do painel pronta para
+a hospedagem de Artifacts do claude.ai, onde o site fica sob um prefixo de caminho desconhecido:
+
+- as fotos são trocadas por placeholders SVG locais (o visualizador bloqueia imagens externas);
+- os assets ficam em `n/_next` (nomes iniciados por `_` são reservados na hospedagem);
+- `scripts/preview-export.mjs` torna as referências relativas, injeta `<base>` em cada página e faz
+  o roteador do Next descobrir o prefixo em tempo de execução (`self.__ccBasePath`).
+
 A prévia atual está em https://claude.ai/artifact/YWM7kjG1qRwqLbotPE2V9w.
 
 ## Conteúdo pendente

@@ -1,4 +1,5 @@
 "use client";
+import { SITE } from "@/lib/site";
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -26,7 +27,7 @@ export function LoginPage() {
       <div className={p.loginGlow} aria-hidden />
       <form className={p.loginCard} onSubmit={submit}>
         <div className={p.loginBrand}>
-          <img src="/logo-country-clube-formiga.png" alt="Country Clube de Formiga" className={p.loginLogo} />
+          <img src={SITE.logo} alt="Country Clube de Formiga" className={p.loginLogo} />
           <div>
             <div className={p.loginTag}>Painel · Admin</div>
             <h1 className={p.loginTitle}>Country Clube de Formiga</h1>

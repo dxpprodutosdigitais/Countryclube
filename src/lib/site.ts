@@ -30,6 +30,6 @@ export const SITE = {
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3737.3337066521103!2d-45.43565778507616!3d-20.4925419862913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b4ee49e54fbb43%3A0xe43f0901866070af!2sCountry%20Clube%20de%20Formiga!5e0!3m2!1spt-BR!2sbr!4v1612793486557!5m2!1spt-BR!2sbr",
   mapsLink: "https://www.google.com/maps/search/?api=1&query=Country%20Clube%20de%20Formiga",
   siteAtual: "https://lagoanossa.com.br",
-  logo: "/logo-country-clube-formiga.png",
+  logo: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/logo-country-clube-formiga.png`,
   funcionamentoResumo: "Todos os dias, 6h às 22h",
 } as const;

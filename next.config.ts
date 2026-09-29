@@ -5,8 +5,8 @@ const preview = process.env.PREVIEW_EXPORT === "1";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  // `_next` não pode ser diretório raiz na hospedagem da prévia; assets ficam em /n/_next.
-  ...(preview ? { output: "export" as const, trailingSlash: true, assetPrefix: "/n" } : {}),
+    // "/__BASE__" é um marcador trocado em tempo de execução por scripts/preview-export.mjs.
+  ...(preview ? { output: "export" as const, trailingSlash: true, basePath: "/__BASE__", assetPrefix: "/__BASE__/n" } : {}),
   // Photos are referenced by URL (club's WordPress uploads + placeholders) and
   // rendered with plain <img>/background-image, so the image optimizer is off.
   images: { unoptimized: true },
