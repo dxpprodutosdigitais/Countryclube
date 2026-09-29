@@ -5,6 +5,20 @@
  * atual (ver CONTEUDO-PENDENTE.md).
  */
 import { FOTOS as OFICIAL, IMG as STOCK } from "./images";
+import scrapedJson from "./scraped.json";
+
+/* ---------- Conteúdo coletado do site atual (scripts/scrape-lagoanossa.mjs) ------ */
+interface Coletado { h1?: string; texto?: string; imagemLocal?: string; erro?: string }
+const SCRAPED = scrapedJson as { modalidades?: Record<string, Coletado>; infra?: Record<string, Coletado>; paginas?: Record<string, Coletado> };
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const paragrafos = (t?: string) => (t ?? "").split(/\n+/).map((x) => x.trim()).filter((x) => x.length > 2);
+/** Sobrescreve nome, descrição, texto e foto de um item com o que foi coletado do site atual. */
+function aplicarColetado<T extends { id: string; nome: string; desc: string; img: string; sobre?: string[]; pendente?: boolean }>(item: T, grupo?: Record<string, Coletado>): T {
+  const c = grupo?.[item.id];
+  if (!c || c.erro || (!c.h1 && !c.texto && !c.imagemLocal)) return item;
+  const ps = paragrafos(c.texto);
+  return { ...item, nome: c.h1 || item.nome, desc: ps[0] ? (ps[0].length > 220 ? ps[0].slice(0, 217) + "…" : ps[0]) : item.desc, sobre: ps.length ? ps : item.sobre, img: c.imagemLocal ? `${BASE_PATH}${c.imagemLocal}` : item.img, pendente: false };
+}
 
 /* ---------- Tipos --------------------------------------------------------- */
 export interface Modalidade {
@@ -27,7 +41,7 @@ export interface Album { id: string; titulo: string; data: string; qt: number; c
 /* ---------- Modalidades (21 — CONTENT.md) --------------------------------- */
 export const CATEGORIAS_MODALIDADES = ["Quadra", "Praia", "Campo", "Aquáticos", "Fitness", "Artes marciais", "Dança", "Saúde e bem-estar"];
 
-export const MODALIDADES: Modalidade[] = [
+const MODALIDADES_BASE: Modalidade[] = [
   { id: "ballet-jazz", nome: "Ballet/Jazz", cat: "Dança", img: STOCK.ballet, desc: "Turmas de ballet e jazz para crianças e adolescentes, com apresentações anuais no clube.", horario: "Consulte a Secretaria de Esportes", publico: "A partir de 4 anos", pendente: true },
   { id: "basquete", nome: "Basquete", cat: "Quadra", img: STOCK.basquete, desc: "Escolinha e treinos de basquete na quadra poliesportiva coberta.", horario: "Consulte a Secretaria de Esportes", publico: "A partir de 8 anos", pendente: true },
   { id: "beach-tenis", nome: "Beach Tenis", cat: "Praia", img: STOCK.beachTenis, desc: "Quadras à beira da Lagoa, com vista privilegiada. Aulas para todos os níveis, do iniciante ao competitivo.", horario: "Seg–Dom · quadras da praia", publico: "A partir de 8 anos", pendente: true },
@@ -51,10 +65,12 @@ export const MODALIDADES: Modalidade[] = [
   { id: "yoga", nome: "Yoga", cat: "Saúde e bem-estar", img: STOCK.yoga, desc: "Prática de yoga em turmas reduzidas, com foco em respiração, equilíbrio e bem-estar.", horario: "Consulte a Secretaria de Esportes", publico: "A partir de 16 anos", pendente: true },
 ];
 
+export const MODALIDADES: Modalidade[] = MODALIDADES_BASE.map((m) => aplicarColetado(m, SCRAPED.modalidades));
+
 export const MODALIDADES_HOME = ["beach-tenis", "tenis", "natacao", "futebol", "musculacao", "hidroginastica"];
 
 /* ---------- Infraestrutura (18 — CONTENT.md) ------------------------------ */
-export const INFRA: Infra[] = [
+const INFRA_BASE: Infra[] = [
   { id: "praia", nome: "Praia", cat: "Lazer", img: STOCK.praia, tag: "Carro-chefe", desc: "Faixa de areia natural à beira da Lagoa do Fundão, com quiosques, decks e quadras de areia.", pendente: true },
   { id: "academia", nome: "Academia", cat: "Esportes", img: STOCK.academia2, tag: "Nova · 2025", desc: "Espaço fitness completo inaugurado em 2025, com musculação e atividades guiadas com vista para a praia.", pendente: true },
   { id: "campos-de-futebol", nome: "Campos de Futebol", cat: "Esportes", img: STOCK.futebol2, desc: "Campos society e sintético iluminados — palco da Copa Country e das escolinhas.", pendente: true },
@@ -74,6 +90,8 @@ export const INFRA: Infra[] = [
   { id: "ginasio", nome: "Ginásio", cat: "Esportes", img: STOCK.ginasio, desc: "Ginásio coberto para treinos, torneios e eventos esportivos.", pendente: true },
   { id: "saunas", nome: "Saunas", cat: "Lazer", img: STOCK.sauna, desc: "Saunas para relaxar depois do esporte ou de um dia de praia.", pendente: true },
 ];
+
+export const INFRA: Infra[] = INFRA_BASE.map((i) => aplicarColetado(i, SCRAPED.infra));
 
 export const INFRA_HOME = ["praia", "academia", "campos-de-futebol", "quadra-de-tenis", "piscinas", "churrasqueira", "quiosques"];
 

@@ -85,6 +85,10 @@ const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 export const IMG = (LOCAL
   ? Object.fromEntries(Object.keys(STOCK).map((k) => [k, `${BASE}/images/placeholder/${k}.svg`]))
   : STOCK) as Record<StockKey, string>;
-export const FOTOS = (LOCAL
+/** Fotos de História: usa a cópia local (public/images/historia) quando o scraper já baixou. */
+const HISTORIA_LOCAL = process.env.NEXT_PUBLIC_HISTORIA_LOCAL === "1";
+export const FOTOS = (HISTORIA_LOCAL && !LOCAL
+  ? { ...OFICIAL, ...Object.fromEntries([1, 2, 3, 4, 5, 6].map((i) => [`historia${i}`, `${BASE}/images/historia/foto_historia${i}.jpg`])) }
+  : LOCAL
   ? { ...OFICIAL, ...Object.fromEntries([1, 2, 3, 4, 5, 6].map((i) => [`historia${i}`, `${BASE}/images/placeholder/historia${i}.svg`])) }
   : OFICIAL) as typeof OFICIAL;
