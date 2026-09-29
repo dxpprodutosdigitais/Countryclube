@@ -1,0 +1,3361 @@
+{
+  "geradoEm": "2026-09-29T20:51:51.917Z",
+  "modalidades": {
+    "ballet-jazz": {
+      "nome": "Ballet/Jazz",
+      "sobre": [
+        "O Ballet e Jazz no Country Clube de Formiga é uma atividade graciosa e educativa, desenvolvida para estimular a expressão corporal, o ritmo e a flexibilidade. Como dança artística, a modalidade contribui para a postura correta, disciplina, coordenação motora e sensibilidade artística.",
+        "No clube, o Ballet e Jazz fortalece a autoconfiança, incentiva a socialização e desenvolve valores como dedicação, foco e comprometimento, em um ambiente acolhedor e estimulante.",
+        "Indicada para crianças e adolescentes, a modalidade é organizada por faixas etárias, garantindo um aprendizado adequado em cada fase do desenvolvimento.",
+        "A turma Baby (4 a 6 anos) trabalha a iniciação lúdica à dança, estimulando o desenvolvimento motor, a musicalidade e a criatividade de forma leve e divertida.",
+        "Já a turma Juvenil (7 a 17 anos) aprofunda a técnica do Ballet e do Jazz, desenvolvendo performance, expressão artística e consciência corporal."
+      ],
+      "tabelas": [
+        {
+          "titulo": "",
+          "colunas": [
+            "Dia da Semana",
+            "Horário",
+            "Turma",
+            "Faixa Etária"
+          ],
+          "linhas": [
+            [
+              "Segunda e Quarta-feira",
+              "18:00 às 19:00",
+              "Juvenil",
+              "7 a 17 anos"
+            ],
+            [
+              "Terça e Quinta-feira",
+              "09:00 às 10:00",
+              "Juvenil",
+              "7 a 17 anos"
+            ],
+            [
+              "Terça e Quinta-feira",
+              "10:00 às 11:00",
+              "Baby",
+              "4 a 6 anos"
+            ]
+          ]
+        }
+      ],
+      "notas": [
+        "Encante-se com a arte da dança no Ballet e Jazz do Country Clube de Formiga! Uma atividade que desenvolve disciplina, expressão corporal e sensibilidade artística desde a infância.",
+        "Para mais informações ou inscrições, procure a professora responsável ou a secretaria do clube."
+      ],
+      "professores": [
+        "Flávia"
+      ],
+      "profTitulo": "Professores",
+      "horarioResumo": "Segunda e Quarta-feira · 18:00 às 19:00",
+      "publico": "Juvenil",
+      "retrato": "/images/modalidades/ballet-jazz.jpg",
+      "foto": "/images/modalidades/ballet-jazz-1.jpg",
+      "fotoDaArea": false,
+      "galeria": [
+        "/images/modalidades/ballet-jazz-1.jpg"
+      ],
+      "inscricao": "Inscrições diretamente com a professora",
+      "horariosSite": {
+        "colunas": [
+          "Categoria",
+          "Dia",
+          "Horário"
+        ],
+        "linhas": [
+          [
+            "Juvenil (7 a 17 anos)",
+            "Terça e Quinta",
+            "9:00 às 10:00"
+          ],
+          [
+            "Juvenil (7 a 17 anos)",
+            "Segunda e Quarta",
+            "18:00 às 19:00"
+          ],
+          [
+            "Ballet Baby (4 a 6 anos)",
+            "Terça e Quinta",
+            "10:00 às 11:00"
+          ]
+        ],
+        "nota": "Inscrições diretamente com a professora."
+      }
+    },
+    "basquete": {
+      "nome": "Basquete",
+      "sobre": [
+        "Basquete",
+        "O Basquete no Country Clube de Formiga é uma modalidade vibrante e estratégica, perfeita para quem busca saúde, disciplina e integração em um ambiente familiar. Como um dos esportes mais dinâmicos do mundo, sua prática vai muito além das quadras: ela é um motor de desenvolvimento físico e mental, promovendo o fortalecimento muscular e a melhora expressiva da agilidade.",
+        "A prática regular do basquete exige equilíbrio e força, atuando diretamente no fortalecimento do core (músculos abdominais e lombares), o que favorece a resistência e a sustentação da coluna vertebral. Enquanto braços e ombros são tonificados pelos arremessos e batidas de bola, as pernas e articulações ganham potência em cada arranque e salto.",
+        "Além do vigor físico, o esporte oferece benefícios vitais:",
+        "Saúde Cardiovascular: A intensidade do jogo auxilia no controle do colesterol e da pressão sanguínea, sendo um excelente aliado para a saúde do coração.",
+        "Desenvolvimento Infantil: Para os pequenos, o basquete age diretamente no crescimento e desenvolvimento ósseo, estimulado pela tração constante dos movimentos do jogo.",
+        "Mente Afiada: A modalidade aprimora a coordenação motora, o raciocínio lógico e a autodisciplina, exigindo foco total em cada jogada.",
+        "No clube, o basquete é também uma poderosa ferramenta de socialização. O convívio entre os jogadores e o espírito de equipe transformam o aprendizado em momentos de pura diversão e risadas, reforçando laços de amizade e o respeito mútuo.",
+        "Junte-se ao time e viva a energia do basquete no Country Clube de Formiga! Uma opção ideal para crianças e adolescentes que buscam desenvolvimento integral em um ambiente seguro e motivador.",
+        "Inscrições diretamente com o professor no local das aulas. Para mais informações, procure a secretaria do clube."
+      ],
+      "tabelas": [
+        {
+          "titulo": "",
+          "colunas": [
+            "Dia da Semana",
+            "Horário",
+            "Turma / Idade"
+          ],
+          "linhas": [
+            [
+              "Terça e Quinta",
+              "17:15 às 18:15",
+              "8 a 14 anos"
+            ]
+          ]
+        }
+      ],
+      "notas": [],
+      "professores": [
+        "Mateus"
+      ],
+      "profTitulo": "Professores",
+      "horarioResumo": "Terça e Quinta · 17:15 às 18:15",
+      "publico": "8 a 14 anos",
+      "retrato": "/images/modalidades/basquete.jpg",
+      "foto": "/images/infraestrutura/quadra-poliesportiva-1.png",
+      "fotoDaArea": true,
+      "galeria": [],
+      "inscricao": "",
+      "horariosSite": {
+        "colunas": [
+          "Dia",
+          "Horário"
+        ],
+        "linhas": [
+          [
+            "Terça",
+            "17:15 às 18:45"
+          ],
+          [
+            "Quinta",
+            "17:15 às 18:15"
+          ]
+        ],
+        "nota": ""
+      }
+    },
+    "beach-tenis": {
+      "nome": "Beach Tenis",
+      "sobre": [
+        "O Beach Tennis no Country Clube de Formiga é uma modalidade que transborda energia e descontração, unindo o clima de lazer à prática esportiva intensa. Ideal para quem busca fortalecer o corpo de forma dinâmica, o esporte é conhecido por seu caráter democrático, permitindo que iniciantes e atletas experientes compartilhem a mesma areia. Além de ser um excelente aliado na queima calórica, a prática auxilia no fortalecimento dos membros inferiores e do core, melhora o tempo de reação e trabalha a coordenação motora de maneira lúdica e eficiente.",
+        "A areia atua como um amortecedor natural, reduzindo significativamente o impacto nas articulações, o que torna a atividade segura para diferentes condicionamentos físicos. No clube, as quadras de areia tornam-se um ponto de encontro vibrante, onde a socialização e o espírito de equipe são estimulados naturalmente, combatendo o estresse cotidiano e promovendo o bem-estar mental em um ambiente solar e acolhedor.",
+        "Para o público jovem, o clube oferece turmas específicas que focam no desenvolvimento das habilidades básicas do esporte, promovendo a disciplina e o condicionamento físico desde cedo. É a oportunidade perfeita para crianças e adolescentes integrarem-se a uma comunidade esportiva saudável, desenvolvendo agilidade e foco enquanto se divertem ao ar livre."
+      ],
+      "tabelas": [
+        {
+          "titulo": "",
+          "colunas": [
+            "Dia da Semana",
+            "Horário",
+            "Faixa Etária"
+          ],
+          "linhas": [
+            [
+              "Segunda, Quarta e Sexta-feira",
+              "17h às 21h",
+              "7 a 13 anos"
+            ]
+          ]
+        }
+      ],
+      "notas": [
+        "As inscrições devem ser realizadas diretamente com o professor responsável."
+      ],
+      "professores": [
+        "Mateus"
+      ],
+      "profTitulo": "Professor",
+      "horarioResumo": "Segunda, Quarta e Sexta-feira · 17h às 21h",
+      "publico": "7 a 13 anos",
+      "retrato": "/images/modalidades/beach-tenis.jpg",
+      "foto": "/images/infraestrutura/praia-1.jpg",
+      "fotoDaArea": true,
+      "galeria": [],
+      "inscricao": "As inscrições devem ser realizadas diretamente com o professor responsável",
+      "horariosSite": {
+        "colunas": [
+          "Dia",
+          "Horário"
+        ],
+        "linhas": [
+          [
+            "Segunda, Quarta e Sexta",
+            "17:00 às 21:00"
+          ]
+        ],
+        "nota": ""
+      }
+    },
+    "fisioterapia": {
+      "nome": "Fisioterapia",
+      "sobre": [
+        "A Fisioterapia no Country Clube de Formiga é um serviço essencial dedicado ao cuidado integral da saúde, focando na prevenção e no tratamento de distúrbios que afetam o movimento e a funcionalidade do corpo humano. Seja para lidar com alterações genéticas, traumas ou doenças adquiridas, nossa abordagem oferece suporte especializado em diferentes níveis de complexidade para garantir a qualidade de vida do associado.",
+        "No ambiente acolhedor do clube, o Fisioterapeuta atua como um pilar fundamental na reabilitação física. Este profissional está plenamente habilitado para construir o Diagnóstico Fisioterapêutico, identificando distúrbios cinéticos funcionais específicos de cada paciente. A partir dessa análise, são prescritas condutas personalizadas, orientando o tratamento de forma técnica e segura para promover a recuperação plena das funções do organismo.",
+        "Os benefícios da prática incluem:",
+        "Recuperação Funcional: Acompanhamento rigoroso da evolução do quadro clínico para restaurar a mobilidade.",
+        "Prevenção de Lesões: Atuação estratégica em órgãos e sistemas para evitar o agravamento de condições pré-existentes.",
+        "Acompanhamento Personalizado: Monitoramento constante das condições do paciente até o momento da alta do serviço.",
+        "Mais do que um tratamento, a fisioterapia no Country Clube proporciona um caminho para que jovens e adultos retomem suas atividades esportivas e sociais com confiança, equilíbrio e bem-estar.",
+        "Agendamento: O atendimento deve ser marcado diretamente pelo aplicativo ou na secretaria do clube, conforme a disponibilidade de vagas."
+      ],
+      "tabelas": [
+        {
+          "titulo": "",
+          "colunas": [
+            "Dia da Semana",
+            "Horário"
+          ],
+          "linhas": [
+            [
+              "Terça e Quinta",
+              "14:00 às 19:00"
+            ],
+            [
+              "Quarta e Sexta",
+              "07:00 às 12:00"
+            ]
+          ]
+        }
+      ],
+      "notas": [],
+      "professores": [
+        "Renzo"
+      ],
+      "profTitulo": "Fisioterapeuta",
+      "horarioResumo": "Terça e Quinta · 14:00 às 19:00",
+      "publico": "",
+      "retrato": "/images/modalidades/fisioterapia.jpg",
+      "foto": "/images/infraestrutura/estudio-de-pilates-2.jpg",
+      "fotoDaArea": true,
+      "galeria": [],
+      "inscricao": "Agendamento pelo aplicativo",
+      "horariosSite": {
+        "colunas": [
+          "Dia",
+          "Horário"
+        ],
+        "linhas": [
+          [
+            "Terça e Quinta",
+            "14:00 às 19:00"
+          ],
+          [
+            "Quarta e Sexta",
+            "7:00 às 12:00"
+          ]
+        ],
+        "nota": "Agendamento pelo aplicativo."
+      }
+    },
+    "futebol": {
+      "nome": "Futebol",
+      "sobre": [
+        "O Futebol no Country Clube de Formiga é uma modalidade vibrante, democrática e inclusiva, ideal para promover saúde física, mental e social em um ambiente familiar e acolhedor. Como o esporte coletivo mais popular do mundo, o futebol vai muito além do lazer: ele contribui para a redução da gordura corporal, manutenção do peso ideal, aumento da força e da massa muscular, fortalecimento dos ossos e melhora significativa da resistência cardiovascular.",
+        "A prática regular ativa diversos sistemas vitais do corpo — digestivo, imunológico, nervoso, muscular, esquelético, endócrino e respiratório — ajudando a reduzir riscos de doenças como problemas cardíacos, diabetes e hipertensão. Também auxilia no controle do estresse e da ansiedade, diminui a frequência cardíaca em repouso e aprimora flexibilidade, coordenação motora, mobilidade articular, reflexos, agilidade e concentração.",
+        "No clube, o futebol é também uma poderosa ferramenta de socialização, incentivando o trabalho em equipe, a disciplina, o respeito e o fair play, além de contribuir para afastar crianças e jovens de riscos como violência, drogas e álcool.",
+        "Indicado para todas as idades, o futebol no Country Clube de Formiga é adaptado para diferentes níveis e fases da vida. Para os pequenos, a Escolinha de Futebol recebe crianças a partir dos 3 anos, com foco no desenvolvimento das habilidades motoras essenciais dessa fase.",
+        "As aulas contribuem para o aumento da potência muscular das pernas, melhora da capacidade cardiovascular, velocidade de reação, coordenação motora, visão periférica, densidade óssea femoral, potência de salto e formação muscular adequada. A oxigenação do sangue acontece de forma mais eficiente, promovendo saúde integral e despertando desde cedo o prazer pelo esporte coletivo.",
+        "Para jovens e adultos, o clube oferece os tradicionais rachas (jogos livres), proporcionando momentos de lazer, integração e competição saudável nos campos gramados do Country Clube.",
+        "Junte-se ao time e viva a emoção do futebol no Country Clube de Formiga! Uma opção perfeita para famílias que buscam escolinha de futebol em Formiga, aulas de futebol para crianças ou jogos recreativos em um ambiente seguro e acolhedor.",
+        "Consulte a disponibilidade de vagas e inscrições diretamente com os professores no local das aulas;",
+        "Para mais informações, procure os professores durante os horários das atividades ou visite a secretaria do clube."
+      ],
+      "tabelas": [
+        {
+          "titulo": "Futebol Livre (Rachas)",
+          "colunas": [
+            "Dia da Semana",
+            "Horário",
+            "Faixa Etária"
+          ],
+          "linhas": [
+            [
+              "Quarta-feira",
+              "18:45h",
+              "Livre para todas as idades"
+            ],
+            [
+              "Sexta-feira",
+              "18:45h",
+              "Acima de 35 anos"
+            ],
+            [
+              "Domingo",
+              "08:30h",
+              "Abaixo e acima de 43 anos"
+            ]
+          ]
+        },
+        {
+          "titulo": "Escolinha de Futebol",
+          "colunas": [
+            "Dia da Semana",
+            "Horário",
+            "Turma / Idade"
+          ],
+          "linhas": [
+            [
+              "Segunda e Quarta",
+              "18h",
+              "2019/2020"
+            ],
+            [
+              "Segunda e Quarta",
+              "19h",
+              "2017/2018"
+            ],
+            [
+              "Terça",
+              "18h",
+              "2012/2013/2014"
+            ],
+            [
+              "Terça",
+              "19h",
+              "2015"
+            ],
+            [
+              "Quinta",
+              "18h",
+              "2021/2022"
+            ],
+            [
+              "Quinta",
+              "19h",
+              "2012/2013/2014"
+            ],
+            [
+              "Sexta",
+              "18h",
+              "2015/2016"
+            ]
+          ]
+        }
+      ],
+      "notas": [],
+      "professores": [
+        "Alex",
+        "Hélio"
+      ],
+      "profTitulo": "Professores",
+      "horarioResumo": "Quarta-feira · 18:45h",
+      "publico": "Livre para todas as idades",
+      "retrato": "/images/modalidades/futebol.jpg",
+      "foto": "/images/modalidades/futebol-1.jpg",
+      "fotoDaArea": false,
+      "galeria": [
+        "/images/modalidades/futebol-1.jpg",
+        "/images/modalidades/futebol-2.jpg",
+        "/images/modalidades/futebol-3.jpg",
+        "/images/modalidades/futebol-4.jpg",
+        "/images/modalidades/futebol-5.jpg",
+        "/images/modalidades/futebol-6.jpg",
+        "/images/modalidades/futebol-7.jpg"
+      ],
+      "inscricao": "Inscrições diretamente com o professor",
+      "horariosSite": {
+        "colunas": [
+          "Dia da Semana",
+          "Horário",
+          "Turma / Idade"
+        ],
+        "linhas": [
+          [
+            "Segunda e Quarta",
+            "18h",
+            "2019/2020"
+          ],
+          [
+            "Segunda e Quarta",
+            "19h",
+            "2017/2018"
+          ],
+          [
+            "Terça",
+            "18h",
+            "2012/2013/2014"
+          ],
+          [
+            "Terça",
+            "19h",
+            "2015"
+          ],
+          [
+            "Quinta",
+            "18h",
+            "2021/2022"
+          ],
+          [
+            "Quinta",
+            "19h",
+            "2012/2013/2014"
+          ],
+          [
+            "Sexta",
+            "18h",
+            "2015/2016"
+          ]
+        ],
+        "nota": "Inscrições diretamente com o professor."
+      }
+    },
+    "futevolei": {
+      "nome": "Futevôlei",
+      "sobre": [
+        "Futevôlei",
+        "O Futevôlei no Country Clube de Formiga é uma modalidade que une a descontração da areia com a técnica do futebol e do vôlei, sendo o esporte perfeito para quem busca lazer e condicionamento físico em um ambiente ensolarado e vibrante. Nascido nas praias do Rio de Janeiro na década de 60, o esporte se consolidou como uma das atividades mais democráticas e completas para o corpo.",
+        "Diferente de outros esportes, o futevôlei exige o uso de quase todos os grupos musculares, exceto braços e mãos. A prática constante promove um alto gasto calórico e melhora significativamente a coordenação motora, o reflexo e a resistência cardiovascular. Por ser praticado na areia, o impacto nas articulações é reduzido, enquanto o fortalecimento das pernas, abdômen e glúteos é intensificado pela instabilidade do terreno.",
+        "Os principais benefícios incluem:",
+        "Tonificação Muscular: Fortalece intensamente o core e os membros inferiores durante os arranques e saltos.",
+        "Agilidade e Equilíbrio: Desenvolve a percepção espacial e a velocidade de reação para manter a bola no ar.",
+        "Saúde Cardiovascular: Melhora a circulação e a capacidade pulmonar devido à dinâmica constante do jogo.",
+        "No clube, o futevôlei é sinônimo de integração. Seja em duplas ou em grupos maiores, a modalidade fomenta o espírito de equipe e o respeito, proporcionando momentos de pura descontração entre os associados. É a escolha ideal para quem quer manter a forma enquanto se diverte com os amigos nos nossos campos de areia.",
+        "Uso das Quadras: As quadras de futevôlei estão liberadas para uso dos associados durante o dia todo."
+      ],
+      "tabelas": [
+        {
+          "titulo": "",
+          "colunas": [
+            "Dia da Semana",
+            "Horário",
+            "Faixa Etária"
+          ],
+          "linhas": [
+            [
+              "Segunda a Domingo",
+              "Livre (Durante o dia todo)",
+              "Livre para todas as idades"
+            ]
+          ]
+        }
+      ],
+      "notas": [],
+      "professores": [],
+      "profTitulo": "",
+      "horarioResumo": "Segunda a Domingo · Livre (Durante o dia todo)",
+      "publico": "Livre para todas as idades",
+      "retrato": "",
+      "foto": "/images/infraestrutura/praia-3.jpg",
+      "fotoDaArea": true,
+      "galeria": [],
+      "inscricao": "",
+      "horariosSite": null
+    },
+    "futsal": {
+      "nome": "Futsal",
+      "sobre": [
+        "O Futsal no Country Clube de Formiga é uma modalidade dinâmica e envolvente, que combina a paixão pelo esporte com um desenvolvimento físico e mental completo. Diferente de outras atividades, o futsal exige raciocínio rápido e criatividade em espaços reduzidos, tornando-se uma ferramenta poderosa para o desenvolvimento da inteligência tática e da coordenação motora fina.",
+        "A prática regular nas nossas quadras oferece benefícios fisiológicos profundos:",
+        "Saúde Cardiovascular: Atua diretamente na prevenção de problemas cardíacos e no fortalecimento do coração.",
+        "Composição Corporal: Por ser uma atividade de alta intensidade, acelera o metabolismo, auxiliando no emagrecimento e no ganho de massa muscular.",
+        "Fortalecimento Estrutural: Os movimentos de arranque e mudança de direção fortalecem significativamente os ossos e as articulações.",
+        "Bem-estar Mental: O jogo ajuda a aliviar sintomas de estresse e ansiedade, promovendo uma melhora constante no humor e na saúde mental.",
+        "Para além do desempenho físico, o futsal no clube é um espaço de aprendizado social. Através da competitividade saudável, nossos jovens atletas desenvolvem habilidades essenciais como o respeito, a disciplina e a capacidade de trabalhar em equipe. É o ambiente ideal para formar não apenas jogadores habilidosos, mas cidadãos integrados e saudáveis.",
+        "Inscrições diretamente com o professor. Para garantir sua vaga ou obter mais detalhes, visite o local das aulas ou a secretaria do clube."
+      ],
+      "tabelas": [
+        {
+          "titulo": "",
+          "colunas": [
+            "Dia da Semana",
+            "Horário",
+            "Turma / Idade"
+          ],
+          "linhas": [
+            [
+              "Terça-feira",
+              "18:30h (2012/2013)",
+              "12 e 13 anos"
+            ],
+            [
+              "Quinta-feira",
+              "18:30h (2014/2015/2016/2017)",
+              "8 a 11 anos"
+            ]
+          ]
+        }
+      ],
+      "notas": [],
+      "professores": [
+        "Mateus"
+      ],
+      "profTitulo": "Professor",
+      "horarioResumo": "Terça-feira · 18:30h (2012/2013)",
+      "publico": "12 e 13 anos",
+      "retrato": "/images/modalidades/futsal.jpg",
+      "foto": "/images/infraestrutura/quadra-poliesportiva-2.png",
+      "fotoDaArea": true,
+      "galeria": [],
+      "inscricao": "Inscrições diretamente com o professor",
+      "horariosSite": {
+        "colunas": [
+          "Dia",
+          "Categoria",
+          "Horário"
+        ],
+        "linhas": [
+          [
+            "Terça",
+            "2012/2013/2014",
+            "19:00"
+          ],
+          [
+            "Quinta",
+            "2015/2016/2017/2018",
+            "18:30"
+          ]
+        ],
+        "nota": "Inscrições diretamente com o professor."
+      }
+    },
+    "ginastica-funcional": {
+      "nome": "Ginástica Funcional",
+      "sobre": [
+        "Ginástica Funcional",
+        "A Ginástica Funcional no Country Clube de Formiga é uma modalidade projetada para otimizar a capacidade física e aprimorar as funções osteomusculares. O objetivo central é proporcionar aos praticantes a habilidade de realizar atividades do cotidiano com máxima eficiência, autonomia e independência, utilizando um programa de exercícios integrados que respeitam a biomecânica do corpo.",
+        "Diferente de métodos tradicionais, os exercícios funcionais baseiam-se em movimentos naturais do ser humano, como correr, saltar, agachar, empurrar e puxar. Essa metodologia permite um desenvolvimento físico homogêneo e completo, complementando perfeitamente as outras modalidades oferecidas na academia do clube através de treinos variados e específicos.",
+        "Os benefícios para a saúde integral incluem:",
+        "Mobilidade e Estabilidade: Melhora a saúde das articulações e a postura através de movimentos multiarticulares.",
+        "Eficiência Diária: Facilita a execução de tarefas rotineiras, prevenindo lesões e dores crônicas.",
+        "Variabilidade Motora: Oferece um treino dinâmico que desafia o corpo de diferentes formas a cada sessão.",
+        "Agendamento: Esta modalidade requer agendamento prévio pelo aplicativo do clube."
+      ],
+      "tabelas": [
+        {
+          "titulo": "",
+          "colunas": [
+            "Dia da Semana",
+            "Horário",
+            "Local"
+          ],
+          "linhas": [
+            [
+              "Terça à Sexta",
+              "07:20 às 08:00",
+              "Espaço Multiuso"
+            ],
+            [
+              "Terça / Quinta / Sexta",
+              "18:10 às 19:00",
+              "Espaço Multiuso"
+            ]
+          ]
+        }
+      ],
+      "notas": [],
+      "professores": [
+        "Hendrick",
+        "Luana"
+      ],
+      "profTitulo": "Professores",
+      "horarioResumo": "Terça à Sexta · 07:20 às 08:00",
+      "publico": "Acima de 14 anos",
+      "retrato": "/images/modalidades/ginastica-funcional.jpg",
+      "foto": "/images/galeria/galeria-6-2.jpg",
+      "fotoDaArea": true,
+      "galeria": [],
+      "inscricao": "Agendamento pelo aplicativo",
+      "horariosSite": {
+        "colunas": [
+          "Dia",
+          "Horário"
+        ],
+        "linhas": [
+          [
+            "Terça, Quinta e Sexta",
+            "18:10 às 19:00"
+          ],
+          [
+            "Terça à Sexta",
+            "7:20 às 8:00"
+          ]
+        ],
+        "nota": "Agendamento pelo aplicativo. Acima de 14 anos."
+      }
+    },
+    "ginastica-localizada": {
+      "nome": "Ginástica Localizada",
+      "sobre": [
+        "A Ginástica Localizada no Country Clube de Formiga é uma atividade energizante e transformadora, ideal para quem busca alinhar saúde, estética e disposição em um ambiente motivador. Focada no aprimoramento do tônus muscular, a modalidade consiste em sessões estruturadas que trabalham grupos musculares específicos através de séries com número elevado de repetições, garantindo resultados visíveis e duradouros.",
+        "Mais do que apenas um treino, a aula é um momento de autocuidado. Com duração média de uma hora, a prática intensa permite um gasto energético expressivo, sendo uma poderosa aliada na manutenção da boa forma.",
+        "Os benefícios fisiológicos e sociais incluem:",
+        "Alto Gasto Calórico: Uma única sessão pode queimar cerca de 500 calorias, auxiliando diretamente no controle de peso e na redução de gordura corporal.",
+        "Definição e Resistência: O método de repetições fortalece a musculatura sem necessariamente causar hipertrofia exagerada, promovendo um corpo mais definido e resistente.",
+        "Bem-estar Pleno: A prática regular eleva a autoestima e a disposição, combatendo o estresse e promovendo uma sensação imediata de realização e beleza.",
+        "No clube, a Ginástica Localizada é sinônimo de superação coletiva. O ambiente de grupo incentiva a constância e torna o esforço físico mais prazeroso, criando uma rede de apoio que valoriza a saúde e a vitalidade de cada associado.",
+        "Sem necessidade de agendamento: Basta comparecer ao local no horário da aula e participar."
+      ],
+      "tabelas": [
+        {
+          "titulo": "",
+          "colunas": [
+            "Dia da Semana",
+            "Horário",
+            "Local"
+          ],
+          "linhas": [
+            [
+              "Segunda e Quarta",
+              "18:30 às 20:00 horas",
+              "Espaço Multiuso"
+            ]
+          ]
+        }
+      ],
+      "notas": [],
+      "professores": [],
+      "profTitulo": "",
+      "horarioResumo": "Segunda e Quarta · 18:30 às 20:00 horas",
+      "publico": "Acima de 16 anos",
+      "retrato": "/images/modalidades/ginastica-localizada.jpg",
+      "foto": "/images/galeria/galeria-6-3.jpg",
+      "fotoDaArea": true,
+      "galeria": [],
+      "inscricao": "Não é necessário agendamento",
+      "horariosSite": {
+        "colunas": [
+          "Dia",
+          "Horário"
+        ],
+        "linhas": [
+          [
+            "Segunda e Quarta",
+            "18:30 às 20:00"
+          ]
+        ],
+        "nota": "Não é necessário agendamento. Acima de 16 anos."
+      }
+    },
+    "hidroginastica": {
+      "nome": "Hidroginástica",
+      "sobre": [
+        "A Hidroginástica no Country Clube de Formiga é uma experiência revigorante que une movimento e leveza, proporcionando um ambiente ideal para quem busca saúde física e mental sem o impacto dos exercícios terrestres. Realizada em nossas piscinas, essa modalidade aeróbica é um convite ao bem-estar, promovendo a manutenção da saúde de forma segura, prazerosa e extremamente eficaz.",
+        "A grande vantagem fisiológica desta prática reside na propriedade física da água, que atua como um amortecedor natural. Isso resulta em um impacto significativamente menor nas articulações e uma sensação de conforto durante a execução dos movimentos, permitindo um trabalho intenso de resistência cardiorrespiratória e força muscular com menor percepção de esforço. Além disso, uma aula vigorosa pode promover um gasto calórico entre 260 a 400 kcal, auxiliando no controle de peso.",
+        "A modalidade é sinônimo de democracia e inclusão. É indicada para todas as idades e perfis, sendo especialmente benéfica para gestantes, idosos, pessoas em tratamento de obesidade, fibromialgia ou em reabilitação de lesões. A água facilita a amplitude dos movimentos, melhorando a flexibilidade e a autonomia funcional.",
+        "No clube, a piscina se torna também um local de encontro e socialização. A dinâmica das aulas, conduzidas por nossos professores especializados, estimula a interação entre os alunos, transformando o exercício em um momento de lazer e descontração que combate o estresse do dia a dia.",
+        "Acesso Facilitado: Para participar, não é necessário agendamento prévio. Basta comparecer à piscina no horário da aula e aproveitar."
+      ],
+      "tabelas": [
+        {
+          "titulo": "",
+          "colunas": [
+            "Dia da Semana",
+            "Horário",
+            "Professor"
+          ],
+          "linhas": [
+            [
+              "Terça à Sexta",
+              "07:00 horas",
+              "Luís Felipe"
+            ],
+            [
+              "Terça à Sexta",
+              "09:00 horas",
+              "Hendrick"
+            ],
+            [
+              "Terça à Sexta",
+              "16:00 horas",
+              "Laís"
+            ],
+            [
+              "Terça à Sexta",
+              "19:00 horas",
+              "Laís"
+            ]
+          ]
+        }
+      ],
+      "notas": [],
+      "professores": [
+        "Luiz Felipe",
+        "Hendrick",
+        "Laís Pacheco"
+      ],
+      "profTitulo": "Professores",
+      "horarioResumo": "Terça à Sexta · 07:00 horas",
+      "publico": "",
+      "retrato": "/images/modalidades/hidroginastica.jpg",
+      "foto": "/images/infraestrutura/piscinas-3.jpg",
+      "fotoDaArea": true,
+      "galeria": [],
+      "inscricao": "Não é necessário agendamento",
+      "horariosSite": {
+        "colunas": [
+          "Dia",
+          "Horário"
+        ],
+        "linhas": [
+          [
+            "Terça à Sexta",
+            "7h, 9h, 16h e 19h"
+          ]
+        ],
+        "nota": "Não é necessário agendamento."
+      }
+    },
+    "jiu-jitsu": {
+      "nome": "Jiu jitsu",
+      "sobre": [
+        "O Jiu-Jitsu no Country Clube de Formiga é uma modalidade que une tradição, disciplina e superação, oferecendo um ambiente seguro para o desenvolvimento pessoal de toda a família. Conhecida como “arte suave”, essa prática milenar adapta-se perfeitamente a todos os perfis, promovendo não apenas o aprendizado de uma defesa pessoal eficiente, mas também um estilo de vida focado no equilíbrio entre corpo e mente.",
+        "A prática regular do Jiu-Jitsu atua diretamente na melhora da capacidade cardiovascular e respiratória, além de proporcionar um fortalecimento muscular integral, resultando em um corpo mais definido e resistente. Por focar na movimentação e técnica estratégica no chão, o esporte desenvolve de forma acentuada a flexibilidade, a coordenação motora e os reflexos.",
+        "Muito além do tatame, o Jiu-Jitsu é uma poderosa ferramenta de bem-estar. As aulas auxiliam significativamente no combate ao estresse e à ansiedade, elevando a autoconfiança e a concentração dos alunos. No ambiente acolhedor do nosso clube, os praticantes encontram um espaço de socialização e respeito mútuo, onde os valores da arte marcial — como a disciplina e a persistência — são aplicados no dia a dia.",
+        "Indicado para todas as idades, o Jiu-Jitsu no Country Clube recebe desde crianças em fase de desenvolvimento até adultos que buscam uma atividade física dinâmica e desafiadora.",
+        "Benefícios da Modalidade:",
+        "Defesa Pessoal e Autoconfiança: Ensina técnicas eficazes para o controle de situações adversas.",
+        "Condicionamento Físico: Auxilia na perda de peso e no ganho de força e resistência.",
+        "Saúde Mental: Proporciona bem-estar através do alívio da tensão diária.",
+        "Estilo de Vida: Incentiva hábitos saudáveis, como alongamentos constantes e cuidado com o corpo.",
+        "Junte-se ao nosso time e descubra a força da arte suave no Country Clube de Formiga! Uma oportunidade ideal para quem busca saúde, segurança e integração social.",
+        "Consulte a disponibilidade de vagas e inscrições diretamente com o professor no local das aulas. Para mais informações, procure o Professor Rodrigo durante os horários das atividades ou visite a secretaria do clube."
+      ],
+      "tabelas": [
+        {
+          "titulo": "Jiu-Jitsu (Inscrições com o Professor Rodrigo)",
+          "colunas": [
+            "Dia da Semana",
+            "Horário",
+            "Turma / Faixa Etária"
+          ],
+          "linhas": [
+            [
+              "Segunda e Quarta",
+              "19:40h",
+              "Adulto Intermediário / Avançado"
+            ],
+            [
+              "Terça e Quinta",
+              "18:45h às 19:45h",
+              "Infantil (A partir de 7 anos)"
+            ],
+            [
+              "Terça e Quinta",
+              "19:45h",
+              "Adultos e Adolescentes Iniciantes"
+            ]
+          ]
+        }
+      ],
+      "notas": [],
+      "professores": [
+        "Rodrigo"
+      ],
+      "profTitulo": "Professor",
+      "horarioResumo": "Segunda e Quarta · 19:40h",
+      "publico": "Adulto Intermediário / Avançado",
+      "retrato": "/images/modalidades/jiu-jitsu.jpg",
+      "foto": "/images/infraestrutura/escolas-de-artes-marciais-2.jpg",
+      "fotoDaArea": true,
+      "galeria": [],
+      "inscricao": "Inscrições diretamente com o professor",
+      "horariosSite": {
+        "colunas": [
+          "Categoria",
+          "Dia",
+          "Horário"
+        ],
+        "linhas": [
+          [
+            "Adulto Intermediário/Avançado",
+            "Segunda e Quarta",
+            "20:00"
+          ],
+          [
+            "Infantil (a partir de 7 anos)",
+            "Terça e Quinta",
+            "18:45 às 19:45"
+          ],
+          [
+            "Adulto e Adolescente Iniciante",
+            "Terça e Quinta",
+            "19:45"
+          ]
+        ],
+        "nota": "Inscrições diretamente com o professor."
+      }
+    },
+    "karate": {
+      "nome": "Karatê",
+      "sobre": [
+        "O Karatê no Country Clube de Formiga é muito mais do que uma técnica de defesa pessoal; é uma filosofia de vida que busca o equilíbrio perfeito entre corpo e mente. Traduzido como “mãos vazias”, esta arte marcial milenar originária de Okinawa fundamenta-se em princípios rígidos de respeito mútuo e autodisciplina, integrando-se perfeitamente ao ambiente familiar e formativo do nosso clube.",
+        "A prática regular oferece benefícios fisiológicos e neurológicos distintos. O treinamento enfatiza o desenvolvimento da lateralidade e da coordenação motora e visual, exigindo que o aluno domine os movimentos de ambos os lados do corpo com igual precisão. Além de aprimorar a capacidade de reação, a atividade canaliza a energia física de forma construtiva, resultando em um aumento significativo da capacidade de concentração e foco.",
+        "No aspecto social e comportamental, o Karatê é uma verdadeira escola de caráter. No tatame, crianças e adultos aprendem o valor da paciência e do respeito ao próximo, fortalecendo a autoestima e promovendo a harmonia na convivência social. É uma modalidade inclusiva, onde a superação individual caminha lado a lado com o companheirismo.",
+        "Inscrições: As matrículas devem ser realizadas diretamente com o professor no local e horário das aulas."
+      ],
+      "tabelas": [
+        {
+          "titulo": "",
+          "colunas": [
+            "Dia da Semana",
+            "Horário"
+          ],
+          "linhas": [
+            [
+              "Segunda e Quarta",
+              "17:30 às 19:30 horas"
+            ]
+          ]
+        }
+      ],
+      "notas": [],
+      "professores": [
+        "Kélcio"
+      ],
+      "profTitulo": "Professor",
+      "horarioResumo": "Segunda e Quarta · 17:30 às 19:30 horas",
+      "publico": "",
+      "retrato": "/images/modalidades/karate.jpg",
+      "foto": "/images/infraestrutura/escolas-de-artes-marciais-3.jpg",
+      "fotoDaArea": true,
+      "galeria": [],
+      "inscricao": "Inscrições diretamente com o professor",
+      "horariosSite": {
+        "colunas": [
+          "Dia",
+          "Horário"
+        ],
+        "linhas": [
+          [
+            "Segunda e Quarta",
+            "18:00 às 20:00"
+          ]
+        ],
+        "nota": "Inscrições diretamente com o professor."
+      }
+    },
+    "liberacao-miofascial-drenagem-e-ventosaterapia": {
+      "nome": "Liberação Miofascial, Drenagem e Ventosaterapia",
+      "sobre": [
+        "A Liberação Miofascial, Drenagem e Ventosaterapia chega como um cuidado essencial para quem busca equilíbrio entre a performance esportiva e a recuperação física. Este serviço especializado é focado no alívio de dores, na redução de tensões musculares e na melhoria da circulação, proporcionando uma sensação imediata de bem-estar e leveza.",
+        "Mais do que apenas relaxamento, essas técnicas atuam diretamente na saúde dos tecidos, auxiliando na eliminação de toxinas e na recuperação da mobilidade articular. É o complemento ideal para atletas e associados de todas as idades que desejam manter o corpo em plena harmonia, prevenindo lesões e otimizando os resultados das atividades físicas praticadas no clube. Em um ambiente acolhedor, oferecemos o suporte necessário para que sua saúde física receba a atenção que merece."
+      ],
+      "tabelas": [
+        {
+          "titulo": "",
+          "colunas": [
+            "Dia da Semana",
+            "Horário"
+          ],
+          "linhas": [
+            [
+              "Segunda-feira",
+              "14h às 18h"
+            ],
+            [
+              "Terça e Quinta-feira",
+              "07h às 11h"
+            ],
+            [
+              "Quarta e Sexta-feira",
+              "13h às 17h"
+            ]
+          ]
+        }
+      ],
+      "notas": [
+        "Os atendimentos são realizados mediante agendamento prévio pelo aplicativo do clube a partir do dia 1 de fevereiro."
+      ],
+      "professores": [
+        "Vanessa"
+      ],
+      "profTitulo": "Professores",
+      "horarioResumo": "Segunda-feira · 14h às 18h",
+      "publico": "",
+      "retrato": "/images/modalidades/liberacao-miofascial-drenagem-e-ventosaterapia.jpg",
+      "foto": "/images/galeria/galeria-2-2.jpg",
+      "fotoDaArea": true,
+      "galeria": [],
+      "inscricao": "Agendamento pelo aplicativo",
+      "horariosSite": {
+        "colunas": [
+          "Dia",
+          "Horário"
+        ],
+        "linhas": [
+          [
+            "Segunda e Quarta",
+            "14:00 às 18:00"
+          ],
+          [
+            "Terça e Quinta",
+            "7:00 às 11:00"
+          ],
+          [
+            "Sexta",
+            "13:00 às 17:00"
+          ]
+        ],
+        "nota": "Agendamento pelo aplicativo."
+      }
+    },
+    "massagem-feminina": {
+      "nome": "Massagem Feminina",
+      "sobre": [
+        "A Massagem Feminina no Country Clube de Formiga é um refúgio de cuidado e bem-estar, projetado para oferecer às nossas associadas um momento de conexão profunda entre corpo e mente. Muito mais do que um recurso estético ou de relaxamento momentâneo, a massagem é uma prática terapêutica essencial que atua na manutenção da saúde integral, proporcionando equilíbrio em um ambiente acolhedor e seguro.",
+        "A prática regular promove benefícios fisiológicos significativos, atuando diretamente na redução da tensão e das dores musculares acumuladas no cotidiano. Ao estimular a circulação sanguínea e linfática, o atendimento auxilia na eliminação de toxinas e resíduos metabólicos, melhorando a vitalidade do organismo. No aspecto emocional, as sessões são poderosas aliadas no combate ao estresse e à ansiedade, favorecendo a liberação de substâncias que promovem a sensação de bem-estar e auxiliam na prevenção de quadros depressivos.",
+        "Indicada para mulheres, acima de 18 anos, que buscam qualidade de vida e um tempo dedicado ao autocuidado, a modalidade no clube conta com profissionais especializadas e atendimento personalizado.",
+        "Garanta o seu momento: os atendimentos são realizados mediante agendamento prévio pelo aplicativo para garantir total conforto e exclusividade."
+      ],
+      "tabelas": [
+        {
+          "titulo": "",
+          "colunas": [
+            "Dia da Semana",
+            "Horário",
+            "Professora"
+          ],
+          "linhas": [
+            [
+              "Segunda-feira",
+              "16:30 às 21:00h",
+              "Rosilene / Laís"
+            ],
+            [
+              "Terça-feira",
+              "16:00 às 21:00h",
+              "Rosilene / Laís"
+            ],
+            [
+              "Terça-feira",
+              "07:00 às 11:45",
+              "Samantha"
+            ],
+            [
+              "Quarta-feira",
+              "07:00 às 11:15h",
+              "Samantha"
+            ],
+            [
+              "Quarta-feira",
+              "16:00 às 21:00h",
+              "Rosilene / Laís"
+            ],
+            [
+              "Quinta-feira",
+              "07:00 às 11:15h",
+              "Samantha"
+            ],
+            [
+              "Quinta-feira",
+              "16:30 às 21:00h",
+              "Laís"
+            ],
+            [
+              "Quinta-feira",
+              "16:30 às 21:00h",
+              "Rosilene"
+            ],
+            [
+              "Sexta-feira",
+              "07:00 às 11:45h",
+              "Samantha"
+            ]
+          ]
+        }
+      ],
+      "notas": [],
+      "professores": [
+        "Samantha",
+        "Rosilene",
+        "Laís Satiro"
+      ],
+      "profTitulo": "Massagistas",
+      "horarioResumo": "Segunda-feira · 16:30 às 21:00h",
+      "publico": "Acima de 18 anos",
+      "retrato": "/images/modalidades/massagem-feminina.jpg",
+      "foto": "/images/galeria/galeria-2-1.jpg",
+      "fotoDaArea": true,
+      "galeria": [],
+      "inscricao": "Agendamento pelo aplicativo",
+      "horariosSite": {
+        "colunas": [
+          "Profissional / Dia",
+          "Horário"
+        ],
+        "linhas": [
+          [
+            "Samantha (Terça e Sexta)",
+            "7:00 às 11:45"
+          ],
+          [
+            "Samantha (Quarta e Quinta)",
+            "7:00 às 11:15"
+          ],
+          [
+            "Rosilene (Segunda e Quinta)",
+            "16:30 às 21:00"
+          ],
+          [
+            "Rosilene (Terça e Quarta)",
+            "16:00 às 21:00"
+          ],
+          [
+            "Laís (Segunda)",
+            "17:00 às 21:00"
+          ],
+          [
+            "Laís (Terça)",
+            "16:00 às 21:00"
+          ],
+          [
+            "Laís (Quarta e Quinta)",
+            "16:30 às 21:00"
+          ]
+        ],
+        "nota": "Agendamento pelo aplicativo. Acima de 18 anos."
+      }
+    },
+    "musculacao": {
+      "nome": "Musculação",
+      "sobre": [
+        "A Musculação no Country Clube de Formiga é uma das atividades mais completas e versáteis para quem busca longevidade e performance. Reconhecida por profissionais da saúde como um pilar fundamental para o condicionamento físico, a modalidade se adapta perfeitamente aos objetivos individuais de cada associado, seja para o emagrecimento, o ganho de massa muscular (hipertrofia) ou a definição corporal.",
+        "Para além da estética, a prática regular oferece benefícios fisiológicos essenciais, como o fortalecimento das articulações e a correção postural, sendo uma ferramenta poderosa na prevenção e no tratamento de lesões. Ao ajustar as cargas e a intensidade dos exercícios conforme a idade, o peso e o histórico de cada praticante, garantimos uma atividade segura e inclusiva, ideal para promover a saúde óssea e o vigor físico em todas as fases da vida.",
+        "No ambiente acolhedor da nossa academia, a musculação também se torna um ponto de encontro e motivação. Com o suporte de uma equipe técnica qualificada, o associado encontra o equilíbrio entre o desafio pessoal e o bem-estar social, transformando o treino em um hábito prazeroso e transformador.",
+        "Invista em você: a academia funciona em horários amplos para se adequar à sua rotina, sem a necessidade de agendamento prévio."
+      ],
+      "tabelas": [
+        {
+          "titulo": "",
+          "colunas": [
+            "Dia da Semana",
+            "Horário"
+          ],
+          "linhas": [
+            [
+              "Segunda-feira",
+              "14:00 às 21:00h"
+            ],
+            [
+              "Terça a Sexta-feira",
+              "06:00 às 21:00h"
+            ],
+            [
+              "Sábado",
+              "07:00 às 16:00h"
+            ],
+            [
+              "Domingo",
+              "08:00 às 13:00h"
+            ]
+          ]
+        }
+      ],
+      "notas": [],
+      "professores": [
+        "Marlon",
+        "Hendrick",
+        "Isabella",
+        "Bruno",
+        "Lucas",
+        "Luana",
+        "Pablo",
+        "Pedro Lima"
+      ],
+      "profTitulo": "Professores",
+      "horarioResumo": "Segunda-feira · 14:00 às 21:00h",
+      "publico": "",
+      "retrato": "/images/modalidades/musculacao.jpg",
+      "foto": "/images/galeria/galeria-6-1.jpg",
+      "fotoDaArea": true,
+      "galeria": [],
+      "inscricao": "Não é necessário agendamento",
+      "horariosSite": {
+        "colunas": [
+          "Dia",
+          "Horário"
+        ],
+        "linhas": [
+          [
+            "Segunda",
+            "14:00 às 21:00"
+          ],
+          [
+            "Terça à Sexta",
+            "6:00 às 21:00"
+          ],
+          [
+            "Sábado",
+            "7:00 às 16:00"
+          ],
+          [
+            "Domingo",
+            "8:00 às 13:00"
+          ]
+        ],
+        "nota": "Não é necessário agendamento."
+      }
+    },
+    "natacao": {
+      "nome": "Natação",
+      "sobre": [
+        "A Natação no Country Clube de Formiga é uma das práticas mais completas para quem busca o equilíbrio entre condicionamento físico e bem-estar mental em um ambiente acolhedor. Por ser um esporte de baixíssimo impacto, é a escolha ideal para proteger as articulações enquanto se trabalha a resistência cardiovascular, o fortalecimento de diversos grupos musculares e a flexibilidade de forma simultânea.",
+        "Para o público Adulto e de Treinamento, a modalidade se destaca pela alta eficiência metabólica. Com um gasto calórico expressivo — que pode variar entre 560 a 770 kcal por hora — a natação é uma excelente aliada no controle de peso e na tonificação muscular sem os riscos de lesões por impacto. Além disso, é amplamente recomendada para a melhora da capacidade pulmonar, auxiliando significativamente no controle de condições respiratórias, como a asma.",
+        "No desenvolvimento Infantil e Infanto-Juvenil, a atividade aumenta a coordenação motora e o tônus muscular. Para os Bebês, a recomendação é iniciar a partir de um ano, idade em que o desenvolvimento do ouvido reduz chances de infecções e a criança já possui maior imunidade. Em nossas raias, as crianças e jovens encontram um espaço de socialização e disciplina, transformando o aprendizado em um hábito saudável e prazeroso.",
+        "Consulte a disponibilidade de vagas e inscrições diretamente com os professores no local das aulas."
+      ],
+      "tabelas": [
+        {
+          "titulo": "Natação para Bebês",
+          "colunas": [
+            "Dia da Semana",
+            "Horário",
+            "Professor(a)"
+          ],
+          "linhas": [
+            [
+              "Terça a Sexta-feira",
+              "08:00 às 12:00h",
+              "Luís Felipe / Hendrick"
+            ],
+            [
+              "Terça a Sexta-feira",
+              "15:00 às 20:00h",
+              "Daisy / Laís"
+            ]
+          ]
+        },
+        {
+          "titulo": "Natação Infantil, Infanto-Juvenil e Adulto",
+          "colunas": [
+            "Dia da Semana",
+            "Horário",
+            "Professor(a)"
+          ],
+          "linhas": [
+            [
+              "Terça a Sexta-feira",
+              "06:30 às 11:00h",
+              "Márcio"
+            ],
+            [
+              "Terça a Sexta-feira",
+              "17:00 às 20:30h",
+              "Thaylon"
+            ]
+          ]
+        }
+      ],
+      "notas": [],
+      "professores": [
+        "Luiz Felipe",
+        "Hendrick",
+        "Laís Pacheco",
+        "Márcio",
+        "Thaylon",
+        "Daisy"
+      ],
+      "profTitulo": "Professores",
+      "horarioResumo": "Terça a Sexta-feira · 08:00 às 12:00h",
+      "publico": "A partir de 1 ano",
+      "retrato": "/images/modalidades/natacao.jpg",
+      "foto": "/images/infraestrutura/piscinas-2.jpg",
+      "fotoDaArea": true,
+      "galeria": [],
+      "inscricao": "",
+      "horariosSite": {
+        "colunas": [
+          "Dia",
+          "Horário"
+        ],
+        "linhas": [
+          [
+            "Terça à Sexta",
+            "6:30 às 11:30 / 15:00 às 20:00"
+          ]
+        ],
+        "nota": "Inscrições diretamente com os professores. A partir de 1 ano."
+      }
+    },
+    "peteca": {
+      "nome": "Peteca",
+      "sobre": [
+        "A Peteca no Country Clube de Formiga é uma modalidade vibrante e dinâmica, perfeita para quem busca um esporte que une diversão e alto rendimento físico em um ambiente de integração social. Como uma atividade predominantemente aeróbica, a peteca é um excelente exercício para quem deseja melhorar o condicionamento cardiovascular e a resistência, permitindo que o praticante realize esforços cada vez maiores com menos fadiga.",
+        "A prática regular promove benefícios fisiológicos fundamentais, como o aumento expressivo da flexibilidade das articulações e a agilidade dos movimentos. Por exigir respostas rápidas, o esporte desenvolve os reflexos, a destreza e a coordenação motora de forma intensa. Além disso, a musculatura se desenvolve gradualmente, tornando o corpo mais flexível e capaz de manter o equilíbrio mesmo em lances que exigem máxima velocidade e precisão.",
+        "Indicada para diversas faixas etárias, a peteca no clube é uma ferramenta poderosa de socialização e bem-estar. À medida que a aptidão física melhora, o jogador amplia sua capacidade respiratória e ganha vigor para executar movimentos complexos, transformando cada partida em um momento de superação pessoal e lazer entre amigos.",
+        "Junte-se ao jogo: venha viver a emoção das quadras e aproveitar todos os benefícios que este esporte genuinamente brasileiro oferece para a sua saúde."
+      ],
+      "tabelas": [
+        {
+          "titulo": "",
+          "colunas": [
+            "Dia da Semana",
+            "Horário"
+          ],
+          "linhas": [
+            [
+              "Terça-feira",
+              "18:30 às 21:30h"
+            ],
+            [
+              "Quinta-feira",
+              "18:30 às 21:30h"
+            ],
+            [
+              "Domingo",
+              "09:00 às 12:00h"
+            ]
+          ]
+        }
+      ],
+      "notas": [
+        "Nota: Consulte a secretaria ou os responsáveis pela área para mais detalhes sobre a organização das partidas."
+      ],
+      "professores": [],
+      "profTitulo": "",
+      "horarioResumo": "Terça-feira · 18:30 às 21:30h",
+      "publico": "",
+      "retrato": "",
+      "foto": "/images/infraestrutura/ginasio-1.jpg",
+      "fotoDaArea": true,
+      "galeria": [],
+      "inscricao": "",
+      "horariosSite": null
+    },
+    "pilates": {
+      "nome": "Pilates",
+      "sobre": [
+        "O Pilates no Country Clube de Formiga é um método de educação e reeducação dos movimentos corporais que integra corpo e mente em uma prática harmoniosa. Baseado nos princípios criados por Joseph Pilates, a modalidade utiliza recursos mecanoterapêuticos e cinesioterapêuticos para promover um desenvolvimento físico equilibrado e consciente.",
+        "As aulas englobam exercícios específicos que trabalham, de forma conectada, o controle do movimento, a flexibilidade, a coordenação motora e o equilíbrio. Um dos grandes diferenciais fisiológicos do Pilates é o fortalecimento do “core” (centro de força) aliado a uma respiração coordenada, o que resulta em uma melhora significativa da postura e no aumento da força funcional sem sobrecarregar as articulações.",
+        "No nosso clube, o Pilates é conduzido por Fisioterapeutas, profissionais de saúde capacitados para atuar na prevenção de lesões, na promoção da saúde e na reabilitação física dos associados. É a escolha ideal para todas as idades, desde quem busca performance e tonificação até aqueles que necessitam de um cuidado terapêutico especializado em um ambiente seguro e acolhedor.",
+        "Agende sua aula: O atendimento deve ser agendado diretamente na secretaria do clube, conforme a disponibilidade de vagas."
+      ],
+      "tabelas": [
+        {
+          "titulo": "",
+          "colunas": [
+            "Dia da Semana",
+            "Horário",
+            "Professora"
+          ],
+          "linhas": [
+            [
+              "Segunda-feira a Quinta-feira",
+              "15:00 às 19:00h",
+              "Márcia"
+            ],
+            [
+              "Terça-feira à Sexta-Feira",
+              "07:30 às 12:00h",
+              "Marcela"
+            ],
+            [
+              "Sexta-feira",
+              "14:00 às 18:00h",
+              "Márcia"
+            ]
+          ]
+        }
+      ],
+      "notas": [
+        "Nota: Os horários de terça a sexta-feira seguem o cronograma de atendimento individualizado ou em pequenos grupos."
+      ],
+      "professores": [
+        "Marcela",
+        "Márcia",
+        "Ana Paula"
+      ],
+      "profTitulo": "Fisioterapeutas",
+      "horarioResumo": "Segunda-feira a Quinta-feira · 15:00 às 19:00h",
+      "publico": "",
+      "retrato": "/images/modalidades/pilates.jpg",
+      "foto": "/images/infraestrutura/estudio-de-pilates-1.jpg",
+      "fotoDaArea": true,
+      "galeria": [],
+      "inscricao": "Agendamento pelo aplicativo",
+      "horariosSite": {
+        "colunas": [
+          "Dia da Semana",
+          "Horário",
+          "Professora"
+        ],
+        "linhas": [
+          [
+            "Segunda-feira a Quinta-feira",
+            "15:00 às 19:00h",
+            "Márcia"
+          ],
+          [
+            "Terça-feira à Sexta-Feira",
+            "07:30 às 12:00h",
+            "Marcela"
+          ],
+          [
+            "Sexta-feira",
+            "14:00 às 18:00h",
+            "Márcia"
+          ]
+        ],
+        "nota": "Agendamento pelo aplicativo. Segunda não necessita agendamento."
+      }
+    },
+    "tenis": {
+      "nome": "Tênis",
+      "sobre": [
+        "O Tênis no Country Clube de Formiga é uma das modalidades mais completas e desafiadoras, exigindo dedicação e proporcionando um desenvolvimento físico integral aos praticantes. Por ser um esporte que movimenta todo o corpo, ele combina de forma única o treinamento de força com o condicionamento aeróbico.",
+        "Durante os treinos, o atleta experimenta um gasto calórico significativo, variando entre 200 e 500 calorias por hora, o que o torna um excelente aliado na perda de peso e na manutenção da composição corporal ideal. Fisiologicamente, o tênis exige um grande esforço das pernas para a locomoção rápida em quadra, do abdômen para a sustentação e estabilidade, além de fortalecer braços, ombros e costas através dos movimentos precisos com a raquete.",
+        "Além dos ganhos físicos, a prática no clube fomenta a disciplina e a agilidade mental, ocorrendo em um ambiente que preza pela integração entre os associados e o espírito esportivo.",
+        "Junte-se ao jogo: Desenvolva sua técnica e melhore sua saúde em nossas quadras. As inscrições devem ser realizadas diretamente com o professor no local das aulas."
+      ],
+      "tabelas": [
+        {
+          "titulo": "",
+          "colunas": [
+            "Dia da Semana",
+            "Horário"
+          ],
+          "linhas": [
+            [
+              "Sexta-feira",
+              "17:00 às 21:30h"
+            ],
+            [
+              "Sábado",
+              "07:00 às 12:00h"
+            ]
+          ]
+        }
+      ],
+      "notas": [],
+      "professores": [],
+      "profTitulo": "",
+      "horarioResumo": "Sexta-feira · 17:00 às 21:30h",
+      "publico": "",
+      "retrato": "",
+      "foto": "/images/infraestrutura/quadra-de-tenis-1.jpg",
+      "fotoDaArea": true,
+      "galeria": [],
+      "inscricao": "",
+      "horariosSite": {
+        "colunas": [
+          "Dia",
+          "Horário"
+        ],
+        "linhas": [
+          [
+            "Sexta",
+            "17:00 às 21:30"
+          ],
+          [
+            "Sábado",
+            "7:00 às 12:00"
+          ]
+        ],
+        "nota": ""
+      }
+    },
+    "volei": {
+      "nome": "Vôlei",
+      "sobre": [
+        "O Vôlei no Country Clube de Formiga é uma modalidade que une o dinamismo do esporte coletivo a um treinamento físico completo, promovendo saúde e integração social em um ambiente vibrante. Durante cada partida ou treino, o corpo é requisitado como um todo, exigindo a ativação constante de grandes grupos musculares, incluindo tríceps, musculatura paravertebral, abdominais e antebraços, além de um trabalho intenso nos membros inferiores.",
+        "A prática regular do voleibol vai muito além do lazer, sendo extremamente benéfica para o aprimoramento das capacidades físicas funcionais e cardiorrespiratórias. O esporte favorece o fortalecimento muscular e a agilidade, tudo isso aliado à característica lúdica que desperta o espírito de equipe em nossos associados.",
+        "Para o público jovem, o Vôlei Infantil (a partir de 11 anos) foca no desenvolvimento das habilidades motoras, coordenação e disciplina, preparando os pequenos atletas para os desafios do esporte em um ambiente seguro e acolhedor. Já no nível Adulto, o foco recai sobre a integração e a manutenção da saúde integral através de jogos que estimulam a competitividade saudável.",
+        "Faça parte do time: Melhore sua saúde e faça novas amizades em nossas quadras. As inscrições devem ser realizadas diretamente com o professor responsável."
+      ],
+      "tabelas": [
+        {
+          "titulo": "",
+          "colunas": [
+            "Dia da Semana",
+            "Horário",
+            "Turma"
+          ],
+          "linhas": [
+            [
+              "Segunda-feira",
+              "19:00 às 21:30h",
+              "Adulto"
+            ],
+            [
+              "Quarta-feira",
+              "19:00 às 21:30h",
+              "Adulto"
+            ],
+            [
+              "Sexta-feira",
+              "19:00 às 20:30h",
+              "Infantil (A partir de 11 anos)"
+            ]
+          ]
+        }
+      ],
+      "notas": [
+        "Nota: As inscrições devem ser feitas diretamente com o professor durante os horários das aulas."
+      ],
+      "professores": [
+        "Thaylon"
+      ],
+      "profTitulo": "Professor",
+      "horarioResumo": "Segunda-feira · 19:00 às 21:30h",
+      "publico": "Adulto",
+      "retrato": "/images/modalidades/volei.jpg",
+      "foto": "/images/infraestrutura/ginasio-2.jpg",
+      "fotoDaArea": true,
+      "galeria": [],
+      "inscricao": "Inscrições diretamente com o professor",
+      "horariosSite": {
+        "colunas": [
+          "Dia",
+          "Categoria",
+          "Horário"
+        ],
+        "linhas": [
+          [
+            "Segunda e Quarta",
+            "Adulto",
+            "19:00 às 21:30"
+          ],
+          [
+            "Sexta",
+            "Infantil (a partir de 11 anos)",
+            "19:00 às 20:30"
+          ]
+        ],
+        "nota": "Inscrições diretamente com o professor."
+      }
+    },
+    "yoga": {
+      "nome": "Yoga",
+      "sobre": [
+        "A prática de Yoga no Country Clube de Formiga é muito mais do que uma atividade física; é uma jornada de reconexão entre corpo e mente, ideal para quem busca desacelerar a rotina e encontrar um refúgio de paz. Reconhecida mundialmente como uma das terapias complementares mais eficazes, a modalidade combina posturas, técnicas respiratórias e meditação para promover um equilíbrio profundo que abrange as esferas física, psíquica e espiritual.",
+        "A metodologia aplicada no clube entende que a boa saúde começa pelo corpo. Através de exercícios de alongamento e permanência em posturas específicas (ásanas), o praticante é estimulado a encontrar o relaxamento dentro do esforço. Uma vez alcançado o aprimoramento físico e a melhora do tônus muscular, inicia-se o trabalho respiratório — a via expressa de ligação com as nossas emoções.",
+        "Os benefícios dessa prática milenar incluem:",
+        "Gestão do Estresse: A interferência consciente na postura e no padrão respiratório acalma a mente, reduzindo a ansiedade.",
+        "Saúde Integral: Promove a manutenção das funções vitais e o alinhamento da coluna vertebral.",
+        "Controle Emocional: A respiração guiada ensina o aluno a gerenciar sentimentos, preparando o terreno para o estado meditativo.",
+        "As aulas são realizadas no Salão Social, um ambiente amplo e acolhedor que favorece a concentração. Seja nas primeiras horas da manhã para despertar com energia ou ao final da tarde para relaxar, o Yoga no clube é acessível a todos os níveis de experiência, proporcionando bem-estar e qualidade de vida em cada respiração.",
+        "Acesso Livre: Para participar das aulas, não é necessário agendamento prévio. Basta trazer seu tapete e comparecer ao local."
+      ],
+      "tabelas": [
+        {
+          "titulo": "",
+          "colunas": [
+            "Dia da Semana",
+            "Horário"
+          ],
+          "linhas": [
+            [
+              "Segunda e Quarta",
+              "18:30 às 19:30h"
+            ],
+            [
+              "Terça e Quinta",
+              "07:00h e 08:00h"
+            ]
+          ]
+        }
+      ],
+      "notas": [],
+      "professores": [
+        "Divânia"
+      ],
+      "profTitulo": "Professora",
+      "horarioResumo": "Segunda e Quarta · 18:30 às 19:30h",
+      "publico": "",
+      "retrato": "/images/modalidades/yoga.jpg",
+      "foto": "/images/galeria/galeria-3-1.jpg",
+      "fotoDaArea": true,
+      "galeria": [],
+      "inscricao": "Não é necessário agendamento",
+      "horariosSite": {
+        "colunas": [
+          "Dia",
+          "Horário"
+        ],
+        "linhas": [
+          [
+            "Terça e Quinta",
+            "7:00 às 9:00"
+          ],
+          [
+            "Segunda e Quarta",
+            "18:30 às 19:30"
+          ]
+        ],
+        "nota": "Não é necessário agendamento."
+      }
+    }
+  },
+  "infra": {
+    "area-familiar": {
+      "nome": "Área Familiar",
+      "subtitulo": "",
+      "sobre": [],
+      "foto": "/images/infraestrutura/area-familiar-1.jpg",
+      "fotoProvisoria": false,
+      "galeria": [
+        "/images/infraestrutura/area-familiar-1.jpg",
+        "/images/infraestrutura/area-familiar-2.jpg",
+        "/images/infraestrutura/area-familiar-3.jpg",
+        "/images/infraestrutura/area-familiar-4.jpg",
+        "/images/infraestrutura/area-familiar-5.jpg",
+        "/images/infraestrutura/area-familiar-6.jpg"
+      ]
+    },
+    "praia": {
+      "nome": "Praia",
+      "subtitulo": "A praia do Country está aberta de acordo com o funcionamento normal do clube.",
+      "sobre": [
+        "A praia do Country Clube oferece a todos seus associados quadras de vôlei de praia, futevôlei, quiosques, decks, churrasqueiras, espaço de beach tênis."
+      ],
+      "foto": "/images/infraestrutura/praia-1.jpg",
+      "fotoProvisoria": false,
+      "galeria": [
+        "/images/infraestrutura/praia-1.jpg",
+        "/images/infraestrutura/praia-2.jpg",
+        "/images/infraestrutura/praia-3.jpg",
+        "/images/infraestrutura/praia-4.jpg",
+        "/images/infraestrutura/praia-5.jpg",
+        "/images/infraestrutura/praia-6.jpg"
+      ]
+    },
+    "secretaria": {
+      "nome": "Secretaria",
+      "subtitulo": "",
+      "sobre": [
+        "Aberta de segunda à sexta de 7 às 17 horas."
+      ],
+      "foto": "/images/infraestrutura/secretaria-1.jpg",
+      "fotoProvisoria": false,
+      "galeria": [
+        "/images/infraestrutura/secretaria-1.jpg",
+        "/images/infraestrutura/secretaria-2.jpg",
+        "/images/infraestrutura/secretaria-3.jpg",
+        "/images/infraestrutura/secretaria-4.jpg"
+      ]
+    },
+    "bares": {
+      "nome": "Bares",
+      "subtitulo": "",
+      "sobre": [
+        "A lagoa conta com dois bares principais: um situado na parte de cima do clube (Piscinas Frias), e o outro na parte de baixo(Praia)",
+        "Bar da Praia"
+      ],
+      "foto": "/images/infraestrutura/bares-1.jpg",
+      "fotoProvisoria": false,
+      "galeria": [
+        "/images/infraestrutura/bares-1.jpg",
+        "/images/infraestrutura/bares-2.jpg",
+        "/images/infraestrutura/bares-3.jpg",
+        "/images/infraestrutura/bares-4.jpg",
+        "/images/infraestrutura/bares-5.jpg"
+      ]
+    },
+    "quiosques": {
+      "nome": "Quiosques",
+      "subtitulo": "",
+      "sobre": [
+        "No ano de 2013 foram inaugurados os quiosques e churrasqueiras. Criados para dar conforto aos sócios que gostam de reunir os amigos e fazer um bom churrasco, os quiosques e churrasqueiras oferecem um melhor aproveitamento social que a prainha da lagoa merece ter pela sua beleza natural."
+      ],
+      "foto": "/images/infraestrutura/quiosques-1.png",
+      "fotoProvisoria": false,
+      "galeria": [
+        "/images/infraestrutura/quiosques-1.png",
+        "/images/infraestrutura/quiosques-2.jpg",
+        "/images/infraestrutura/quiosques-3.png",
+        "/images/infraestrutura/quiosques-4.jpg",
+        "/images/infraestrutura/quiosques-5.jpg"
+      ]
+    },
+    "sinuca": {
+      "nome": "Sinuca",
+      "subtitulo": "",
+      "sobre": [
+        "Mesas de sinuca (para maiores de 18 anos), tênis de mesa (ping-pong) e pebolim (totó) estão disponíveis no salão de jogos do clube. Muito frequentado, o local é situado na primeira edificação da história do Country Clube, onde funcionava a sede social antigamente. Há também salas especiais para jogos de baralho que ficam em frente a sauna."
+      ],
+      "foto": "/images/infraestrutura/sinuca-1.jpg",
+      "fotoProvisoria": false,
+      "galeria": [
+        "/images/infraestrutura/sinuca-1.jpg",
+        "/images/infraestrutura/sinuca-2.jpg",
+        "/images/infraestrutura/sinuca-3.png"
+      ]
+    },
+    "churrasqueira": {
+      "nome": "Churrasqueira",
+      "subtitulo": "",
+      "sobre": [
+        "No ano de 2013 foram inaugurados os quiosques e churrasqueiras. Criados para dar conforto aos sócios que gostam de reunir os amigos e fazer um bom churrasco, os quiosques e churrasqueiras oferecem um melhor aproveitamento social que a prainha da lagoa merece ter bela sua beleza natural."
+      ],
+      "foto": "/images/infraestrutura/churrasqueira-1.jpg",
+      "fotoProvisoria": false,
+      "galeria": [
+        "/images/infraestrutura/churrasqueira-1.jpg",
+        "/images/infraestrutura/churrasqueira-2.jpg",
+        "/images/infraestrutura/churrasqueira-3.jpg",
+        "/images/infraestrutura/churrasqueira-4.jpg"
+      ]
+    },
+    "restaurante": {
+      "nome": "Restaurante",
+      "subtitulo": "",
+      "sobre": [
+        "O restaurante do Country fica na parte de cima do clube."
+      ],
+      "foto": "/images/infraestrutura/bares-2.jpg",
+      "fotoProvisoria": true,
+      "galeria": []
+    },
+    "quadra-poliesportiva": {
+      "nome": "Quadra Poliesportiva",
+      "subtitulo": "",
+      "sobre": [
+        "A quadra poliesportiva da lagoa fica situada na parte central do clube. Praticantes de basquete, vôlei, futsal e handebol usam o local para se reunir com os amigos e manter a forma ao praticar esportes coletivos."
+      ],
+      "foto": "/images/infraestrutura/quadra-poliesportiva-1.png",
+      "fotoProvisoria": false,
+      "galeria": [
+        "/images/infraestrutura/quadra-poliesportiva-1.png",
+        "/images/infraestrutura/quadra-poliesportiva-2.png",
+        "/images/infraestrutura/quadra-poliesportiva-3.jpg",
+        "/images/infraestrutura/quadra-poliesportiva-4.jpg",
+        "/images/infraestrutura/quadra-poliesportiva-5.jpg",
+        "/images/infraestrutura/quadra-poliesportiva-6.jpg",
+        "/images/infraestrutura/quadra-poliesportiva-7.jpg",
+        "/images/infraestrutura/quadra-poliesportiva-8.jpg"
+      ]
+    },
+    "quadra-de-tenis": {
+      "nome": "Quadra de Tênis",
+      "subtitulo": "",
+      "sobre": [
+        "A quadra de tênis do Country Clube é feita de saibro e tem as medidas oficiais da confederação do desporto."
+      ],
+      "foto": "/images/infraestrutura/quadra-de-tenis-1.jpg",
+      "fotoProvisoria": false,
+      "galeria": [
+        "/images/infraestrutura/quadra-de-tenis-1.jpg",
+        "/images/infraestrutura/quadra-de-tenis-2.jpg",
+        "/images/infraestrutura/quadra-de-tenis-3.jpg",
+        "/images/infraestrutura/quadra-de-tenis-4.jpg",
+        "/images/infraestrutura/quadra-de-tenis-5.jpg",
+        "/images/infraestrutura/quadra-de-tenis-6.jpg"
+      ]
+    },
+    "escolas-de-artes-marciais": {
+      "nome": "Escolas de Artes Marciais",
+      "subtitulo": "",
+      "sobre": [
+        "A escola de artes marciais é localizada na parte de cima do clube, atrás do Salão Nobre. Fundada em 2013, conta com aulas de Jiu Jitsu e Karatê.",
+        "O Jiu-Jitsu e Karatê é um esporte recomendado para quem deseja ter uma vida saudável e com muita disposição. Por ser um esporte físico de grande contato nos proporciona melhora física e até mesmo mental."
+      ],
+      "foto": "/images/infraestrutura/escolas-de-artes-marciais-1.jpg",
+      "fotoProvisoria": false,
+      "galeria": [
+        "/images/infraestrutura/escolas-de-artes-marciais-1.jpg",
+        "/images/infraestrutura/escolas-de-artes-marciais-2.jpg",
+        "/images/infraestrutura/escolas-de-artes-marciais-3.jpg"
+      ]
+    },
+    "campos-de-futebol": {
+      "nome": "Campos de Futebol",
+      "subtitulo": "",
+      "sobre": [
+        "A Lagoa tem 3 campos de futebol society e um de grama sintética todos bem iluminados com sistema de irrigação que possibilita ao sócio um bom divertimento com o esporte mais praticado no país."
+      ],
+      "foto": "/images/infraestrutura/campos-de-futebol-1.jpg",
+      "fotoProvisoria": false,
+      "galeria": [
+        "/images/infraestrutura/campos-de-futebol-1.jpg",
+        "/images/infraestrutura/campos-de-futebol-2.jpg",
+        "/images/infraestrutura/campos-de-futebol-3.jpg",
+        "/images/infraestrutura/campos-de-futebol-4.jpg",
+        "/images/infraestrutura/campos-de-futebol-5.jpg",
+        "/images/infraestrutura/campos-de-futebol-6.jpg"
+      ]
+    },
+    "estudio-de-pilates": {
+      "nome": "Estúdio de Pilates e Fisioterapia",
+      "subtitulo": "",
+      "sobre": [
+        "O associado da lagoa conta com um estúdio de Pilates e sala de Fisioterapia. O Estúdio conta com equipamentos de última geração.",
+        "O Pilates é agradável, fácil e traz resultados rápidos. Qualquer pessoa, com mais de 12 anos e em todos os níveis de condicionamento físico pode praticá-lo. Experimente!"
+      ],
+      "foto": "/images/infraestrutura/estudio-de-pilates-1.jpg",
+      "fotoProvisoria": false,
+      "galeria": [
+        "/images/infraestrutura/estudio-de-pilates-1.jpg",
+        "/images/infraestrutura/estudio-de-pilates-2.jpg",
+        "/images/infraestrutura/estudio-de-pilates-3.jpg",
+        "/images/infraestrutura/estudio-de-pilates-4.jpg",
+        "/images/infraestrutura/estudio-de-pilates-5.jpg",
+        "/images/infraestrutura/estudio-de-pilates-6.jpg",
+        "/images/infraestrutura/estudio-de-pilates-7.jpg"
+      ]
+    },
+    "academia": {
+      "nome": "Academia",
+      "subtitulo": "",
+      "sobre": [
+        "Academia foi um grande investimento do Country Clube para os associados. Aparelhos modernos e professores qualificados, a academia da Lagoa, é apontada como uma das melhores da cidade de Formiga. A academia do clube fica localizada na praia como uma vista privilegiada."
+      ],
+      "foto": "/images/galeria/galeria-6-1.jpg",
+      "fotoProvisoria": true,
+      "galeria": []
+    },
+    "parquinho": {
+      "nome": "Parquinho",
+      "subtitulo": "",
+      "sobre": [
+        "A garotada da lagoa possui dois parquinhos à disposição. O primeiro complexo conta com brinquedos plásticos (casinhas, mini-escorregadores, gangorras, etc), fraldário e anfiteatro. Já o segundo, que fica localizado na areia da praia, conta com três grandes brinquedos multifuncionais feitos em madeira, que oferecem segurança e descontração às crianças."
+      ],
+      "foto": "/images/infraestrutura/parquinho-1.jpg",
+      "fotoProvisoria": false,
+      "galeria": [
+        "/images/infraestrutura/parquinho-1.jpg",
+        "/images/infraestrutura/parquinho-2.jpg",
+        "/images/infraestrutura/parquinho-3.jpg",
+        "/images/infraestrutura/parquinho-4.jpg"
+      ]
+    },
+    "ginasio": {
+      "nome": "Ginásio",
+      "subtitulo": "",
+      "sobre": [
+        "Composto por quatro quadras de peteca e uma de vôlei, o ginásio construído em 2004 pelo presidente da época, Vicente de Paulo Faria, recebe muitas pessoas semanalmente. Jogadores de peteca de todas as idades usufruem do espaço de forma democrática e pacífica. Neste local o clube realiza divesos eventos sociais como Festa Junina, Festival Gastronômico entre outras."
+      ],
+      "foto": "/images/infraestrutura/ginasio-1.jpg",
+      "fotoProvisoria": false,
+      "galeria": [
+        "/images/infraestrutura/ginasio-1.jpg",
+        "/images/infraestrutura/ginasio-2.jpg",
+        "/images/infraestrutura/ginasio-3.jpg",
+        "/images/infraestrutura/ginasio-4.jpg",
+        "/images/infraestrutura/ginasio-5.jpg",
+        "/images/infraestrutura/ginasio-6.jpg"
+      ]
+    },
+    "saunas": {
+      "nome": "Saunas",
+      "subtitulo": "",
+      "sobre": [
+        "O associado da lagoa conta com sauna a vapor masculina e feminina."
+      ],
+      "foto": "/images/infraestrutura/piscinas-5.jpg",
+      "fotoProvisoria": true,
+      "galeria": []
+    },
+    "piscinas": {
+      "nome": "Piscinas",
+      "subtitulo": "",
+      "sobre": [
+        "O espaço aquático do clube conta com três “piscinas frias”, sendo uma infantil (rasa), uma social (oval – profundidade crescente), a semi-olímpica (para natação), uma témica e um bar, na praia tamém temos uma piscina fria infantil num total de cinco. No verão, famílias se deliciam no espaço, que atende de forma concomitante crianças, jovens e adultos.",
+        "Funcionamento Piscina Térmica:",
+        "Terça á sexta – 06:30 às 21 horas.",
+        "Sábado 7 às 21 horas.",
+        "Domingos e feriados 7 às 14 horas."
+      ],
+      "foto": "/images/infraestrutura/piscinas-2.jpg",
+      "fotoProvisoria": false,
+      "galeria": [
+        "/images/infraestrutura/piscinas-2.jpg",
+        "/images/infraestrutura/piscinas-3.jpg",
+        "/images/infraestrutura/piscinas-4.jpg",
+        "/images/infraestrutura/piscinas-5.jpg",
+        "/images/infraestrutura/piscinas-6.jpg"
+      ]
+    }
+  },
+  "eventos": [
+    {
+      "id": "country-na-copa-13-06",
+      "data": "2026-06-13",
+      "dia": 13,
+      "mes": "jun",
+      "mesNome": "Junho",
+      "ano": 2026,
+      "hora": "a partir das 17h",
+      "nome": "Country na Copa · Brasil x Marrocos",
+      "cat": "Festa",
+      "local": "Country Clube de Formiga",
+      "destaque": true,
+      "img": "/images/agenda/country-na-copa.jpg",
+      "desc": "O clima da Copa vai tomar conta do Country Clube com uma programação especial para os torcedores acompanharem os jogos da Seleção Brasileira em um ambiente de muita animação, boa música e confraternização.",
+      "texto": [
+        "O clima da Copa vai tomar conta do Country Clube com uma programação especial para os torcedores acompanharem os jogos da Seleção Brasileira em um ambiente de muita animação, boa música e confraternização."
+      ],
+      "programacao": [
+        "Data: 13 de junho (sábado)",
+        "Horário: A partir das 17h"
+      ],
+      "obs": "",
+      "fonte": "https://lagoanossa.com.br/agenda-de-eventos/country-na-copa/"
+    },
+    {
+      "id": "country-na-copa-19-06",
+      "data": "2026-06-19",
+      "dia": 19,
+      "mes": "jun",
+      "mesNome": "Junho",
+      "ano": 2026,
+      "hora": "a partir das 19h",
+      "nome": "Country na Copa · Brasil x Haiti",
+      "cat": "Festa",
+      "local": "Country Clube de Formiga",
+      "destaque": true,
+      "img": "/images/agenda/country-na-copa.jpg",
+      "desc": "O clima da Copa vai tomar conta do Country Clube com uma programação especial para os torcedores acompanharem os jogos da Seleção Brasileira em um ambiente de muita animação, boa música e confraternização.",
+      "texto": [
+        "O clima da Copa vai tomar conta do Country Clube com uma programação especial para os torcedores acompanharem os jogos da Seleção Brasileira em um ambiente de muita animação, boa música e confraternização."
+      ],
+      "programacao": [
+        "Data: 19 de junho (sexta-feira)",
+        "Horário: A partir das 19h"
+      ],
+      "obs": "",
+      "fonte": "https://lagoanossa.com.br/agenda-de-eventos/country-na-copa/"
+    },
+    {
+      "id": "20-06-2026-intercambio-de-karate",
+      "data": "2026-06-20",
+      "dia": 20,
+      "mes": "jun",
+      "mesNome": "Junho",
+      "ano": 2026,
+      "hora": "14h",
+      "nome": "Intercâmbio de Karatê",
+      "cat": "Esportes",
+      "local": "Quadra coberta do Country Clube",
+      "destaque": false,
+      "img": "/images/infraestrutura/escolas-de-artes-marciais-1.jpg",
+      "desc": "Country Clube promove Intercâmbio de Karatê na quadra coberta",
+      "texto": [
+        "Country Clube promove Intercâmbio de Karatê na quadra coberta",
+        "No dia 20 de junho de 2026, às 14h, o Country Clube recebe mais uma edição do Intercâmbio de Karatê, em parceria com o Dojo Kelcio.",
+        "O evento será realizado na quadra coberta e promete reunir atletas, alunos e admiradores da modalidade em um momento de integração, aprendizado e demonstração esportiva.",
+        "Participação: Dojo Kelcio",
+        "Venha prestigiar mais um grande momento do esporte no Country Clube!"
+      ],
+      "programacao": [
+        "Data: 20 de junho de 2026",
+        "Horário: 14h",
+        "Local: Quadra coberta do Country Clube"
+      ],
+      "obs": "",
+      "fonte": "https://lagoanossa.com.br/noticias/20-06-2026-intercambio-de-karate/"
+    },
+    {
+      "id": "20-06-2026-arraia-do-country",
+      "data": "2026-06-20",
+      "dia": 20,
+      "mes": "jun",
+      "mesNome": "Junho",
+      "ano": 2026,
+      "hora": "a partir das 18h",
+      "nome": "Arraiá do Country",
+      "cat": "Festa",
+      "local": "Country Clube",
+      "destaque": true,
+      "img": "/images/galeria/galeria-11-1.jpg",
+      "desc": "O clima junino vai tomar conta do Country Clube no dia 20 de junho, a partir das 18h, com mais uma edição do tradicional Arraiá do Country.",
+      "texto": [
+        "O clima junino vai tomar conta do Country Clube no dia 20 de junho, a partir das 18h, com mais uma edição do tradicional Arraiá do Country.",
+        "A festa contará com show de Karol Shienna e Banda, além de diversas atrações para toda a família, incluindo área kids e comidas típicas para deixar a noite ainda mais especial.",
+        "No cardápio, os participantes poderão aproveitar caldos, canjica, algodão doce, pipoca e quentão, em um ambiente preparado para celebrar a tradição junina com muita animação.",
+        "Atração musical: Karol Shienna e Banda",
+        "Prepare seu traje caipira e venha curtir uma noite de música, diversão e sabores típicos no Country Clube!"
+      ],
+      "programacao": [
+        "Data: 20 de junho",
+        "Horário: A partir das 18h",
+        "Local: Country Clube"
+      ],
+      "obs": "",
+      "fonte": "https://lagoanossa.com.br/noticias/20-06-2026-arraia-do-country/"
+    },
+    {
+      "id": "23-e-25-06-2026-torneio-de-peteca-ildeu-vaz-da-silva",
+      "data": "2026-06-23",
+      "dia": 23,
+      "mes": "jun",
+      "mesNome": "Junho",
+      "ano": 2026,
+      "hora": "23 a 25/06",
+      "nome": "Torneio de Peteca Ildeu Vaz da Silva",
+      "cat": "Esportes",
+      "local": "Country Clube",
+      "destaque": false,
+      "img": "/images/infraestrutura/ginasio-3.jpg",
+      "desc": "O Country Clube promove o Torneio de Peteca Ildeu Vaz da Silva, reunindo associados para momentos de integração, tradição e competitividade nas quadras do clube.",
+      "texto": [
+        "Country Clube realiza Torneio de Peteca Ildeu Vaz da Silva",
+        "O Country Clube promove o Torneio de Peteca Ildeu Vaz da Silva, reunindo associados para momentos de integração, tradição e competitividade nas quadras do clube.",
+        "A competição será realizada nos dias 23 e 25 de junho, com inscrições abertas até o dia 21 de junho.",
+        "Datas: 23 e 25 de junho",
+        "Mais um grande evento esportivo para fortalecer a convivência e o espírito esportivo entre os associados."
+      ],
+      "programacao": [
+        "Inscrições: Até 21/06",
+        "Local: Country Clube"
+      ],
+      "obs": "23 a 25 de junho de 2026",
+      "fonte": "https://lagoanossa.com.br/noticias/23-e-25-06-2026-torneio-de-peteca-ildeu-vaz-da-silva/"
+    },
+    {
+      "id": "country-na-copa-24-06",
+      "data": "2026-06-24",
+      "dia": 24,
+      "mes": "jun",
+      "mesNome": "Junho",
+      "ano": 2026,
+      "hora": "a partir das 17h",
+      "nome": "Country na Copa · Brasil x Escócia",
+      "cat": "Festa",
+      "local": "Country Clube de Formiga",
+      "destaque": true,
+      "img": "/images/agenda/country-na-copa.jpg",
+      "desc": "O clima da Copa vai tomar conta do Country Clube com uma programação especial para os torcedores acompanharem os jogos da Seleção Brasileira em um ambiente de muita animação, boa música e confraternização.",
+      "texto": [
+        "O clima da Copa vai tomar conta do Country Clube com uma programação especial para os torcedores acompanharem os jogos da Seleção Brasileira em um ambiente de muita animação, boa música e confraternização."
+      ],
+      "programacao": [
+        "Data: 24 de junho (quarta-feira)",
+        "Horário: A partir das 17h"
+      ],
+      "obs": "",
+      "fonte": "https://lagoanossa.com.br/agenda-de-eventos/country-na-copa/"
+    },
+    {
+      "id": "27-06-2026-torneio-relampago-de-beach-tennis",
+      "data": "2026-06-27",
+      "dia": 27,
+      "mes": "jun",
+      "mesNome": "Junho",
+      "ano": 2026,
+      "hora": "a partir das 7h30",
+      "nome": "Torneio Relâmpago de Beach Tennis",
+      "cat": "Esportes",
+      "local": "Country Clube",
+      "destaque": false,
+      "img": "/images/infraestrutura/praia-2.jpg",
+      "desc": "No dia 27 de junho, a partir das 7h30, o Country Clube promove mais uma edição do Torneio Relâmpago de Beach Tennis, reunindo atletas e amantes do esporte para uma manhã de integração, lazer e grandes disputas nas quadras.",
+      "texto": [
+        "Torneio Relâmpago de Beach Tennis acontece no Country Clube",
+        "No dia 27 de junho, a partir das 7h30, o Country Clube promove mais uma edição do Torneio Relâmpago de Beach Tennis, reunindo atletas e amantes do esporte para uma manhã de integração, lazer e grandes disputas nas quadras.",
+        "As inscrições podem ser realizadas até o dia 27 de junho, às 7h, através do aplicativo Letz Play.",
+        "Venha participar de mais um grande momento do esporte no Country Clube!"
+      ],
+      "programacao": [
+        "Data: 27 de junho",
+        "Horário: A partir das 7h30",
+        "Inscrições: Até 27/06, às 7h, pelo Letz Play",
+        "Local: Country Clube"
+      ],
+      "obs": "",
+      "fonte": "https://lagoanossa.com.br/noticias/27-06-2026-torneio-relampago-de-beach-tennis/"
+    },
+    {
+      "id": "18-07-2026-festival-do-rock",
+      "data": "2026-07-18",
+      "dia": 18,
+      "mes": "jul",
+      "mesNome": "Julho",
+      "ano": 2026,
+      "hora": "16h",
+      "nome": "Festival do Rock",
+      "cat": "Show",
+      "local": "Praia",
+      "destaque": true,
+      "img": "/images/galeria/galeria-11-1.jpg",
+      "desc": "FESTIVAL DO ROCK NA PRAIA!",
+      "texto": [
+        "FESTIVAL DO ROCK NA PRAIA!",
+        "Prepare a camiseta da sua banda favorita e venha curtir um dia de muita música, energia e aquele clima que só o Country Clube proporciona!",
+        "Chame a galera, garanta seu lugar e venha viver uma tarde e noite de muito rock à beira da praia!",
+        "Esperamos você!"
+      ],
+      "programacao": [
+        "16h · Peu Faria",
+        "18h30 · 32 Dentes",
+        "21h · Pato Rocco"
+      ],
+      "obs": "",
+      "fonte": "https://lagoanossa.com.br/noticias/18-07-2026-festival-do-rock/"
+    },
+    {
+      "id": "19-07-26-relampago-de-futebol",
+      "data": "2026-07-19",
+      "dia": 19,
+      "mes": "jul",
+      "mesNome": "Julho",
+      "ano": 2026,
+      "hora": "8h30",
+      "nome": "Relâmpago de Futebol",
+      "cat": "Esportes",
+      "local": "Country Clube",
+      "destaque": false,
+      "img": "/images/infraestrutura/campos-de-futebol-1.jpg",
+      "desc": "No dia 19 de julho, o Country Clube promove mais uma edição do Torneio Relâmpago de Futebol, reunindo associados para uma manhã de competição, integração e espírito esportivo.",
+      "texto": [
+        "Country Clube realiza Torneio Relâmpago de Futebol",
+        "No dia 19 de julho, o Country Clube promove mais uma edição do Torneio Relâmpago de Futebol, reunindo associados para uma manhã de competição, integração e espírito esportivo.",
+        "As inscrições serão realizadas até às 8h30, no dia do evento, e os participantes entrarão em campo para grandes disputas e momentos de confraternização.",
+        "Venha participar de mais um grande evento esportivo no Country Clube!"
+      ],
+      "programacao": [
+        "Data: 19 de julho",
+        "Inscrições: Até às 8h30, no dia do evento",
+        "Local: Country Clube"
+      ],
+      "obs": "",
+      "fonte": "https://lagoanossa.com.br/noticias/19-07-26-relampago-de-futebol/"
+    },
+    {
+      "id": "27-31-de-julho-35a-colonia-de-ferias",
+      "data": "2026-07-27",
+      "dia": 27,
+      "mes": "jul",
+      "mesNome": "Julho",
+      "ano": 2026,
+      "hora": "Das 12h30 às 17h",
+      "nome": "35ª Colônia de Férias",
+      "cat": "Família",
+      "local": "Country Clube",
+      "destaque": true,
+      "img": "/images/galeria/galeria-9-1.jpg",
+      "desc": "O Country Clube realizará, entre os dias 27 e 31 de julho, mais uma edição da tradicional Colônia de Férias, proporcionando momentos de lazer, diversão e integração para as crianças durante o período de férias escolares.",
+      "texto": [
+        "O Country Clube realizará, entre os dias 27 e 31 de julho, mais uma edição da tradicional Colônia de Férias, proporcionando momentos de lazer, diversão e integração para as crianças durante o período de férias escolares.",
+        "As atividades acontecerão das 12h30 às 17h, com programação voltada para crianças de 3 a 11 anos.",
+        "As inscrições poderão ser realizadas pelo aplicativo do clube, entre os dias 01 e 17 de julho.",
+        "Período da Colônia: 27 a 31 de julho",
+        "Faixa etária: Crianças de 3 a 11 anos",
+        "Uma programação especial preparada para garantir férias inesquecíveis para os pequenos!"
+      ],
+      "programacao": [
+        "Horário: Das 12h30 às 17h",
+        "Inscrições: De 01/07 a 17/07 pelo aplicativo do clube",
+        "Local: Country Clube"
+      ],
+      "obs": "27 a 31 de julho de 2026",
+      "fonte": "https://lagoanossa.com.br/noticias/27-31-de-julho-35a-colonia-de-ferias/"
+    },
+    {
+      "id": "25-07-26-relampago-de-futevolei",
+      "data": "2026-08-08",
+      "dia": 8,
+      "mes": "ago",
+      "mesNome": "Agosto",
+      "ano": 2026,
+      "hora": "8h45",
+      "nome": "Relâmpago de Futevôlei",
+      "cat": "Esportes",
+      "local": "Country Clube",
+      "destaque": false,
+      "img": "/images/infraestrutura/praia-2.jpg",
+      "desc": "No dia 08 de agosto, às 8h45, o Country Clube realiza mais uma edição do Torneio de Futevôlei, reunindo associados para uma manhã de esporte, integração e grandes disputas na areia.",
+      "texto": [
+        "Country Clube promove Torneio de Futevôlei",
+        "No dia 08 de agosto, às 8h45, o Country Clube realiza mais uma edição do Torneio de Futevôlei, reunindo associados para uma manhã de esporte, integração e grandes disputas na areia.",
+        "O evento é uma excelente oportunidade para os praticantes da modalidade demonstrarem suas habilidades e aproveitarem um momento de lazer e confraternização.",
+        "As inscrições serão realizadas no dia do evento.",
+        "Venha participar e prestigiar mais um grande evento esportivo do Country Clube!"
+      ],
+      "programacao": [
+        "Data: 08 de agosto",
+        "Horário: 8h45",
+        "Inscrições: No dia do evento",
+        "Local: Country Clube"
+      ],
+      "obs": "",
+      "fonte": "https://lagoanossa.com.br/noticias/25-07-26-relampago-de-futevolei/"
+    },
+    {
+      "id": "10-08-2026-copinha-country",
+      "data": "2026-08-10",
+      "dia": 10,
+      "mes": "ago",
+      "mesNome": "Agosto",
+      "ano": 2026,
+      "hora": "",
+      "nome": "Copinha Country",
+      "cat": "Esportes",
+      "local": "Country Clube",
+      "destaque": false,
+      "img": "/images/infraestrutura/campos-de-futebol-1.jpg",
+      "desc": "O Country Clube já está nos preparativos para mais uma edição da tradicional Copinha Country, que neste ano homenageia Flávia Maria Oliveira.",
+      "texto": [
+        "Country Clube abre inscrições para a Copinha Country 2026",
+        "O Country Clube já está nos preparativos para mais uma edição da tradicional Copinha Country, que neste ano homenageia Flávia Maria Oliveira.",
+        "As inscrições seguem abertas até o dia 12 de junho, com realização diretamente com o professor Alex. A competição tem início marcado para o dia 10 de agosto, reunindo jovens atletas em momentos de integração, esporte e diversão.",
+        "Início da competição: 10 de agosto",
+        "Prepare a torcida e venha participar de mais uma grande edição da Copinha Country!"
+      ],
+      "programacao": [
+        "Homenageada: Flávia Maria Oliveira",
+        "Inscrições: Até 12 de junho, com o professor Alex",
+        "Categorias: 2012 a 2022",
+        "Local: Country Clube"
+      ],
+      "obs": "",
+      "fonte": "https://lagoanossa.com.br/noticias/10-08-2026-copinha-country/"
+    },
+    {
+      "id": "15-08-2026-sabado-esportivo",
+      "data": "2026-08-15",
+      "dia": 15,
+      "mes": "ago",
+      "mesNome": "Agosto",
+      "ano": 2026,
+      "hora": "8h30",
+      "nome": "Sábado Esportivo",
+      "cat": "Esportes",
+      "local": "Country Clube de Formiga",
+      "destaque": false,
+      "img": "/images/infraestrutura/area-familiar-1.jpg",
+      "desc": "No dia 15 de agosto, o Country Clube realiza o Sábado Esportivo, um evento que reúne diversas modalidades esportivas e uma programação especial para os associados.",
+      "texto": [
+        "No dia 15 de agosto, o Country Clube realiza o Sábado Esportivo, um evento que reúne diversas modalidades esportivas e uma programação especial para os associados.",
+        "Ao longo do dia, serão disputadas competições de Futebol, Beach Tennis, Tênis, Peteca, Vôlei e Sinuca, promovendo integração, lazer e espírito esportivo.",
+        "Além das competições, os participantes poderão aproveitar a programação especial com a liberação do restante do chopp do aniversário do clube e show ao vivo com Mateus Oliveira.",
+        "Programação",
+        "07h30",
+        "Início do Sábado Esportivo",
+        "13h00",
+        "Liberação do restante do chopp do aniversário do clube",
+        "15h00",
+        "Show com Mateus Oliveira",
+        "Modalidades e inscrições",
+        "Futebol",
+        "• Assinatura até às 8h30",
+        "Beach Tennis",
+        "• Masculino e Feminino",
+        "• Inscrições pelo aplicativo LetzPlay até 14/08",
+        "• Início: 7h30",
+        "Tênis",
+        "• Masculino e Feminino",
+        "• Inscrições com o professor Claudinho",
+        "Peteca",
+        "• Masculino e Feminino",
+        "• Inscrições até 13/08",
+        "• Início: 9h00",
+        "Vôlei",
+        "• Misto",
+        "• Inscrições com o professor Thaylon até 13/08",
+        "• Início: 8h30",
+        "Sinuca",
+        "• Masculino",
+        "• Inscrições no local",
+        "• Início: 9h00"
+      ],
+      "programacao": [],
+      "obs": "",
+      "fonte": "https://lagoanossa.com.br/noticias/15-08-2026-sabado-esportivo/"
+    },
+    {
+      "id": "19-09-26-amistoso-de-futsal",
+      "data": "2026-09-19",
+      "dia": 19,
+      "mes": "set",
+      "mesNome": "Setembro",
+      "ano": 2026,
+      "hora": "8h30",
+      "nome": "Amistoso de Futsal",
+      "cat": "Esportes",
+      "local": "Quadra Poliesportiva",
+      "destaque": false,
+      "img": "/images/infraestrutura/quadra-poliesportiva-3.jpg",
+      "desc": "Neste sábado, 19 de setembro, o Country Clube recebe o Projeto Águia para mais uma rodada de futebol.",
+      "texto": [
+        "Neste sábado, 19 de setembro, o Country Clube recebe o Projeto Águia para mais uma rodada de futebol.",
+        "As partidas começam às 8h30, no Country Clube, reunindo as categorias Sub-9, Sub-11 e Sub-14.",
+        "Venha prestigiar nossos atletas e acompanhar mais um momento de integração e incentivo ao esporte!"
+      ],
+      "programacao": [],
+      "obs": "",
+      "fonte": "https://lagoanossa.com.br/noticias/19-09-26-amistoso-de-futsal/"
+    },
+    {
+      "id": "20-09-26-torneio-relampago-de-futebol",
+      "data": "2026-09-20",
+      "dia": 20,
+      "mes": "set",
+      "mesNome": "Setembro",
+      "ano": 2026,
+      "hora": "8h30",
+      "nome": "Torneio Relâmpago de Futebol",
+      "cat": "Esportes",
+      "local": "Campos de Futebol",
+      "destaque": false,
+      "img": "/images/infraestrutura/campos-de-futebol-1.jpg",
+      "desc": "O Country Clube realiza mais uma competição para os amantes do futebol!",
+      "texto": [
+        "O Country Clube realiza mais uma competição para os amantes do futebol!",
+        "No dia 20 de setembro, acontece o Torneio Relâmpago de Futebol, reunindo atletas em uma disputa marcada por competitividade, integração e espírito esportivo.",
+        "As inscrições serão realizadas no dia do evento, até as 8h30.",
+        "Prepare sua equipe e venha participar de mais um torneio no Country Clube!"
+      ],
+      "programacao": [],
+      "obs": "",
+      "fonte": "https://lagoanossa.com.br/noticias/20-09-26-torneio-relampago-de-futebol/"
+    },
+    {
+      "id": "24-09-26-futsal-em-familia",
+      "data": "2026-09-24",
+      "dia": 24,
+      "mes": "set",
+      "mesNome": "Setembro",
+      "ano": 2026,
+      "hora": "8h30",
+      "nome": "Futsal em Família",
+      "cat": "Família",
+      "local": "Quadra Poliesportiva",
+      "destaque": false,
+      "img": "/images/infraestrutura/quadra-poliesportiva-3.jpg",
+      "desc": "O Country Clube promove mais um momento especial de esporte e integração com o Futsal em Família.",
+      "texto": [
+        "O Country Clube promove mais um momento especial de esporte e integração com o Futsal em Família.",
+        "Uma oportunidade para reunir pais e filhos em uma manhã de diversão, companheirismo e paixão pelo esporte.",
+        "Dia 24 de setembro, às 8h30, no Country Clube. Participe e venha viver esse momento em família!"
+      ],
+      "programacao": [],
+      "obs": "",
+      "fonte": "https://lagoanossa.com.br/noticias/24-09-26-futsal-em-familia/"
+    },
+    {
+      "id": "26-09-2026-amistoso-de-futebol-infantil",
+      "data": "2026-09-26",
+      "dia": 26,
+      "mes": "set",
+      "mesNome": "Setembro",
+      "ano": 2026,
+      "hora": "8h30",
+      "nome": "Amistoso de Futebol Infantil",
+      "cat": "Esportes",
+      "local": "Campos de Futebol",
+      "destaque": false,
+      "img": "/images/infraestrutura/campos-de-futebol-1.jpg",
+      "desc": "O Country Clube recebe a Escolinha de Futebol do Fabiano para mais um amistoso de futebol infantil.",
+      "texto": [
+        "O Country Clube recebe a Escolinha de Futebol do Fabiano para mais um amistoso de futebol infantil.",
+        "Os jogos acontecem no dia 26 de setembro, a partir das 8h30, no Country Clube, reunindo atletas das categorias Sub-7, Sub-9, Sub-11, Sub-13 e Sub-14.",
+        "Uma manhã de esporte, integração e diversão para a garotada. Venha prestigiar nossos pequenos atletas!"
+      ],
+      "programacao": [],
+      "obs": "",
+      "fonte": "https://lagoanossa.com.br/noticias/26-09-2026-amistoso-de-futebol-infantil/"
+    },
+    {
+      "id": "03-10-2026-amistoso-de-futebol",
+      "data": "2026-10-03",
+      "dia": 3,
+      "mes": "out",
+      "mesNome": "Outubro",
+      "ano": 2026,
+      "hora": "8h30",
+      "nome": "Amistoso de Futebol",
+      "cat": "Esportes",
+      "local": "Campos de Futebol",
+      "destaque": false,
+      "img": "/images/infraestrutura/campos-de-futebol-1.jpg",
+      "desc": "O Country Clube recebe o Formiga Tênis Clube para um amistoso de futebol.",
+      "texto": [
+        "O Country Clube recebe o Formiga Tênis Clube para um amistoso de futebol.",
+        "A partida acontece no dia 03 de outubro, às 8h30, no Country Clube, reunindo atletas das categorias acima de 40 anos e abaixo de 40 anos.",
+        "Venha prestigiar esse encontro e acompanhar mais uma manhã de futebol, integração e espírito esportivo!"
+      ],
+      "programacao": [],
+      "obs": "",
+      "fonte": "https://lagoanossa.com.br/noticias/03-10-2026-amistoso-de-futebol/"
+    },
+    {
+      "id": "03-10-26-torneio-de-natacao-em-aguas-abertas",
+      "data": "2026-10-03",
+      "dia": 3,
+      "mes": "out",
+      "mesNome": "Outubro",
+      "ano": 2026,
+      "hora": "",
+      "nome": "Torneio de Natação em Águas Abertas",
+      "cat": "Esportes",
+      "local": "Lagoa do Fundão",
+      "destaque": true,
+      "img": "/images/infraestrutura/piscinas-4.jpg",
+      "desc": "O Country Clube realizará mais uma competição esportiva: o Torneio de Natação em Águas Abertas.",
+      "texto": [
+        "O Country Clube realizará mais uma competição esportiva: o Torneio de Natação em Águas Abertas.",
+        "A disputa acontecerá no dia 03 de outubro, reunindo atletas em um desafio de resistência, esporte e superação.",
+        "Em breve, serão divulgadas mais informações sobre as categorias e inscrições.",
+        "Fique atento e participe de mais esse evento do Country Clube!"
+      ],
+      "programacao": [],
+      "obs": "",
+      "fonte": "https://lagoanossa.com.br/noticias/03-10-26-torneio-de-natacao-em-aguas-abertas/"
+    },
+    {
+      "id": "25-10-26-passeio-ciclistico-country",
+      "data": "2026-10-25",
+      "dia": 25,
+      "mes": "out",
+      "mesNome": "Outubro",
+      "ano": 2026,
+      "hora": "8h",
+      "nome": "Passeio Ciclístico Country",
+      "cat": "Família",
+      "local": "Country Clube de Formiga",
+      "destaque": false,
+      "img": "/images/galeria/galeria-3-2.jpg",
+      "desc": "O Country Clube realizará um passeio ciclístico no dia 25 de outubro, reunindo esporte, lazer e integração entre os associados.",
+      "texto": [
+        "O Country Clube realizará um passeio ciclístico no dia 25 de outubro, reunindo esporte, lazer e integração entre os associados.",
+        "A concentração será às 8h.",
+        "Em breve, serão divulgadas mais informações sobre as inscrições e o percurso.",
+        "Prepare sua bicicleta e participe!"
+      ],
+      "programacao": [],
+      "obs": "",
+      "fonte": "https://lagoanossa.com.br/noticias/25-10-26-passeio-ciclistico-country/"
+    },
+    {
+      "id": "30-e-31-de-outubro-torneio-de-beach-tennis",
+      "data": "2026-10-30",
+      "dia": 30,
+      "mes": "out",
+      "mesNome": "Outubro",
+      "ano": 2026,
+      "hora": "30 a 31/10",
+      "nome": "Torneio de Beach Tennis",
+      "cat": "Esportes",
+      "local": "Praia",
+      "destaque": false,
+      "img": "/images/infraestrutura/praia-2.jpg",
+      "desc": "O Country Clube realizará mais um grande torneio de Beach Tennis, reunindo associados e atletas em uma competição de muito esporte e integração.",
+      "texto": [
+        "O Country Clube realizará mais um grande torneio de Beach Tennis, reunindo associados e atletas em uma competição de muito esporte e integração.",
+        "A disputa acontecerá nos dias 30 e 31 de outubro, nas categorias masculina e feminina.",
+        "As inscrições estarão abertas de 01 a 18 de setembro, pelo LetzPlay.",
+        "Prepare sua dupla e participe de mais essa competição do Country Clube!"
+      ],
+      "programacao": [],
+      "obs": "30 a 31 de outubro de 2026",
+      "fonte": "https://lagoanossa.com.br/noticias/30-e-31-de-outubro-torneio-de-beach-tennis/"
+    }
+  ],
+  "comunicados": [
+    {
+      "id": "36a-copa-country-de-futebol",
+      "tag": "Esportes",
+      "titulo": "36ª Copa Country de Futebol",
+      "data": "",
+      "img": "/images/infraestrutura/campos-de-futebol-1.jpg",
+      "resumo": "O Country Clube já se prepara para mais uma grande competição do seu calendário esportivo. A 36ª Copa Country de Futebol reunirá associados e atletas em uma disputa marcada pela integração, espírito esportivo e competitividade.",
+      "texto": [
+        "O Country Clube já se prepara para mais uma grande competição do seu calendário esportivo. A 36ª Copa Country de Futebol reunirá associados e atletas em uma disputa marcada pela integração, espírito esportivo e competitividade.",
+        "A competição será disputada em duas categorias: 40+ e Livre (acima de 15 anos), proporcionando jogos de alto nível e fortalecendo a tradição do futebol dentro do clube.",
+        "As inscrições estarão abertas de 01 a 19 de agosto, e o início da competição está marcado para o dia 29 de setembro de 2026.",
+        "Informações do evento:",
+        "Categorias: Acima de 40 anos e Livre (acima de 15 anos)",
+        "Inscrições: De 01 a 19 de agosto",
+        "Início da competição: 29/09/2026",
+        "Local: Country Clube de Formiga",
+        "Monte sua equipe e venha fazer parte de mais uma edição da tradicional Copa Country de Futebol!"
+      ],
+      "fonte": "https://lagoanossa.com.br/noticias/36a-copa-country-de-futebol/",
+      "somenteImagem": false
+    },
+    {
+      "id": "relampago-de-volei-julho",
+      "tag": "Esportes",
+      "titulo": "Relâmpago de Vôlei – Julho",
+      "data": "",
+      "img": "/images/infraestrutura/ginasio-3.jpg",
+      "resumo": "O Country Clube realiza, no mês de julho, mais uma edição do Relâmpago de Vôlei, reunindo atletas de diferentes categorias para dias de muita integração, competitividade e espírito esportivo.",
+      "texto": [
+        "O Country Clube realiza, no mês de julho, mais uma edição do Relâmpago de Vôlei, reunindo atletas de diferentes categorias para dias de muita integração, competitividade e espírito esportivo.",
+        "Confira a programação:",
+        "15/07 – Feminino",
+        "14/07 – Misto",
+        "16/07 – Masculino",
+        "17/07 – Mirim",
+        "As inscrições devem ser realizadas diretamente com o professor Thaylon.",
+        "Local: Country Clube",
+        "Inscrições: Com o professor Thaylon",
+        "Participe e venha fazer parte de mais um grande evento esportivo do Country Clube!"
+      ],
+      "fonte": "https://lagoanossa.com.br/noticias/relampago-de-volei-julho/",
+      "somenteImagem": false
+    },
+    {
+      "id": "assembleia-geral-extraordinaria",
+      "tag": "Comunicado",
+      "titulo": "Assembleia Geral Extraordinária",
+      "data": "",
+      "img": "/images/noticias/assembleia-geral-extraordinaria.jpg",
+      "resumo": "Comunicado oficial da Diretoria — veja a imagem publicada.",
+      "texto": [],
+      "fonte": "https://lagoanossa.com.br/noticias/assembleia-geral-extraordinaria/",
+      "somenteImagem": true
+    },
+    {
+      "id": "importante",
+      "tag": "Comunicado",
+      "titulo": "Importante",
+      "data": "",
+      "img": "/images/noticias/importante.jpg",
+      "resumo": "Comunicado oficial da Diretoria — veja a imagem publicada.",
+      "texto": [],
+      "fonte": "https://lagoanossa.com.br/noticias/importante/",
+      "somenteImagem": true
+    },
+    {
+      "id": "atencao-associados",
+      "tag": "Comunicado",
+      "titulo": "Atenção Associados",
+      "data": "",
+      "img": "/images/noticias/atencao-associados.jpg",
+      "resumo": "Comunicado oficial da Diretoria — veja a imagem publicada.",
+      "texto": [],
+      "fonte": "https://lagoanossa.com.br/noticias/atencao-associados/",
+      "somenteImagem": true
+    },
+    {
+      "id": "atencao-associados-2",
+      "tag": "Comunicado",
+      "titulo": "Atenção Associados",
+      "data": "",
+      "img": "/images/noticias/atencao-associados-2.jpg",
+      "resumo": "Portaria nº 001/2021",
+      "texto": [
+        "Portaria nº 001/2021"
+      ],
+      "fonte": "https://lagoanossa.com.br/noticias/atencao-associados-2/",
+      "somenteImagem": true
+    },
+    {
+      "id": "churrasqueiras",
+      "tag": "Estrutura",
+      "titulo": "Churrasqueiras",
+      "data": "",
+      "img": "/images/noticias/churrasqueiras.jpg",
+      "resumo": "O Country coloca à disposição dos seus associados várias churrasqueias na praia com balcão e pia para maior conforto e elas não são agendadas , o sócio pode chegar e usufruir de uma vista privilegiada.",
+      "texto": [
+        "O Country coloca à disposição dos seus associados várias churrasqueias na praia com balcão e pia para maior conforto e elas não são agendadas , o sócio pode chegar e usufruir de uma vista privilegiada."
+      ],
+      "fonte": "https://lagoanossa.com.br/noticias/churrasqueiras/",
+      "somenteImagem": false
+    },
+    {
+      "id": "area-familiar-2",
+      "tag": "Estrutura",
+      "titulo": "Área Familiar",
+      "data": "",
+      "img": "/images/noticias/area-familiar-2.jpg",
+      "resumo": "O Clube oferece uma área que pode ser agendada pelo associado, durante todo dia. Este agendamento é na secretaria do Country ou pelo telefone (037)3322-1033. Neste espaço os sócios tem mesas com cadeira , uma churrasqueira, banheiro exclusivo cozinha montada e TV a cabo.",
+      "texto": [
+        "O Clube oferece uma área que pode ser agendada pelo associado, durante todo dia. Este agendamento é na secretaria do Country ou pelo telefone (037)3322-1033. Neste espaço os sócios tem mesas com cadeira , uma churrasqueira, banheiro exclusivo cozinha montada e TV a cabo."
+      ],
+      "fonte": "https://lagoanossa.com.br/noticias/area-familiar-2/",
+      "somenteImagem": false
+    },
+    {
+      "id": "sala-de-jogos",
+      "tag": "Estrutura",
+      "titulo": "Sala de Jogos",
+      "data": "",
+      "img": "/images/noticias/sala-de-jogos.jpg",
+      "resumo": "O Country Clube oferece uma área localizada na praia com jogos de sinuca, ping pong e totó.",
+      "texto": [
+        "O Country Clube oferece uma área localizada na praia com jogos de sinuca, ping pong e totó."
+      ],
+      "fonte": "https://lagoanossa.com.br/noticias/sala-de-jogos/",
+      "somenteImagem": false
+    }
+  ],
+  "albuns": [
+    {
+      "id": "galeria-11",
+      "titulo": "Aniversário 91 anos",
+      "data": "",
+      "qt": 2,
+      "cover": "/images/galeria/galeria-11.jpg",
+      "fotos": [
+        "/images/galeria/galeria-11.jpg",
+        "/images/galeria/galeria-11-1.jpg"
+      ],
+      "fonte": "https://lagoanossa.com.br/galeria-de-fotos/galeria-11/"
+    },
+    {
+      "id": "galeria-9",
+      "titulo": "Colônia de férias – julho de 2025",
+      "data": "2025",
+      "qt": 2,
+      "cover": "/images/galeria/galeria-9.jpg",
+      "fotos": [
+        "/images/galeria/galeria-9.jpg",
+        "/images/galeria/galeria-9-1.jpg"
+      ],
+      "fonte": "https://lagoanossa.com.br/galeria-de-fotos/galeria-9/"
+    },
+    {
+      "id": "galeria-8",
+      "titulo": "Praia",
+      "data": "",
+      "qt": 6,
+      "cover": "/images/galeria/galeria-8.png",
+      "fotos": [
+        "/images/galeria/galeria-8.png",
+        "/images/galeria/galeria-8-1.png",
+        "/images/galeria/galeria-8-2.png",
+        "/images/galeria/galeria-8-3.jpg",
+        "/images/galeria/galeria-8-4.jpg",
+        "/images/galeria/galeria-8-5.jpg"
+      ],
+      "fonte": "https://lagoanossa.com.br/galeria-de-fotos/galeria-8/"
+    },
+    {
+      "id": "galeria-7",
+      "titulo": "Campos de futebol",
+      "data": "",
+      "qt": 7,
+      "cover": "/images/galeria/galeria-7.jpg",
+      "fotos": [
+        "/images/galeria/galeria-7.jpg",
+        "/images/galeria/galeria-7-1.jpg",
+        "/images/galeria/galeria-7-2.jpg",
+        "/images/galeria/galeria-7-3.jpg",
+        "/images/galeria/galeria-7-4.jpg",
+        "/images/galeria/galeria-7-5.jpg",
+        "/images/galeria/galeria-7-6.jpg"
+      ],
+      "fonte": "https://lagoanossa.com.br/galeria-de-fotos/galeria-7/"
+    },
+    {
+      "id": "galeria-6",
+      "titulo": "Academia",
+      "data": "",
+      "qt": 7,
+      "cover": "/images/galeria/galeria-6.jpg",
+      "fotos": [
+        "/images/galeria/galeria-6.jpg",
+        "/images/galeria/galeria-6-1.jpg",
+        "/images/galeria/galeria-6-2.jpg",
+        "/images/galeria/galeria-6-3.jpg",
+        "/images/galeria/galeria-6-4.jpg",
+        "/images/galeria/galeria-6-5.jpg",
+        "/images/galeria/galeria-6-6.jpg"
+      ],
+      "fonte": "https://lagoanossa.com.br/galeria-de-fotos/galeria-6/"
+    },
+    {
+      "id": "galeria-5",
+      "titulo": "Piscinas",
+      "data": "",
+      "qt": 10,
+      "cover": "/images/galeria/galeria-5.jpg",
+      "fotos": [
+        "/images/galeria/galeria-5.jpg",
+        "/images/galeria/galeria-5-1.jpg",
+        "/images/galeria/galeria-5-2.jpg",
+        "/images/galeria/galeria-5-3.jpg",
+        "/images/galeria/galeria-5-4.jpg",
+        "/images/galeria/galeria-5-5.jpg",
+        "/images/galeria/galeria-5-6.jpg",
+        "/images/galeria/galeria-5-7.jpg",
+        "/images/galeria/galeria-5-8.jpg",
+        "/images/galeria/galeria-5-9.jpg"
+      ],
+      "fonte": "https://lagoanossa.com.br/galeria-de-fotos/galeria-5/"
+    },
+    {
+      "id": "galeria-4",
+      "titulo": "Pilates e fisioterapia",
+      "data": "",
+      "qt": 7,
+      "cover": "/images/galeria/galeria-4.jpg",
+      "fotos": [
+        "/images/galeria/galeria-4.jpg",
+        "/images/galeria/galeria-4-1.jpg",
+        "/images/galeria/galeria-4-2.jpg",
+        "/images/galeria/galeria-4-3.jpg",
+        "/images/galeria/galeria-4-4.jpg",
+        "/images/galeria/galeria-4-5.jpg",
+        "/images/galeria/galeria-4-6.jpg"
+      ],
+      "fonte": "https://lagoanossa.com.br/galeria-de-fotos/galeria-4/"
+    },
+    {
+      "id": "galeria-3",
+      "titulo": "Jardins",
+      "data": "",
+      "qt": 10,
+      "cover": "/images/galeria/galeria-3.jpg",
+      "fotos": [
+        "/images/galeria/galeria-3.jpg",
+        "/images/galeria/galeria-3-1.jpg",
+        "/images/galeria/galeria-3-2.jpg",
+        "/images/galeria/galeria-3-3.jpg",
+        "/images/galeria/galeria-3-4.jpg",
+        "/images/galeria/galeria-3-5.jpg",
+        "/images/galeria/galeria-3-6.jpg",
+        "/images/galeria/galeria-3-7.jpg",
+        "/images/galeria/galeria-3-8.jpg",
+        "/images/galeria/galeria-3-9.jpg"
+      ],
+      "fonte": "https://lagoanossa.com.br/galeria-de-fotos/galeria-3/"
+    },
+    {
+      "id": "galeria-2",
+      "titulo": "Sala de massagem",
+      "data": "",
+      "qt": 8,
+      "cover": "/images/galeria/galeria-2.jpg",
+      "fotos": [
+        "/images/galeria/galeria-2.jpg",
+        "/images/galeria/galeria-2-1.jpg",
+        "/images/galeria/galeria-2-2.jpg",
+        "/images/galeria/galeria-2-3.jpg",
+        "/images/galeria/galeria-2-4.jpg",
+        "/images/galeria/galeria-2-5.jpg",
+        "/images/galeria/galeria-2-6.jpg",
+        "/images/galeria/galeria-2-7.jpg"
+      ],
+      "fonte": "https://lagoanossa.com.br/galeria-de-fotos/galeria-2/"
+    },
+    {
+      "id": "galeria-1",
+      "titulo": "Portaria e secretaria",
+      "data": "",
+      "qt": 7,
+      "cover": "/images/galeria/galeria-1.jpg",
+      "fotos": [
+        "/images/galeria/galeria-1.jpg",
+        "/images/galeria/galeria-1-1.jpg",
+        "/images/galeria/galeria-1-2.jpg",
+        "/images/galeria/galeria-1-3.jpg",
+        "/images/galeria/galeria-1-4.jpg",
+        "/images/galeria/galeria-1-5.jpg",
+        "/images/galeria/galeria-1-6.jpg"
+      ],
+      "fonte": "https://lagoanossa.com.br/galeria-de-fotos/galeria-1/"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Quais os horários das atividades esportivas do clube?",
+      "a": "Consulte os horários em nossas Modalidades"
+    },
+    {
+      "q": "Como alugo o Salão Nobre para eventos?",
+      "a": "Para reservar datas para eventos sociais (casamentos, festas de 15 anos, etc) é necessário entrar em contato com a Secretaria pelo telefone (37)3322-1033."
+    },
+    {
+      "q": "Qual o valor de Transferência de quotas?",
+      "a": "É necessário entrar em contato com a Secretaria pelo telefone (37)3322-1033."
+    },
+    {
+      "q": "Como faço pra me tornar sócio do Country Clube de Formiga?",
+      "a": "Atualmente o clube não disponibiliza cotas e jóais para venda. Somente pode ser adquirido cotas de terceiros com a taxa de transferência."
+    }
+  ],
+  "paginas": {
+    "historia": [
+      "Em 6 de maio de 1934 o Country Clube foi fundado. Conta-se que algumas famílias tradicionais da cidade, sem ter espaço para o lazer, descobriram na “Lagoa do Fundão” a possibilidade de se criar um local apropriado ao descanso e à diversão. Tais famílias seriam as de Carlos Camarão, Tarcísio Cardoso, Zé Cuca, Omar Soares, Edmundo Lins, Lauro Coelho e João Pautilho Silva.",
+      "O acesso à lagoa praticamente não existia. Havia apenas uma trilha no meio da mata. O passo inicial foi providenciar a abertura da estrada. Depois, a limpeza das margens do lago, a construção de um barracão que serviria de abrigo contra a chuva e o sol forte e a colocação do primeiro trampolim de madeira.",
+      "Logo, o lugar já era ponto de encontro para vários formiguenses durante os finais de semana. Surgiu, então, a necessidade de ampliar as suas instalações. Assim, o clube foi fundado oficialmente no sistema de sociedade por cotas. Daí para frente, as benfeitorias foram aumentando e, consequentemente, o número de associados.",
+      "Durante todos esses anos, a Lagoa não parou de crescer. A cada gestão, são traçadas novas diretrizes. Grandes nomes passaram pela administração do clube e deixaram sua parcela de progresso. Eles são lembrados em placas que dão nome às instalações do clube.",
+      "Todos os associados podem conhecem melhor a história do clube visitando nosso Memorial, que funciona de 16hs as 21hs no Country Clube de Formiga."
+    ],
+    "direitos": {
+      "artigo": "Art. 27",
+      "intro": "São direitos dos sócios desde que em dia com suas obrigações para com o clube:",
+      "secoes": [
+        {
+          "num": "I",
+          "titulo": "Inerentes a todas as categorias sociais",
+          "itens": [
+            {
+              "letra": "a",
+              "texto": "Usufruir das prerrogativas deste Estatuto e invocar os seus direitos perante os poderes do Clube;"
+            },
+            {
+              "letra": "b",
+              "texto": "Freqüentar as dependências do Clube, comparecer às reuniões por este promovidas e participar de todas as suas atividades."
+            },
+            {
+              "letra": "c",
+              "texto": "Solicitar, em requerimento com um mínimo de 50 (cinquenta) assinaturas de sócios de qualquer categoria, devidamente fundamentado, dirigido ao Presidente, a convocação do Conselho Deliberativo para apreciar assunto de interesse social expressamente declarado."
+            },
+            {
+              "letra": "d",
+              "texto": "Trazer ao Country Clube seus convidados, por ele representados e sob sua inteira responsabilidade, desde que residente Fora da cidade de Formiga e aqui estejam como visitantes, mediante convites com distribuição e utilização fixados a critério da diretoria, observando-se que cada visitante poderá comparecer ao clube, nesta qualidade, somente 2 vezes ao mês."
+            }
+          ]
+        },
+        {
+          "num": "II",
+          "titulo": "Privativos dos sócios proprietários e proprietários remidos, observando-se o disposto no parágrafo 2º do artigo 19",
+          "itens": [
+            {
+              "letra": "a",
+              "texto": "Constituir as assembléias gerais, nelas deliberarem, votarem e serem votados, observando-se o disposto no art. 19, parágrafo 2º;"
+            },
+            {
+              "letra": "b",
+              "texto": "Abonar pedido de inscrição de novos sócios;"
+            },
+            {
+              "letra": "c",
+              "texto": "Resolver sobre a dissolução da sociedade em Assembléia Geral, deliberando sobre a destinação a dar a seus bens, coisas e direitos."
+            },
+            {
+              "letra": "d",
+              "texto": "Integrar a Comissão Fiscal, a Comissão Disciplinar, a Diretoria e o Conselho Deliberativo, votando e sendo votados."
+            }
+          ]
+        }
+      ]
+    },
+    "deveres": {
+      "artigo": "Art. 28",
+      "intro": "São deveres dos sócios:",
+      "secoes": [
+        {
+          "num": "I",
+          "titulo": "Inerentes a todas as categorias sociais",
+          "itens": [
+            {
+              "letra": "a",
+              "texto": "Cumprir fielmente o presente Estatuto e deliberações dos poderes do Clube;"
+            },
+            {
+              "letra": "b",
+              "texto": "Cooperar sempre, direta ou indiretamente, para o engrandecimento do Clube;"
+            },
+            {
+              "letra": "c",
+              "texto": "Acatar as decisões dos membros da Diretoria e outras autoridades do clube, quando no exercício de suas funções;"
+            },
+            {
+              "letra": "d",
+              "texto": "Zelar pela conservação dos bens imóveis e móveis do clube;"
+            },
+            {
+              "letra": "e",
+              "texto": "Comprovar, por meio de carteira social e taxa de manutenção em dia, a sua qualidade de sócio em gozo dos respectivos direitos, quando desejar ter ingresso às dependências do Clube ou comparecer às reuniões ou eventos por ele promovidos;"
+            },
+            {
+              "letra": "f",
+              "texto": "Pagar pontualmente as contribuições ou mensalidades e outras obrigações financeiras a que estejam sujeitos;"
+            },
+            {
+              "letra": "g",
+              "texto": "Desempenhar fielmente os mandatos sociais e as obrigações nas comissões de que fizerem parte;"
+            },
+            {
+              "letra": "h",
+              "texto": "Acatar as resoluções da Diretoria, Conselho Deliberativo e Assembléia Geral e de seus representantes legais;"
+            },
+            {
+              "letra": "i",
+              "texto": "Respeitar e cumprir as disposições deste Estatuto, do Regimento Interno e demais regulamentos criados pela Diretoria;"
+            },
+            {
+              "letra": "j",
+              "texto": "Conduzir-se com a devida compostura e decência no recinto do Clube;"
+            },
+            {
+              "letra": "k",
+              "texto": "Indenizar, no prazo de 15 (quinze) dias, qualquer, prejuízo material que causar ao Clube direta ou indiretamente;"
+            },
+            {
+              "letra": "l",
+              "texto": "Apresentar ao Clube atestado médico ou equivalente que preserve a boa saúde dos freqüentadores da piscina e dos que pratiquem qualquer atividade esportiva no recinto do clube, ou assinar termo de responsabilidade, com ciência e assumindo os riscos."
+            }
+          ]
+        },
+        {
+          "num": "II",
+          "titulo": "Deveres Privativos dos Sócios Proprietários e Proprietários remidos",
+          "itens": [
+            {
+              "letra": "a",
+              "texto": "atender às chamadas de capital nos prazos e limites estipulados em reunião conjunta da Diretoria e Conselho Deliberativo, sempre que houver aumento de patrimônio por aquisição ou obra de interesse do Clube."
+            }
+          ]
+        }
+      ]
+    },
+    "funcionamento": [
+      {
+        "dia": "Segunda",
+        "horario": "14h às 21h"
+      },
+      {
+        "dia": "Terça a Sábado",
+        "horario": "7h às 21h30"
+      },
+      {
+        "dia": "Domingo",
+        "horario": "7h às 19h"
+      }
+    ],
+    "convenio": {
+      "nome": "Clube dos Oficiais da Polícia Militar de Minas Gerais",
+      "endereco": "Rua Diábase, 200 – Prado – Belo Horizonte/MG",
+      "site": "https://www.clubedosoficiais.org.br",
+      "instrumento": "https://lagoanossa.com.br/images/instrumento-particular-de-convenio.pdf"
+    },
+    "contato": [
+      "Endereço:",
+      "Lagoa do Fundão, s/n – Lagoa",
+      "Formiga – MG",
+      "35573-124",
+      "facebook – country Clube",
+      "Instagram – country-lagoa",
+      "E-mail: countryclubefga@gmail.com",
+      "Telefone: (37) 3322-1033/3321-1629/Zap 999622146"
+    ],
+    "convenios": [
+      "Convênio com:",
+      "Clube dos Oficiais da Polícia Militar de Minas Gerais",
+      "– Rua Diábase, 200 – Prado – Belo Horizonte/MG",
+      "(www.clubedosoficiais.org.br).",
+      "Saiba mais acessando o Instrumento Particular de Convênio"
+    ],
+    "oportunidade": [
+      "Faça parte da nossa equipe, venha trabalhar conosco!",
+      "Envie o seu currículo através do formulário abaixo:"
+    ],
+    "ouvidoria": [
+      "Fale com a ouvidoria do Country Clube de Formiga"
+    ],
+    "horarios": [
+      {
+        "atividade": "Hidroginástica",
+        "colunas": [
+          "Dia",
+          "Horário"
+        ],
+        "linhas": [
+          [
+            "Terça à Sexta",
+            "7h, 9h, 16h e 19h"
+          ]
+        ],
+        "nota": "Não é necessário agendamento."
+      },
+      {
+        "atividade": "Natação",
+        "colunas": [
+          "Dia",
+          "Horário"
+        ],
+        "linhas": [
+          [
+            "Terça à Sexta",
+            "6:30 às 11:30 / 15:00 às 20:00"
+          ]
+        ],
+        "nota": "Inscrições diretamente com os professores. A partir de 1 ano."
+      },
+      {
+        "atividade": "Ioga",
+        "colunas": [
+          "Dia",
+          "Horário"
+        ],
+        "linhas": [
+          [
+            "Terça e Quinta",
+            "7:00 às 9:00"
+          ],
+          [
+            "Segunda e Quarta",
+            "18:30 às 19:30"
+          ]
+        ],
+        "nota": "Não é necessário agendamento."
+      },
+      {
+        "atividade": "Musculação",
+        "colunas": [
+          "Dia",
+          "Horário"
+        ],
+        "linhas": [
+          [
+            "Segunda",
+            "14:00 às 21:00"
+          ],
+          [
+            "Terça à Sexta",
+            "6:00 às 21:00"
+          ],
+          [
+            "Sábado",
+            "7:00 às 16:00"
+          ],
+          [
+            "Domingo",
+            "8:00 às 13:00"
+          ]
+        ],
+        "nota": "Não é necessário agendamento."
+      },
+      {
+        "atividade": "Futebol Livre (Rachas)",
+        "colunas": [
+          "Dia da Semana",
+          "Horário",
+          "Faixa Etária"
+        ],
+        "linhas": [
+          [
+            "Quarta-feira",
+            "18:45h",
+            "Livre para todas as idades"
+          ],
+          [
+            "Sexta-feira",
+            "18:45h",
+            "Acima de 35 anos"
+          ],
+          [
+            "Domingo",
+            "08:30h",
+            "Abaixo e acima de 43 anos"
+          ]
+        ],
+        "nota": ""
+      },
+      {
+        "atividade": "Escolinha de Futebol",
+        "colunas": [
+          "Dia da Semana",
+          "Horário",
+          "Turma / Idade"
+        ],
+        "linhas": [
+          [
+            "Segunda e Quarta",
+            "18h",
+            "2019/2020"
+          ],
+          [
+            "Segunda e Quarta",
+            "19h",
+            "2017/2018"
+          ],
+          [
+            "Terça",
+            "18h",
+            "2012/2013/2014"
+          ],
+          [
+            "Terça",
+            "19h",
+            "2015"
+          ],
+          [
+            "Quinta",
+            "18h",
+            "2021/2022"
+          ],
+          [
+            "Quinta",
+            "19h",
+            "2012/2013/2014"
+          ],
+          [
+            "Sexta",
+            "18h",
+            "2015/2016"
+          ]
+        ],
+        "nota": "Inscrições diretamente com o professor."
+      },
+      {
+        "atividade": "Futsal",
+        "colunas": [
+          "Dia",
+          "Categoria",
+          "Horário"
+        ],
+        "linhas": [
+          [
+            "Terça",
+            "2012/2013/2014",
+            "19:00"
+          ],
+          [
+            "Quinta",
+            "2015/2016/2017/2018",
+            "18:30"
+          ]
+        ],
+        "nota": "Inscrições diretamente com o professor."
+      },
+      {
+        "atividade": "Massagem Feminina",
+        "colunas": [
+          "Profissional / Dia",
+          "Horário"
+        ],
+        "linhas": [
+          [
+            "Samantha (Terça e Sexta)",
+            "7:00 às 11:45"
+          ],
+          [
+            "Samantha (Quarta e Quinta)",
+            "7:00 às 11:15"
+          ],
+          [
+            "Rosilene (Segunda e Quinta)",
+            "16:30 às 21:00"
+          ],
+          [
+            "Rosilene (Terça e Quarta)",
+            "16:00 às 21:00"
+          ],
+          [
+            "Laís (Segunda)",
+            "17:00 às 21:00"
+          ],
+          [
+            "Laís (Terça)",
+            "16:00 às 21:00"
+          ],
+          [
+            "Laís (Quarta e Quinta)",
+            "16:30 às 21:00"
+          ]
+        ],
+        "nota": "Agendamento pelo aplicativo. Acima de 18 anos."
+      },
+      {
+        "atividade": "Ginástica Localizada",
+        "colunas": [
+          "Dia",
+          "Horário"
+        ],
+        "linhas": [
+          [
+            "Segunda e Quarta",
+            "18:30 às 20:00"
+          ]
+        ],
+        "nota": "Não é necessário agendamento. Acima de 16 anos."
+      },
+      {
+        "atividade": "Vôlei",
+        "colunas": [
+          "Dia",
+          "Categoria",
+          "Horário"
+        ],
+        "linhas": [
+          [
+            "Segunda e Quarta",
+            "Adulto",
+            "19:00 às 21:30"
+          ],
+          [
+            "Sexta",
+            "Infantil (a partir de 11 anos)",
+            "19:00 às 20:30"
+          ]
+        ],
+        "nota": "Inscrições diretamente com o professor."
+      },
+      {
+        "atividade": "Sauna",
+        "colunas": [
+          "Dia",
+          "Horário"
+        ],
+        "linhas": [
+          [
+            "Segunda",
+            "17:00 às 21:00"
+          ],
+          [
+            "Terça à Sábado",
+            "17:00 às 21:30"
+          ],
+          [
+            "Domingo",
+            "10:00 às 13:30 / 17:00 às 19:00"
+          ]
+        ],
+        "nota": ""
+      },
+      {
+        "atividade": "Jiu-Jitsu",
+        "colunas": [
+          "Categoria",
+          "Dia",
+          "Horário"
+        ],
+        "linhas": [
+          [
+            "Adulto Intermediário/Avançado",
+            "Segunda e Quarta",
+            "20:00"
+          ],
+          [
+            "Infantil (a partir de 7 anos)",
+            "Terça e Quinta",
+            "18:45 às 19:45"
+          ],
+          [
+            "Adulto e Adolescente Iniciante",
+            "Terça e Quinta",
+            "19:45"
+          ]
+        ],
+        "nota": "Inscrições diretamente com o professor."
+      },
+      {
+        "atividade": "Pilates",
+        "colunas": [
+          "Dia da Semana",
+          "Horário",
+          "Professora"
+        ],
+        "linhas": [
+          [
+            "Segunda-feira a Quinta-feira",
+            "15:00 às 19:00h",
+            "Márcia"
+          ],
+          [
+            "Terça-feira à Sexta-Feira",
+            "07:30 às 12:00h",
+            "Marcela"
+          ],
+          [
+            "Sexta-feira",
+            "14:00 às 18:00h",
+            "Márcia"
+          ]
+        ],
+        "nota": "Agendamento pelo aplicativo. Segunda não necessita agendamento."
+      },
+      {
+        "atividade": "Ginástica Funcional",
+        "colunas": [
+          "Dia",
+          "Horário"
+        ],
+        "linhas": [
+          [
+            "Terça, Quinta e Sexta",
+            "18:10 às 19:00"
+          ],
+          [
+            "Terça à Sexta",
+            "7:20 às 8:00"
+          ]
+        ],
+        "nota": "Agendamento pelo aplicativo. Acima de 14 anos."
+      },
+      {
+        "atividade": "Karatê",
+        "colunas": [
+          "Dia",
+          "Horário"
+        ],
+        "linhas": [
+          [
+            "Segunda e Quarta",
+            "18:00 às 20:00"
+          ]
+        ],
+        "nota": "Inscrições diretamente com o professor."
+      },
+      {
+        "atividade": "Fisioterapia",
+        "colunas": [
+          "Dia",
+          "Horário"
+        ],
+        "linhas": [
+          [
+            "Terça e Quinta",
+            "14:00 às 19:00"
+          ],
+          [
+            "Quarta e Sexta",
+            "7:00 às 12:00"
+          ]
+        ],
+        "nota": "Agendamento pelo aplicativo."
+      },
+      {
+        "atividade": "Tênis",
+        "colunas": [
+          "Dia",
+          "Horário"
+        ],
+        "linhas": [
+          [
+            "Sexta",
+            "17:00 às 21:30"
+          ],
+          [
+            "Sábado",
+            "7:00 às 12:00"
+          ]
+        ],
+        "nota": ""
+      },
+      {
+        "atividade": "Beach Tennis (7 a 13 anos)",
+        "colunas": [
+          "Dia",
+          "Horário"
+        ],
+        "linhas": [
+          [
+            "Segunda, Quarta e Sexta",
+            "17:00 às 21:00"
+          ]
+        ],
+        "nota": ""
+      },
+      {
+        "atividade": "Basquete (8 a 14 anos)",
+        "colunas": [
+          "Dia",
+          "Horário"
+        ],
+        "linhas": [
+          [
+            "Terça",
+            "17:15 às 18:45"
+          ],
+          [
+            "Quinta",
+            "17:15 às 18:15"
+          ]
+        ],
+        "nota": ""
+      },
+      {
+        "atividade": "Ballet e Jazz",
+        "colunas": [
+          "Categoria",
+          "Dia",
+          "Horário"
+        ],
+        "linhas": [
+          [
+            "Juvenil (7 a 17 anos)",
+            "Terça e Quinta",
+            "9:00 às 10:00"
+          ],
+          [
+            "Juvenil (7 a 17 anos)",
+            "Segunda e Quarta",
+            "18:00 às 19:00"
+          ],
+          [
+            "Ballet Baby (4 a 6 anos)",
+            "Terça e Quinta",
+            "10:00 às 11:00"
+          ]
+        ],
+        "nota": "Inscrições diretamente com a professora."
+      },
+      {
+        "atividade": "Liberação Miofascial / Drenagem / Ventosaterapia",
+        "colunas": [
+          "Dia",
+          "Horário"
+        ],
+        "linhas": [
+          [
+            "Segunda e Quarta",
+            "14:00 às 18:00"
+          ],
+          [
+            "Terça e Quinta",
+            "7:00 às 11:00"
+          ],
+          [
+            "Sexta",
+            "13:00 às 17:00"
+          ]
+        ],
+        "nota": "Agendamento pelo aplicativo."
+      }
+    ]
+  },
+  "fotos": {
+    "praia": "/images/infraestrutura/praia-1.jpg",
+    "lagoa": "/images/infraestrutura/praia-6.jpg",
+    "lagoaSunset": "/images/galeria/galeria-3-1.jpg",
+    "entardecer": "/images/infraestrutura/praia-5.jpg",
+    "tenis": "/images/infraestrutura/quadra-de-tenis-1.jpg",
+    "tenis2": "/images/infraestrutura/quadra-de-tenis-2.jpg",
+    "futebol": "/images/infraestrutura/campos-de-futebol-1.jpg",
+    "futebol2": "/images/infraestrutura/campos-de-futebol-2.jpg",
+    "academia": "/images/galeria/galeria-6-1.jpg",
+    "academia2": "/images/galeria/galeria-6-2.jpg",
+    "piscina": "/images/infraestrutura/piscinas-2.jpg",
+    "volei": "/images/infraestrutura/ginasio-2.jpg",
+    "beachTenis": "/images/infraestrutura/praia-2.jpg",
+    "futevolei": "/images/infraestrutura/praia-3.jpg",
+    "churrasco": "/images/infraestrutura/churrasqueira-1.jpg",
+    "churrasco2": "/images/infraestrutura/churrasqueira-2.jpg",
+    "familia": "/images/infraestrutura/area-familiar-1.jpg",
+    "evento": "/images/galeria/galeria-11-1.jpg",
+    "show": "/images/galeria/galeria-11-1.jpg",
+    "salao": "/images/infraestrutura/area-familiar-3.jpg",
+    "quadraCoberta": "/images/infraestrutura/quadra-poliesportiva-1.png",
+    "deck": "/images/infraestrutura/quiosques-1.png",
+    "natacao": "/images/infraestrutura/piscinas-3.jpg",
+    "hidro": "/images/infraestrutura/piscinas-4.jpg",
+    "yoga": "/images/galeria/galeria-3-2.jpg",
+    "pilates": "/images/infraestrutura/estudio-de-pilates-1.jpg",
+    "diretoria": "/images/galeria/galeria-1-1.jpg",
+    "basquete": "/images/infraestrutura/quadra-poliesportiva-2.png",
+    "futsal": "/images/infraestrutura/quadra-poliesportiva-3.jpg",
+    "ballet": "/images/modalidades/ballet-jazz-1.jpg",
+    "jiujitsu": "/images/infraestrutura/escolas-de-artes-marciais-2.jpg",
+    "karate": "/images/infraestrutura/escolas-de-artes-marciais-3.jpg",
+    "musculacao": "/images/galeria/galeria-6-3.jpg",
+    "funcional": "/images/galeria/galeria-6-4.jpg",
+    "localizada": "/images/galeria/galeria-6-5.jpg",
+    "fisioterapia": "/images/infraestrutura/estudio-de-pilates-3.jpg",
+    "massagem": "/images/galeria/galeria-2-1.jpg",
+    "peteca": "/images/infraestrutura/ginasio-1.jpg",
+    "bar": "/images/infraestrutura/bares-1.jpg",
+    "restaurante": "/images/infraestrutura/bares-2.jpg",
+    "quiosque": "/images/infraestrutura/quiosques-2.jpg",
+    "sinuca": "/images/infraestrutura/sinuca-1.jpg",
+    "parquinho": "/images/infraestrutura/parquinho-1.jpg",
+    "sauna": "/images/infraestrutura/piscinas-5.jpg",
+    "secretaria": "/images/infraestrutura/secretaria-1.jpg",
+    "ginasio": "/images/infraestrutura/ginasio-3.jpg",
+    "artesMarciais": "/images/infraestrutura/escolas-de-artes-marciais-1.jpg",
+    "criancas": "/images/galeria/galeria-9-1.jpg",
+    "rock": "/images/infraestrutura/praia-4.jpg",
+    "festaJunina": "/images/galeria/galeria-11-1.jpg",
+    "copa": "/images/infraestrutura/area-familiar-2.jpg",
+    "aniversario": "/images/galeria/galeria-11-1.jpg"
+  },
+  "pendentes": [
+    "infra restaurante: sem foto própria (usando foto de outra área)",
+    "infra academia: sem foto própria (usando foto de outra área)",
+    "infra saunas: sem foto própria (usando foto de outra área)",
+    "futevolei: foto própria não existe no site atual (gerar no Gamma — scripts/gamma-prompts.json)",
+    "peteca: foto própria não existe no site atual (gerar no Gamma — scripts/gamma-prompts.json)",
+    "tenis: foto própria não existe no site atual (gerar no Gamma — scripts/gamma-prompts.json)",
+    "restaurante: foto própria não existe no site atual (gerar no Gamma — scripts/gamma-prompts.json)",
+    "academia: foto própria não existe no site atual (gerar no Gamma — scripts/gamma-prompts.json)",
+    "saunas: foto própria não existe no site atual (gerar no Gamma — scripts/gamma-prompts.json)"
+  ]
+}

@@ -3,7 +3,7 @@ import { Icon } from "@/components/ui/Icon";
 import { Button } from "@/components/ui/Button";
 import { Container, Eyebrow, IconTile, PageHeader } from "@/components/ui/Primitives";
 import { AppCTA } from "@/components/site/Home";
-import { DEVERES, DIREITOS } from "@/data/content";
+import { DEVERES, DIREITOS, type Regras } from "@/data/content";
 import { IMG as STOCK } from "@/data/images";
 import { SITE } from "@/lib/site";
 import s from "./Servicos.module.css";
@@ -91,24 +91,32 @@ export function Associado() {
   );
 }
 
-function RuleList({ items }: { items: string[] }) {
+function RuleList({ regras }: { regras: Regras }) {
   return (
-    <ol className={p.ruleList}>
-      {items.map((t, i) => <li key={i} className={p.ruleItem}><span className={p.ruleNum} aria-hidden>{i + 1}</span><span>{t}</span></li>)}
-    </ol>
+    <div className={p.regras}>
+      {regras.artigo && <p className={p.regrasIntro}><strong>{regras.artigo}</strong> — {regras.intro}</p>}
+      {regras.secoes.map((sec, si) => (
+        <section key={si} className={p.regrasSecao} aria-label={sec.titulo || regras.artigo}>
+          {sec.titulo && <h3 className={p.regrasTitulo}><span className={p.regrasNum} aria-hidden>{sec.num}</span>{sec.titulo}</h3>}
+          <ol className={p.ruleList}>
+            {sec.itens.map((it) => <li key={it.letra} className={p.ruleItem}><span className={p.ruleNum} aria-hidden>{it.letra}</span><span>{it.texto}</span></li>)}
+          </ol>
+        </section>
+      ))}
+    </div>
   );
 }
 
 export function Direitos() {
   return (
     <>
-      <PageHeader eyebrow="Associado" title="Direitos do associado." sub="O que o Country Clube de Formiga garante a cada associado, nos termos do Estatuto." breadcrumb={[{ label: "Associado", href: "/associado" }, { label: "Direitos" }]} />
+      <PageHeader eyebrow="Associado · Estatuto, art. 27" title="Direitos do associado." sub="O que o Country Clube de Formiga garante a cada sócio, nos termos do Estatuto — texto conforme publicado pelo clube." breadcrumb={[{ label: "Associado", href: "/associado" }, { label: "Direitos" }]} />
       <section className="section section--tight">
         <Container size="md">
-          <RuleList items={DIREITOS} />
+          <RuleList regras={DIREITOS} />
           <div className={p.notice}>
             <span className={p.noticeIcon}><Icon name="file-text" size={20} /></span>
-            <div><h4 className={p.noticeTitle}>Texto completo no Estatuto</h4><p className={p.noticeText}>Esta lista é um resumo. A redação oficial está no <Link href="/estatuto">Estatuto do clube</Link> e em <a href={`${SITE.siteAtual}/direitos/`} target="_blank" rel="noopener noreferrer">lagoanossa.com.br/direitos</a>.</p></div>
+            <div><h4 className={p.noticeTitle}>Texto completo no Estatuto</h4><p className={p.noticeText}>Transcrição do artigo 27 do Estatuto, publicada em <a href={`${SITE.siteAtual}/direitos/`} target="_blank" rel="noopener noreferrer">lagoanossa.com.br/direitos</a>. A redação oficial e completa está no <Link href="/estatuto">Estatuto do clube</Link>.</p></div>
           </div>
           <div style={{ display: "flex", gap: 12, marginTop: 32, flexWrap: "wrap" }}>
             <Button href="/associado/deveres" variant="secondary" iconRight={<Icon name="arrow-right" size={14} />}>Ver deveres</Button>
@@ -123,13 +131,13 @@ export function Direitos() {
 export function Deveres() {
   return (
     <>
-      <PageHeader eyebrow="Associado" title="Deveres do associado." sub="O que o clube espera de cada associado para que a Lagoa continue sendo a casa de todos." breadcrumb={[{ label: "Associado", href: "/associado" }, { label: "Deveres" }]} />
+      <PageHeader eyebrow="Associado · Estatuto, art. 28" title="Deveres do associado." sub="O que o clube espera de cada sócio para que a Lagoa continue sendo a casa de todos — texto conforme publicado pelo clube." breadcrumb={[{ label: "Associado", href: "/associado" }, { label: "Deveres" }]} />
       <section className="section section--tight">
         <Container size="md">
-          <RuleList items={DEVERES} />
+          <RuleList regras={DEVERES} />
           <div className={p.notice}>
             <span className={p.noticeIcon}><Icon name="file-text" size={20} /></span>
-            <div><h4 className={p.noticeTitle}>Texto completo no Estatuto</h4><p className={p.noticeText}>Esta lista é um resumo. A redação oficial está no <Link href="/estatuto">Estatuto do clube</Link> e em <a href={`${SITE.siteAtual}/deveres/`} target="_blank" rel="noopener noreferrer">lagoanossa.com.br/deveres</a>.</p></div>
+            <div><h4 className={p.noticeTitle}>Texto completo no Estatuto</h4><p className={p.noticeText}>Transcrição do artigo 28 do Estatuto, publicada em <a href={`${SITE.siteAtual}/deveres/`} target="_blank" rel="noopener noreferrer">lagoanossa.com.br/deveres</a>. A redação oficial e completa está no <Link href="/estatuto">Estatuto do clube</Link>.</p></div>
           </div>
           <div style={{ display: "flex", gap: 12, marginTop: 32, flexWrap: "wrap" }}>
             <Button href="/associado/direitos" variant="secondary" iconRight={<Icon name="arrow-right" size={14} />}>Ver direitos</Button>

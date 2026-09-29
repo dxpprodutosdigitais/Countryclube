@@ -89,6 +89,29 @@ a.contactCard:hover { border-color: var(--color-border-brand); color: inherit; }
 .redirectText { font-size: 16px; line-height: 1.7; color: var(--color-fg-muted); margin-bottom: 28px; }
 .redirectBtns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
+/* Funcionamento */
+.diasGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
+.dia { display: flex; align-items: center; gap: 16px; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 16px; padding: 20px 22px; }
+.diaNome { font-family: var(--font-heading); font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-fg-subtle); margin-bottom: 4px; }
+.diaHora { font-family: var(--font-display); font-size: 24px; font-weight: 600; color: var(--color-fg-strong); letter-spacing: -0.01em; }
+.atvHeader { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin: 56px 0 24px; flex-wrap: wrap; }
+.atvH2 { font-family: var(--font-display); font-size: clamp(26px, 3vw, 34px); font-weight: 600; color: var(--color-fg-strong); margin-top: 10px; letter-spacing: -0.02em; }
+.atvGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.atv { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 18px; padding: 20px 22px; display: flex; flex-direction: column; gap: 12px; }
+.atvTitle { font-family: var(--font-heading); font-size: 16px; font-weight: 600; color: var(--color-fg-strong); }
+.atvTable { border: 1px solid var(--color-border); border-radius: 12px; overflow: hidden; }
+.atvHead, .atvRow { display: grid; gap: 10px; padding: 10px 14px; align-items: center; }
+.atvHead { background: var(--c-lagoa-950); color: #fff; font-family: var(--font-heading); font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.atvRow { border-top: 1px solid var(--color-divider); font-size: 13.5px; color: var(--color-fg); }
+.atvRow:first-child { border-top: 0; }
+.atvRow > div:first-child { font-weight: 600; color: var(--color-fg-strong); }
+.atvNota { display: flex; align-items: flex-start; gap: 6px; font-size: 13px; line-height: 1.5; color: var(--color-fg-muted); }
+.atvNota svg { flex-shrink: 0; margin-top: 3px; color: var(--color-accent-strong); }
+.fonte { font-size: 12.5px; color: var(--color-fg-subtle); margin-top: 28px; line-height: 1.5; }
+.fonte a { color: var(--color-fg-muted); text-decoration: underline; }
+.convLine { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--color-fg-muted); }
+.convLine a { color: var(--color-brand); }
+
 @media (max-width: 768px) {
   .tableHead, .tableRow { grid-template-columns: 1.6fr 1fr 1fr 1fr; padding: 12px 14px; font-size: 12.5px; }
   .tableHead { font-size: 9.5px; letter-spacing: 0.12em; }
@@ -102,4 +125,9 @@ a.contactCard:hover { border-color: var(--color-border-brand); color: inherit; }
   .shortcuts { grid-template-columns: repeat(2, 1fr); }
   .benefits { grid-template-columns: 1fr; }
   .redirect { padding: 32px 28px; }
+  .diasGrid { grid-template-columns: 1fr; }
+  .atvGrid { grid-template-columns: 1fr; }
+  .atvHead { display: none; }
+  .atvRow { grid-template-columns: 1fr !important; gap: 3px; }
+  .atvRow > div[data-label]:not([data-label=""])::before { content: attr(data-label) ": "; font-family: var(--font-heading); font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-fg-subtle); margin-right: 4px; }
 }

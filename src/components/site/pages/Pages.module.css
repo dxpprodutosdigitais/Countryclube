@@ -67,9 +67,14 @@
 .chapterDesc { font-size: 13.5px; color: var(--color-fg-muted); }
 
 /* Listas de direitos/deveres */
+.regras { display: flex; flex-direction: column; gap: 28px; }
+.regrasIntro { font-size: 16px; line-height: 1.65; color: var(--color-fg); }
+.regrasSecao { display: flex; flex-direction: column; gap: 12px; }
+.regrasTitulo { display: flex; align-items: center; gap: 12px; font-family: var(--font-heading); font-size: 15px; font-weight: 600; color: var(--color-fg-strong); }
+.regrasNum { display: inline-flex; align-items: center; justify-content: center; min-width: 36px; height: 28px; padding: 0 8px; border-radius: 8px; background: var(--c-eletrico-100); color: var(--color-accent-strong); font-family: var(--font-display); font-size: 15px; font-weight: 700; }
 .ruleList { display: flex; flex-direction: column; gap: 10px; list-style: none; padding: 0; margin: 0; counter-reset: rule; }
 .ruleItem { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 14px; padding: 18px 22px; display: flex; gap: 16px; align-items: flex-start; font-size: 15.5px; line-height: 1.6; color: var(--color-fg); }
-.ruleNum { width: 32px; height: 32px; flex-shrink: 0; border-radius: 10px; background: var(--c-lagoa-100); color: var(--color-brand); display: inline-flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 17px; font-weight: 700; }
+.ruleNum { width: 32px; height: 32px; text-transform: uppercase; flex-shrink: 0; border-radius: 10px; background: var(--c-lagoa-100); color: var(--color-brand); display: inline-flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 17px; font-weight: 700; }
 
 .notice { margin-top: 32px; background: var(--c-eletrico-100); border-radius: 16px; padding: 20px 24px; display: flex; gap: 14px; align-items: flex-start; }
 .noticeIcon { color: var(--color-accent-strong); flex-shrink: 0; margin-top: 1px; }

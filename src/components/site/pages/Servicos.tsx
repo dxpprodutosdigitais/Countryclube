@@ -4,7 +4,7 @@ import { Icon } from "@/components/ui/Icon";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { Container, EmptyState, Eyebrow, FilterPills, IconTile, PageHeader } from "@/components/ui/Primitives";
-import { CONVENIOS, FAQ, FUNCIONAMENTO } from "@/data/content";
+import { CONVENIOS, FAQ, FUNCIONAMENTO, HORARIOS_ATIVIDADES, type Tabela } from "@/data/content";
 import { SITE } from "@/lib/site";
 import s from "./Servicos.module.css";
 import p from "./Pages.module.css";
@@ -43,28 +43,66 @@ function useForm(requiredFields: { name: string; label: string; email?: boolean 
 }
 
 /* ============================ FUNCIONAMENTO ============================ */
+function TabelaAtividade({ t }: { t: Tabela }) {
+  const cols = t.colunas.length || Math.max(...t.linhas.map((l) => l.length), 1);
+  return (
+    <div className={s.atv}>
+      <h3 className={s.atvTitle}>{t.titulo}</h3>
+      <div className={s.atvTable} role="table" aria-label={`Horários de ${t.titulo}`}>
+        {t.colunas.length > 0 && (
+          <div className={s.atvHead} role="row" style={{ gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))` }}>
+            {t.colunas.map((c, i) => <div key={i} role="columnheader">{c}</div>)}
+          </div>
+        )}
+        {t.linhas.map((l, i) => (
+          <div key={i} className={s.atvRow} role="row" style={{ gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))` }}>
+            {Array.from({ length: cols }).map((_, j) => <div key={j} role="cell" data-label={t.colunas[j] ?? ""}>{l[j] ?? ""}</div>)}
+          </div>
+        ))}
+      </div>
+      {t.nota && <p className={s.atvNota}><Icon name="info" size={13} /> {t.nota}</p>}
+    </div>
+  );
+}
+
 export function Funcionamento() {
+  const [query, setQuery] = useState("");
+  const q = query.trim().toLowerCase();
+  const atividades = q ? HORARIOS_ATIVIDADES.filter((t) => t.titulo.toLowerCase().includes(q)) : HORARIOS_ATIVIDADES;
   return (
     <>
-      <PageHeader eyebrow="Funcionamento" title="Horários de todas as áreas do clube." sub="Geralmente abrimos às 6h e fechamos às 22h. Cada área tem seu próprio horário — consulte abaixo." breadcrumb={[{ label: "Serviços" }, { label: "Funcionamento" }]} />
+      <PageHeader eyebrow="Funcionamento" title="Horários do clube e das atividades." sub="Horário de funcionamento do Country Clube de Formiga e a grade completa de cada atividade, conforme publicado pelo clube." breadcrumb={[{ label: "Serviços" }, { label: "Funcionamento" }]} />
       <section className="section section--tight">
         <Container size="lg">
-          <div className={s.table} role="table" aria-label="Horários de funcionamento por área">
-            <div className={s.tableHead} role="row"><div role="columnheader">Área</div><div role="columnheader">Seg–Sex</div><div role="columnheader">Sábado</div><div role="columnheader">Domingo</div></div>
-            {FUNCIONAMENTO.map((r) => (
-              <div key={r.area} className={s.tableRow} role="row">
-                <div className={s.area} role="cell">{r.area}</div>
-                {[r.seg, r.sab, r.dom].map((v, i) => <div key={i} role="cell" className={v === "Fechado" ? s.closed : ""}>{v}</div>)}
+          <Eyebrow>Funcionamento do clube</Eyebrow>
+          <div className={s.diasGrid}>
+            {FUNCIONAMENTO.map((f) => (
+              <div key={f.dia} className={s.dia}>
+                <IconTile name="clock" size={40} icon={18} />
+                <div><div className={s.diaNome}>{f.dia}</div><div className={s.diaHora}>{f.horario}</div></div>
               </div>
             ))}
           </div>
-          <div className={p.notice}>
+          <div className={p.notice} style={{ marginTop: 24 }}>
             <span className={p.noticeIcon}><Icon name="megaphone" size={20} /></span>
             <div>
-              <h4 className={p.noticeTitle}>Feriados</h4>
-              <p className={p.noticeText}>Em feriados, o clube funciona em horário de domingo. Em datas excepcionais, comunicamos com antecedência pelo app, pelas redes sociais e no mural da Secretaria.</p>
+              <h4 className={p.noticeTitle}>Datas excepcionais</h4>
+              <p className={p.noticeText}>Alterações de horário em feriados e eventos são comunicadas pelo app, pelas redes sociais e no mural da Secretaria. Dúvidas: <a href={SITE.telefoneHref}>{SITE.telefone}</a>.</p>
             </div>
           </div>
+
+          <div className={s.atvHeader}>
+            <div><Eyebrow>Horário das atividades</Eyebrow><h2 className={s.atvH2}>Grade de cada modalidade</h2></div>
+            <div className={s.search} style={{ margin: 0, maxWidth: 320 }}>
+              <span className={s.searchIcon}><Icon name="search" size={18} /></span>
+              <input type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Buscar atividade..." className={s.searchInput} aria-label="Buscar atividade" />
+            </div>
+          </div>
+          {atividades.length === 0 && <EmptyState title="Nenhuma atividade encontrada" sub="Tente outro nome — por exemplo, natação, pilates ou futsal." action={<Button variant="secondary" size="sm" onClick={() => setQuery("")}>Limpar busca</Button>} />}
+          <div className={s.atvGrid}>
+            {atividades.map((t) => <TabelaAtividade key={t.titulo} t={t} />)}
+          </div>
+          <p className={s.fonte}>Horários publicados pelo clube em <a href={`${SITE.siteAtual}/horarios/`} target="_blank" rel="noopener noreferrer">lagoanossa.com.br/horarios</a>. Confirme vagas e alterações na Secretaria de Esportes.</p>
         </Container>
       </section>
     </>
@@ -73,30 +111,30 @@ export function Funcionamento() {
 
 /* ============================ CONVÊNIOS ============================ */
 export function Convenios() {
-  const cats = ["Todas", ...Array.from(new Set(CONVENIOS.map((c) => c.cat)))];
-  const [cat, setCat] = useState("Todas");
-  const filtered = cat === "Todas" ? CONVENIOS : CONVENIOS.filter((c) => c.cat === cat);
   return (
     <>
-      <PageHeader eyebrow="Vantagens para a família Lagoa" title="Convênios e parcerias." sub="Empresas e instituições locais oferecem condições especiais para os associados do Country. Apresente sua carteirinha (ou o app) e aproveite." breadcrumb={[{ label: "Serviços" }, { label: "Convênios" }]} />
+      <PageHeader eyebrow="Vantagens para a família Lagoa" title="Convênios." sub="Instituições conveniadas ao Country Clube de Formiga. Apresente sua carteirinha (ou o app) e aproveite as condições do convênio." breadcrumb={[{ label: "Serviços" }, { label: "Convênios" }]} />
       <section className="section section--tight">
         <Container>
-          <div style={{ marginBottom: 32 }}><FilterPills options={cats} value={cat} onChange={setCat} label="Filtrar por categoria" small /></div>
-          <div className={s.convGrid}>
-            {filtered.map((c) => (
+          <Eyebrow>Convênio com</Eyebrow>
+          <div className={s.convGrid} style={{ marginTop: 16 }}>
+            {CONVENIOS.map((c) => (
               <div key={c.nome} className={s.conv}>
                 <div className={s.convHead}><h3 className={s.convName}>{c.nome}</h3><Badge tone="areia" size="sm">{c.cat}</Badge></div>
+                {c.endereco && <div className={s.convLine}><Icon name="map-pin" size={14} /><span>{c.endereco}</span></div>}
+                {c.site && <div className={s.convLine}><Icon name="globe" size={14} /><a href={c.site} target="_blank" rel="noopener noreferrer">{c.site.replace(/^https?:\/\//, "")}</a></div>}
                 <div className={s.convBenefit}><Icon name="star" size={14} /><span>{c.beneficio}</span></div>
+                {c.instrumento && <div style={{ paddingTop: 4 }}><Button href={c.instrumento} variant="secondary" size="sm" external iconRight={<Icon name="file-text" size={14} />}>Instrumento Particular de Convênio</Button></div>}
               </div>
             ))}
           </div>
           <div className={p.darkCta} style={{ marginTop: 48 }}>
             <div>
-              <Eyebrow light>Sua empresa aqui</Eyebrow>
-              <h3 className={p.darkCtaTitle}>Quer ser parceira do Country?</h3>
-              <p className={p.darkCtaText}>Oferecemos exposição da sua marca aos nossos 4 mil associados, em troca de benefícios exclusivos.</p>
+              <Eyebrow light>Sua instituição aqui</Eyebrow>
+              <h3 className={p.darkCtaTitle}>Quer firmar convênio com o Country?</h3>
+              <p className={p.darkCtaText}>Clubes e instituições interessados em convênio de reciprocidade podem falar com a Secretaria pelo e-mail <a href={`mailto:${SITE.email}`} style={{ color: "#fff" }}>{SITE.email}</a>.</p>
             </div>
-            <Button href="/oportunidade" variant="accent" size="lg" iconRight={<Icon name="arrow-right" size={14} />}>Quero ser parceira</Button>
+            <Button href="/contato" variant="accent" size="lg" iconRight={<Icon name="arrow-right" size={14} />}>Falar com a Secretaria</Button>
           </div>
         </Container>
       </section>
@@ -234,7 +272,7 @@ export function Ouvidoria() {
 export function Contato() {
   const form = useForm([{ name: "nome", label: "Seu nome" }, { name: "email", label: "Seu e-mail", email: true }, { name: "mensagem", label: "A mensagem" }]);
   const cards = [
-    { icon: "phone", label: "Telefone", v1: SITE.telefone, v2: "Recepção · todos os dias", href: SITE.telefoneHref },
+    { icon: "phone", label: "Telefone", v1: SITE.telefone, v2: `ou ${SITE.telefone2} · Secretaria`, href: SITE.telefoneHref },
     { icon: "whatsapp", label: "WhatsApp", v1: SITE.whatsapp, v2: "Seg–Sex · horário comercial", href: SITE.whatsappHref },
     { icon: "mail", label: "E-mail", v1: SITE.email, v2: `Eventos: ${SITE.emailEventos}`, href: `mailto:${SITE.email}` },
     { icon: "map-pin", label: "Endereço", v1: `${SITE.endereco.linha1}, ${SITE.endereco.bairro}`, v2: `${SITE.endereco.cidade} · CEP ${SITE.endereco.cep}`, href: SITE.mapsLink },

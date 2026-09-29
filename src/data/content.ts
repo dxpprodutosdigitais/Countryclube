@@ -1,101 +1,147 @@
 /**
- * Conteúdo do site público — migrado de CONTENT.md (handoff) e do site atual
- * lagoanossa.com.br. Os textos marcados com `pendente: true` ainda usam
- * descrição provisória e devem ser substituídos pelo texto literal do site
- * atual (ver CONTEUDO-PENDENTE.md).
+ * Conteúdo do site público.
+ *
+ * Fonte principal: `real.json`, gerado a partir do site atual (lagoanossa.com.br)
+ * por scripts/scrape-lagoanossa.mjs → scripts/build-content.mjs. Textos, tabelas
+ * de horários, professores, eventos, comunicados, álbuns, FAQ, história,
+ * direitos/deveres, funcionamento e convênio vêm literalmente de lá.
+ * As listas *_BASE abaixo (CONTENT.md do handoff) fornecem categoria, ordem e
+ * um texto de reserva usado apenas quando o site atual não traz o dado.
  */
-import { FOTOS as OFICIAL, IMG as STOCK } from "./images";
-import scrapedJson from "./scraped.json";
-
-/* ---------- Conteúdo coletado do site atual (scripts/scrape-lagoanossa.mjs) ------ */
-interface Coletado { h1?: string; texto?: string; imagemLocal?: string; erro?: string }
-const SCRAPED = scrapedJson as { modalidades?: Record<string, Coletado>; infra?: Record<string, Coletado>; paginas?: Record<string, Coletado> };
-const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-const paragrafos = (t?: string) => (t ?? "").split(/\n+/).map((x) => x.trim()).filter((x) => x.length > 2);
-/** Sobrescreve nome, descrição, texto e foto de um item com o que foi coletado do site atual. */
-function aplicarColetado<T extends { id: string; nome: string; desc: string; img: string; sobre?: string[]; pendente?: boolean }>(item: T, grupo?: Record<string, Coletado>): T {
-  const c = grupo?.[item.id];
-  if (!c || c.erro || (!c.h1 && !c.texto && !c.imagemLocal)) return item;
-  const ps = paragrafos(c.texto);
-  return { ...item, nome: c.h1 || item.nome, desc: ps[0] ? (ps[0].length > 220 ? ps[0].slice(0, 217) + "…" : ps[0]) : item.desc, sobre: ps.length ? ps : item.sobre, img: c.imagemLocal ? `${BASE_PATH}${c.imagemLocal}` : item.img, pendente: false };
-}
+import { FOTOS as OFICIAL, IMG as STOCK, local } from "./images";
+import realJson from "./real.json";
 
 /* ---------- Tipos --------------------------------------------------------- */
+export interface Tabela { titulo: string; colunas: string[]; linhas: string[][]; nota?: string }
 export interface Modalidade {
   id: string; nome: string; cat: string; img: string; desc: string; horario: string; publico: string;
-  professor?: string; sobre?: string[]; fotoOficialUrl?: string; pendente?: boolean;
+  professor?: string; professores: string[]; profTitulo: string; retrato: string; sobre: string[];
+  tabelas: Tabela[]; notas: string[]; inscricao: string; galeria: string[]; fotoDaArea: boolean; fonte: string;
 }
 export interface Infra {
-  id: string; nome: string; cat: string; img: string; tag?: string; desc: string; sobre?: string[]; destaque?: { titulo: string; texto: string }; pendente?: boolean;
+  id: string; nome: string; cat: string; img: string; tag?: string; desc: string; sobre: string[]; galeria: string[];
+  destaque?: { titulo: string; texto: string }; fotoProvisoria: boolean; fonte: string;
 }
 export interface Evento {
   id: string; data: string; dia: number; mes: string; mesNome: string; ano: number; hora: string; nome: string; cat: string; local: string;
-  destaque?: boolean; img: string; desc: string; programacao?: string[]; obs?: string;
+  destaque?: boolean; img: string; desc: string; texto?: string[]; programacao?: string[]; obs?: string; fonte?: string;
 }
-export interface Noticia { id: string; tag: string; titulo: string; data: string; img: string; resumo: string }
+export interface Noticia { id: string; tag: string; titulo: string; data: string; img: string; resumo: string; texto?: string[]; somenteImagem?: boolean; fonte?: string }
 export interface FaqItem { cat: string; q: string; a: string }
 export interface Membro { nome: string; cargo: string; gestao: string }
-export interface Convenio { nome: string; cat: string; beneficio: string }
-export interface Album { id: string; titulo: string; data: string; qt: number; cover: string; fotos: string[] }
+export interface Convenio { nome: string; cat: string; beneficio: string; endereco?: string; site?: string; instrumento?: string }
+export interface Album { id: string; titulo: string; data: string; qt: number; cover: string; fotos: string[]; fonte?: string }
+export interface RegrasSecao { num: string; titulo: string; itens: { letra: string; texto: string }[] }
+export interface Regras { artigo: string; intro: string; secoes: RegrasSecao[] }
 
-/* ---------- Modalidades (21 — CONTENT.md) --------------------------------- */
+type ModalidadeBase = { id: string; nome: string; cat: string; img: string; desc: string; horario: string; publico: string };
+type InfraBase = { id: string; nome: string; cat: string; img: string; tag?: string; desc: string; destaque?: { titulo: string; texto: string } };
+
+/* ---------- real.json (site atual) --------------------------------------- */
+interface RealModalidade { nome: string; sobre: string[]; tabelas: Tabela[]; notas: string[]; professores: string[]; profTitulo: string; horarioResumo: string; publico: string; retrato: string; foto: string; fotoDaArea: boolean; galeria: string[]; inscricao: string; horariosSite: { colunas: string[]; linhas: string[][]; nota: string } | null }
+interface RealInfra { nome: string; subtitulo: string; sobre: string[]; foto: string; fotoProvisoria: boolean; galeria: string[] }
+interface RealEvento { id: string; data: string; dia: number; mes: string; mesNome: string; ano: number; hora: string; nome: string; cat: string; local: string; destaque: boolean; img: string; desc: string; texto: string[]; programacao: string[]; obs: string; fonte: string }
+interface RealComunicado { id: string; tag: string; titulo: string; data: string; img: string; resumo: string; texto: string[]; fonte: string; somenteImagem: boolean }
+interface RealAlbum { id: string; titulo: string; data: string; qt: number; cover: string; fotos: string[]; fonte: string }
+interface RealHorario { atividade: string; colunas: string[]; linhas: string[][]; nota: string }
+interface Real {
+  modalidades: Record<string, RealModalidade>; infra: Record<string, RealInfra>; eventos: RealEvento[]; comunicados: RealComunicado[];
+  albuns: RealAlbum[]; faq: { q: string; a: string }[];
+  paginas: { historia: string[]; direitos: Regras; deveres: Regras; funcionamento: { dia: string; horario: string }[]; contato: string[]; convenios: string[]; convenio: { nome: string; endereco: string; site: string; instrumento: string }; oportunidade: string[]; ouvidoria: string[]; horarios: RealHorario[] };
+  pendentes: string[];
+}
+const REAL = realJson as unknown as Real;
+export const CONTEUDO_PENDENTE = REAL.pendentes;
+const SITE_ATUAL = "https://lagoanossa.com.br";
+
+/** Resumo curto (primeira frase) de um texto, para cards. */
+function resumo(ps: string[], fallback: string, max = 200): string {
+  const t = ps.find((x) => x.length > 40) ?? ps[0];
+  if (!t) return fallback;
+  const frase = t.match(/^(.{40,}?[.!?])(\s|$)/)?.[1] ?? t;
+  return frase.length > max ? frase.slice(0, max - 1).replace(/\s+\S*$/, "") + "…" : frase;
+}
+
+/* ---------- Modalidades (21) ---------------------------------------------- */
 export const CATEGORIAS_MODALIDADES = ["Quadra", "Praia", "Campo", "Aquáticos", "Fitness", "Artes marciais", "Dança", "Saúde e bem-estar"];
 
-const MODALIDADES_BASE: Modalidade[] = [
-  { id: "ballet-jazz", nome: "Ballet/Jazz", cat: "Dança", img: STOCK.ballet, desc: "Turmas de ballet e jazz para crianças e adolescentes, com apresentações anuais no clube.", horario: "Consulte a Secretaria de Esportes", publico: "A partir de 4 anos", pendente: true },
-  { id: "basquete", nome: "Basquete", cat: "Quadra", img: STOCK.basquete, desc: "Escolinha e treinos de basquete na quadra poliesportiva coberta.", horario: "Consulte a Secretaria de Esportes", publico: "A partir de 8 anos", pendente: true },
-  { id: "beach-tenis", nome: "Beach Tenis", cat: "Praia", img: STOCK.beachTenis, desc: "Quadras à beira da Lagoa, com vista privilegiada. Aulas para todos os níveis, do iniciante ao competitivo.", horario: "Seg–Dom · quadras da praia", publico: "A partir de 8 anos", pendente: true },
-  { id: "fisioterapia", nome: "Fisioterapia", cat: "Saúde e bem-estar", img: STOCK.fisioterapia, desc: "Atendimento fisioterapêutico no Estúdio de Pilates e Fisioterapia do clube.", horario: "Com hora marcada", publico: "Associados", pendente: true },
-  { id: "futebol", nome: "Futebol", cat: "Campo", img: STOCK.futebol, desc: "Escolinha, categorias de base e a tradicional Copa Country nos campos de futebol da Lagoa.", horario: "Consulte a Secretaria de Esportes", publico: "Todas as idades", pendente: true },
-  { id: "futevolei", nome: "Futevôlei", cat: "Praia", img: STOCK.futevolei, desc: "Aulas e jogos livres nas quadras de areia da praia.", horario: "Consulte a Secretaria de Esportes", publico: "A partir de 12 anos", pendente: true },
-  { id: "futsal", nome: "Futsal", cat: "Quadra", img: STOCK.futsal, desc: "Escolinha de futsal na quadra poliesportiva, por faixa etária.", horario: "Consulte a Secretaria de Esportes", publico: "A partir de 5 anos", pendente: true },
-  { id: "ginastica-funcional", nome: "Ginástica Funcional", cat: "Fitness", img: STOCK.funcional, desc: "Treinos funcionais em grupo na academia, com foco em condicionamento e mobilidade.", horario: "Consulte a Secretaria de Esportes", publico: "A partir de 14 anos", pendente: true },
-  { id: "ginastica-localizada", nome: "Ginástica Localizada", cat: "Fitness", img: STOCK.localizada, desc: "Aulas de ginástica localizada para fortalecimento e tonificação.", horario: "Consulte a Secretaria de Esportes", publico: "A partir de 14 anos", pendente: true },
-  { id: "hidroginastica", nome: "Hidroginástica", cat: "Aquáticos", img: STOCK.hidro, desc: "Aulas na piscina térmica, com foco em mobilidade, condicionamento e baixo impacto.", horario: "Consulte a Secretaria de Esportes", publico: "Adultos", pendente: true },
-  { id: "jiu-jitsu", nome: "Jiu jitsu", cat: "Artes marciais", img: STOCK.jiujitsu, desc: "Aulas de jiu jitsu nas Escolas de Artes Marciais do clube, infantil e adulto.", horario: "Consulte a Secretaria de Esportes", publico: "A partir de 5 anos", pendente: true },
-  { id: "karate", nome: "Karatê", cat: "Artes marciais", img: STOCK.karate, desc: "Escola de karatê com turmas por faixa etária e graduação.", horario: "Consulte a Secretaria de Esportes", publico: "A partir de 5 anos", pendente: true },
-  { id: "liberacao-miofascial-drenagem-e-ventosaterapia", nome: "Liberação Miofascial, Drenagem e Ventosaterapia", cat: "Saúde e bem-estar", img: STOCK.massagem, desc: "Terapias manuais para recuperação muscular e bem-estar, com hora marcada.", horario: "Com hora marcada", publico: "Adultos", pendente: true },
-  { id: "massagem-feminina", nome: "Massagem Feminina", cat: "Saúde e bem-estar", img: STOCK.massagem, desc: "Massagem relaxante e terapêutica para associadas, com hora marcada.", horario: "Com hora marcada", publico: "Adultas", pendente: true },
-  { id: "musculacao", nome: "Musculação", cat: "Fitness", img: STOCK.musculacao, desc: "Academia nova (2025) com musculação, orientação profissional e vista para a praia.", horario: "Horário da Academia", publico: "A partir de 14 anos", pendente: true },
-  { id: "natacao", nome: "Natação", cat: "Aquáticos", img: STOCK.natacao, desc: "Escolinha de Natação na piscina térmica, turmas por faixa etária e nível.", horario: "Consulte a Secretaria de Esportes", publico: "A partir de 3 anos", pendente: true },
-  { id: "peteca", nome: "Peteca", cat: "Quadra", img: STOCK.peteca, desc: "Jogos e torneios de peteca, tradição mineira, nas quadras do clube.", horario: "Consulte a Secretaria de Esportes", publico: "Todas as idades", pendente: true },
-  { id: "pilates", nome: "Pilates", cat: "Saúde e bem-estar", img: STOCK.pilates, desc: "Aulas de pilates no Estúdio de Pilates e Fisioterapia, em turmas reduzidas.", horario: "Consulte a Secretaria de Esportes", publico: "A partir de 16 anos", pendente: true },
-  { id: "tenis", nome: "Tênis", cat: "Quadra", img: STOCK.tenis, desc: "Aulas e jogos nas quadras de tênis do clube, para todas as idades e níveis.", horario: "Consulte a Secretaria de Esportes", publico: "A partir de 6 anos", pendente: true },
-  { id: "volei", nome: "Vôlei", cat: "Quadra", img: STOCK.volei, desc: "Escolinha e treinos de vôlei no ginásio e nas quadras da praia.", horario: "Consulte a Secretaria de Esportes", publico: "A partir de 10 anos", pendente: true },
-  { id: "yoga", nome: "Yoga", cat: "Saúde e bem-estar", img: STOCK.yoga, desc: "Prática de yoga em turmas reduzidas, com foco em respiração, equilíbrio e bem-estar.", horario: "Consulte a Secretaria de Esportes", publico: "A partir de 16 anos", pendente: true },
+const MODALIDADES_BASE: ModalidadeBase[] = [
+  { id: "ballet-jazz", nome: "Ballet/Jazz", cat: "Dança", img: STOCK.ballet, desc: "Turmas de ballet e jazz para crianças e adolescentes, com apresentações anuais no clube.", horario: "Consulte a Secretaria de Esportes", publico: "A partir de 4 anos" },
+  { id: "basquete", nome: "Basquete", cat: "Quadra", img: STOCK.basquete, desc: "Escolinha e treinos de basquete na quadra poliesportiva coberta.", horario: "Consulte a Secretaria de Esportes", publico: "A partir de 8 anos" },
+  { id: "beach-tenis", nome: "Beach Tenis", cat: "Praia", img: STOCK.beachTenis, desc: "Quadras à beira da Lagoa, com vista privilegiada. Aulas para todos os níveis, do iniciante ao competitivo.", horario: "Seg–Dom · quadras da praia", publico: "A partir de 8 anos" },
+  { id: "fisioterapia", nome: "Fisioterapia", cat: "Saúde e bem-estar", img: STOCK.fisioterapia, desc: "Atendimento fisioterapêutico no Estúdio de Pilates e Fisioterapia do clube.", horario: "Com hora marcada", publico: "Associados" },
+  { id: "futebol", nome: "Futebol", cat: "Campo", img: STOCK.futebol, desc: "Escolinha, categorias de base e a tradicional Copa Country nos campos de futebol da Lagoa.", horario: "Consulte a Secretaria de Esportes", publico: "Todas as idades" },
+  { id: "futevolei", nome: "Futevôlei", cat: "Praia", img: STOCK.futevolei, desc: "Aulas e jogos livres nas quadras de areia da praia.", horario: "Consulte a Secretaria de Esportes", publico: "A partir de 12 anos" },
+  { id: "futsal", nome: "Futsal", cat: "Quadra", img: STOCK.futsal, desc: "Escolinha de futsal na quadra poliesportiva, por faixa etária.", horario: "Consulte a Secretaria de Esportes", publico: "A partir de 5 anos" },
+  { id: "ginastica-funcional", nome: "Ginástica Funcional", cat: "Fitness", img: STOCK.funcional, desc: "Treinos funcionais em grupo na academia, com foco em condicionamento e mobilidade.", horario: "Consulte a Secretaria de Esportes", publico: "A partir de 14 anos" },
+  { id: "ginastica-localizada", nome: "Ginástica Localizada", cat: "Fitness", img: STOCK.localizada, desc: "Aulas de ginástica localizada para fortalecimento e tonificação.", horario: "Consulte a Secretaria de Esportes", publico: "A partir de 14 anos" },
+  { id: "hidroginastica", nome: "Hidroginástica", cat: "Aquáticos", img: STOCK.hidro, desc: "Aulas na piscina térmica, com foco em mobilidade, condicionamento e baixo impacto.", horario: "Consulte a Secretaria de Esportes", publico: "Adultos" },
+  { id: "jiu-jitsu", nome: "Jiu jitsu", cat: "Artes marciais", img: STOCK.jiujitsu, desc: "Aulas de jiu jitsu nas Escolas de Artes Marciais do clube, infantil e adulto.", horario: "Consulte a Secretaria de Esportes", publico: "A partir de 5 anos" },
+  { id: "karate", nome: "Karatê", cat: "Artes marciais", img: STOCK.karate, desc: "Escola de karatê com turmas por faixa etária e graduação.", horario: "Consulte a Secretaria de Esportes", publico: "A partir de 5 anos" },
+  { id: "liberacao-miofascial-drenagem-e-ventosaterapia", nome: "Liberação Miofascial, Drenagem e Ventosaterapia", cat: "Saúde e bem-estar", img: STOCK.massagem, desc: "Terapias manuais para recuperação muscular e bem-estar, com hora marcada.", horario: "Com hora marcada", publico: "Adultos" },
+  { id: "massagem-feminina", nome: "Massagem Feminina", cat: "Saúde e bem-estar", img: STOCK.massagem, desc: "Massagem relaxante e terapêutica para associadas, com hora marcada.", horario: "Com hora marcada", publico: "Adultas" },
+  { id: "musculacao", nome: "Musculação", cat: "Fitness", img: STOCK.musculacao, desc: "Academia nova (2025) com musculação, orientação profissional e vista para a praia.", horario: "Horário da Academia", publico: "A partir de 14 anos" },
+  { id: "natacao", nome: "Natação", cat: "Aquáticos", img: STOCK.natacao, desc: "Escolinha de Natação na piscina térmica, turmas por faixa etária e nível.", horario: "Consulte a Secretaria de Esportes", publico: "A partir de 3 anos" },
+  { id: "peteca", nome: "Peteca", cat: "Quadra", img: STOCK.peteca, desc: "Jogos e torneios de peteca, tradição mineira, nas quadras do clube.", horario: "Consulte a Secretaria de Esportes", publico: "Todas as idades" },
+  { id: "pilates", nome: "Pilates", cat: "Saúde e bem-estar", img: STOCK.pilates, desc: "Aulas de pilates no Estúdio de Pilates e Fisioterapia, em turmas reduzidas.", horario: "Consulte a Secretaria de Esportes", publico: "A partir de 16 anos" },
+  { id: "tenis", nome: "Tênis", cat: "Quadra", img: STOCK.tenis, desc: "Aulas e jogos nas quadras de tênis do clube, para todas as idades e níveis.", horario: "Consulte a Secretaria de Esportes", publico: "A partir de 6 anos" },
+  { id: "volei", nome: "Vôlei", cat: "Quadra", img: STOCK.volei, desc: "Escolinha e treinos de vôlei no ginásio e nas quadras da praia.", horario: "Consulte a Secretaria de Esportes", publico: "A partir de 10 anos" },
+  { id: "yoga", nome: "Yoga", cat: "Saúde e bem-estar", img: STOCK.yoga, desc: "Prática de yoga em turmas reduzidas, com foco em respiração, equilíbrio e bem-estar.", horario: "Consulte a Secretaria de Esportes", publico: "A partir de 16 anos" },
 ];
 
-export const MODALIDADES: Modalidade[] = MODALIDADES_BASE.map((m) => aplicarColetado(m, SCRAPED.modalidades));
+
+export const MODALIDADES: Modalidade[] = MODALIDADES_BASE.map((b): Modalidade => {
+  const r = REAL.modalidades[b.id];
+  if (!r) return { ...b, professores: [], profTitulo: "", retrato: "", sobre: [], tabelas: [], notas: [], inscricao: "", galeria: [], fotoDaArea: false, fonte: `${SITE_ATUAL}/modalidades/${b.id}/` };
+  const tabelas: Tabela[] = r.tabelas.length ? r.tabelas : r.horariosSite ? [{ titulo: "Horários", colunas: r.horariosSite.colunas, linhas: r.horariosSite.linhas, nota: r.horariosSite.nota }] : [];
+  return {
+    id: b.id, nome: r.nome || b.nome, cat: b.cat,
+    img: r.foto ? local(r.foto) : b.img,
+    desc: resumo(r.sobre, b.desc),
+    horario: r.horarioResumo || b.horario,
+    publico: r.publico || b.publico,
+    professor: r.professores.length ? r.professores.join(", ") : undefined,
+    professores: r.professores, profTitulo: r.profTitulo || "Professores", retrato: r.retrato ? local(r.retrato) : "",
+    sobre: r.sobre, tabelas, notas: r.notas, inscricao: r.inscricao, galeria: r.galeria.map(local), fotoDaArea: r.fotoDaArea,
+    fonte: `${SITE_ATUAL}/modalidades/${b.id}/`,
+  };
+});
 
 export const MODALIDADES_HOME = ["beach-tenis", "tenis", "natacao", "futebol", "musculacao", "hidroginastica"];
 
-/* ---------- Infraestrutura (18 — CONTENT.md) ------------------------------ */
-const INFRA_BASE: Infra[] = [
-  { id: "praia", nome: "Praia", cat: "Lazer", img: STOCK.praia, tag: "Carro-chefe", desc: "Faixa de areia natural à beira da Lagoa do Fundão, com quiosques, decks e quadras de areia.", pendente: true },
-  { id: "academia", nome: "Academia", cat: "Esportes", img: STOCK.academia2, tag: "Nova · 2025", desc: "Espaço fitness completo inaugurado em 2025, com musculação e atividades guiadas com vista para a praia.", pendente: true },
-  { id: "campos-de-futebol", nome: "Campos de Futebol", cat: "Esportes", img: STOCK.futebol2, desc: "Campos society e sintético iluminados — palco da Copa Country e das escolinhas.", pendente: true },
-  { id: "quadra-de-tenis", nome: "Quadra de Tênis", cat: "Esportes", img: STOCK.tenis2, desc: "Quadras de tênis com iluminação noturna para aulas e jogos livres.", pendente: true },
-  { id: "piscinas", nome: "Piscinas", cat: "Aquáticos", img: STOCK.piscina, desc: "Piscinas de lazer e a piscina térmica, que recebe a hidroginástica e a Escolinha de Natação.", destaque: { titulo: "Piscina Térmica", texto: "Mais conforto para nossos associados. Com mais de 100 pessoas que utilizam diariamente ao local, que abriga praticantes de hidroginástica e os alunos da Escolinha de Natação." }, pendente: true },
-  { id: "churrasqueira", nome: "Churrasqueira", cat: "Lazer", img: STOCK.churrasco2, desc: "Churrasqueiras individuais para reunir a família, reserváveis pelo app e pela Secretaria.", pendente: true },
-  { id: "quiosques", nome: "Quiosques", cat: "Lazer", img: STOCK.quiosque, desc: "Quiosques na praia e nas áreas de convivência, com sombra e vista para a Lagoa.", pendente: true },
-  { id: "area-familiar", nome: "Área Familiar", cat: "Lazer", img: STOCK.familia, desc: "Espaço de convivência pensado para a família passar o dia no clube.", pendente: true },
-  { id: "secretaria", nome: "Secretaria", cat: "Serviços", img: STOCK.secretaria, desc: "Atendimento ao associado: cadastro, boletos, reservas e informações.", pendente: true },
-  { id: "bares", nome: "Bares", cat: "Alimentação", img: STOCK.bar, desc: "Bares na praia e nas áreas sociais, para o lanche e a bebida gelada do final de semana.", pendente: true },
-  { id: "restaurante", nome: "Restaurante", cat: "Alimentação", img: STOCK.restaurante, desc: "Restaurante do clube para almoços em família e eventos.", pendente: true },
-  { id: "sinuca", nome: "Sinuca", cat: "Lazer", img: STOCK.sinuca, desc: "Salão de sinuca para os associados.", pendente: true },
-  { id: "quadra-poliesportiva", nome: "Quadra Poliesportiva", cat: "Esportes", img: STOCK.quadraCoberta, desc: "Quadra coberta para futsal, basquete, vôlei e peteca.", pendente: true },
-  { id: "escolas-de-artes-marciais", nome: "Escolas de Artes Marciais", cat: "Esportes", img: STOCK.artesMarciais, desc: "Espaço dedicado às aulas de jiu jitsu e karatê.", pendente: true },
-  { id: "estudio-de-pilates", nome: "Estúdio de Pilates e Fisioterapia", cat: "Saúde", img: STOCK.pilates, desc: "Estúdio equipado para pilates, fisioterapia e terapias manuais.", pendente: true },
-  { id: "parquinho", nome: "Parquinho", cat: "Lazer", img: STOCK.parquinho, desc: "Parquinho infantil para as crianças brincarem em segurança.", pendente: true },
-  { id: "ginasio", nome: "Ginásio", cat: "Esportes", img: STOCK.ginasio, desc: "Ginásio coberto para treinos, torneios e eventos esportivos.", pendente: true },
-  { id: "saunas", nome: "Saunas", cat: "Lazer", img: STOCK.sauna, desc: "Saunas para relaxar depois do esporte ou de um dia de praia.", pendente: true },
+/* ---------- Infraestrutura (18) ------------------------------------------- */
+const INFRA_BASE: InfraBase[] = [
+  { id: "praia", nome: "Praia", cat: "Lazer", img: STOCK.praia, tag: "Carro-chefe", desc: "Faixa de areia natural à beira da Lagoa do Fundão, com quiosques, decks e quadras de areia." },
+  { id: "academia", nome: "Academia", cat: "Esportes", img: STOCK.academia2, tag: "Nova · 2025", desc: "Espaço fitness completo inaugurado em 2025, com musculação e atividades guiadas com vista para a praia." },
+  { id: "campos-de-futebol", nome: "Campos de Futebol", cat: "Esportes", img: STOCK.futebol2, desc: "Campos society e sintético iluminados — palco da Copa Country e das escolinhas." },
+  { id: "quadra-de-tenis", nome: "Quadra de Tênis", cat: "Esportes", img: STOCK.tenis2, desc: "Quadras de tênis com iluminação noturna para aulas e jogos livres." },
+  { id: "piscinas", nome: "Piscinas", cat: "Aquáticos", img: STOCK.piscina, desc: "Piscinas de lazer e a piscina térmica, que recebe a hidroginástica e a Escolinha de Natação.", destaque: { titulo: "Piscina Térmica", texto: "Mais conforto para nossos associados. Com mais de 100 pessoas que utilizam diariamente ao local, que abriga praticantes de hidroginástica e os alunos da Escolinha de Natação." } },
+  { id: "churrasqueira", nome: "Churrasqueira", cat: "Lazer", img: STOCK.churrasco2, desc: "Churrasqueiras individuais para reunir a família, reserváveis pelo app e pela Secretaria." },
+  { id: "quiosques", nome: "Quiosques", cat: "Lazer", img: STOCK.quiosque, desc: "Quiosques na praia e nas áreas de convivência, com sombra e vista para a Lagoa." },
+  { id: "area-familiar", nome: "Área Familiar", cat: "Lazer", img: STOCK.familia, desc: "Espaço de convivência pensado para a família passar o dia no clube." },
+  { id: "secretaria", nome: "Secretaria", cat: "Serviços", img: STOCK.secretaria, desc: "Atendimento ao associado: cadastro, boletos, reservas e informações." },
+  { id: "bares", nome: "Bares", cat: "Alimentação", img: STOCK.bar, desc: "Bares na praia e nas áreas sociais, para o lanche e a bebida gelada do final de semana." },
+  { id: "restaurante", nome: "Restaurante", cat: "Alimentação", img: STOCK.restaurante, desc: "Restaurante do clube para almoços em família e eventos." },
+  { id: "sinuca", nome: "Sinuca", cat: "Lazer", img: STOCK.sinuca, desc: "Salão de sinuca para os associados." },
+  { id: "quadra-poliesportiva", nome: "Quadra Poliesportiva", cat: "Esportes", img: STOCK.quadraCoberta, desc: "Quadra coberta para futsal, basquete, vôlei e peteca." },
+  { id: "escolas-de-artes-marciais", nome: "Escolas de Artes Marciais", cat: "Esportes", img: STOCK.artesMarciais, desc: "Espaço dedicado às aulas de jiu jitsu e karatê." },
+  { id: "estudio-de-pilates", nome: "Estúdio de Pilates e Fisioterapia", cat: "Saúde", img: STOCK.pilates, desc: "Estúdio equipado para pilates, fisioterapia e terapias manuais." },
+  { id: "parquinho", nome: "Parquinho", cat: "Lazer", img: STOCK.parquinho, desc: "Parquinho infantil para as crianças brincarem em segurança." },
+  { id: "ginasio", nome: "Ginásio", cat: "Esportes", img: STOCK.ginasio, desc: "Ginásio coberto para treinos, torneios e eventos esportivos." },
+  { id: "saunas", nome: "Saunas", cat: "Lazer", img: STOCK.sauna, desc: "Saunas para relaxar depois do esporte ou de um dia de praia." },
 ];
 
-export const INFRA: Infra[] = INFRA_BASE.map((i) => aplicarColetado(i, SCRAPED.infra));
+
+export const INFRA: Infra[] = INFRA_BASE.map((b): Infra => {
+  const r = REAL.infra[b.id];
+  if (!r) return { ...b, sobre: [], galeria: [], fotoProvisoria: true, fonte: `${SITE_ATUAL}/instalacoes/${b.id}/` };
+  const sobre = r.sobre.length ? r.sobre : r.subtitulo ? [r.subtitulo] : [];
+  return { ...b, nome: r.nome || b.nome, img: r.foto ? local(r.foto) : b.img, desc: resumo(sobre, b.desc), sobre, galeria: r.galeria.map(local), fotoProvisoria: r.fotoProvisoria, fonte: `${SITE_ATUAL}/instalacoes/${b.id}/` };
+});
 
 export const INFRA_HOME = ["praia", "academia", "campos-de-futebol", "quadra-de-tenis", "piscinas", "churrasqueira", "quiosques"];
 
-/* ---------- Agenda (eventos reais — CONTENT.md) --------------------------- */
+/* ---------- Agenda -------------------------------------------------------- */
 const MESES: Record<string, string> = { "01": "Janeiro", "02": "Fevereiro", "03": "Março", "04": "Abril", "05": "Maio", "06": "Junho", "07": "Julho", "08": "Agosto", "09": "Setembro", "10": "Outubro", "11": "Novembro", "12": "Dezembro" };
 const ABREV: Record<string, string> = { "01": "jan", "02": "fev", "03": "mar", "04": "abr", "05": "mai", "06": "jun", "07": "jul", "08": "ago", "09": "set", "10": "out", "11": "nov", "12": "dez" };
 function ev(id: string, data: string, hora: string, nome: string, cat: string, local: string, img: string, desc: string, extra: Partial<Evento> = {}): Evento {
@@ -103,41 +149,32 @@ function ev(id: string, data: string, hora: string, nome: string, cat: string, l
   return { id, data, dia: Number(d), mes: ABREV[m], mesNome: MESES[m], ano: Number(y), hora, nome, cat, local, img, desc, ...extra };
 }
 
-export const EVENTOS: Evento[] = [
-  ev("aniversario-92-anos", "2026-05-09", "Programação completa", "Aniversário 92 anos", "Tradição", "Country Clube de Formiga", STOCK.aniversario, "Dois dias de comemoração pelos 92 anos da nossa Lagoa, em 09 e 10 de maio, com programação completa para toda a família.", { destaque: true, obs: "09 e 10 de maio de 2026." }),
+/** Eventos do calendário oficial (CONTENT.md) que não estão como notícia datada no site atual. */
+const EVENTOS_CALENDARIO: Evento[] = [
+  ev("aniversario-92-anos", "2026-05-09", "Programação completa", "Aniversário 92 anos", "Tradição", "Country Clube de Formiga", STOCK.aniversario, "Dois dias de comemoração pelos 92 anos da nossa Lagoa, em 09 e 10 de maio, com programação completa para toda a família.", { destaque: true, obs: "09 e 10 de maio de 2026" }),
   ev("1-ano-academia-country", "2026-05-17", "8h", "1 Ano Academia Country", "Esportes", "Academia", STOCK.academia, "A Academia Country completa um ano. Coquetel para os associados e DJ Dan Garcia.", { programacao: ["8h · Coquetel", "DJ Dan Garcia"] }),
   ev("sabado-na-praia-mateus-oliveira", "2026-05-30", "15h", "Sábado na Praia com Mateus Oliveira", "Show", "Praia", STOCK.show, "Tarde de música ao vivo na praia da Lagoa com Mateus Oliveira."),
-  ev("country-na-copa-brasil-x-marrocos", "2026-06-13", "17h", "Country na Copa · Brasil x Marrocos", "Festa", "Praia", STOCK.copa, "Telão para o jogo do Brasil e show com Peu Faria.", { destaque: true, programacao: ["17h · Show Peu Faria", "Brasil x Marrocos"] }),
-  ev("country-na-copa-brasil-x-haiti", "2026-06-19", "19h", "Country na Copa · Brasil x Haiti", "Festa", "Praia", STOCK.copa, "Telão para o jogo do Brasil e show com Diney & Felipe.", { programacao: ["19h · Show Diney & Felipe", "Brasil x Haiti"] }),
-  ev("arraia-do-country", "2026-06-20", "18h", "Arraiá do Country", "Festa", "Espaço Multiuso", STOCK.festaJunina, "A festa junina da Lagoa: Karol Shienna e Banda, área kids e comidas típicas.", { destaque: true, programacao: ["18h · Abertura", "Karol Shienna e Banda", "Área kids", "Comidas típicas"] }),
-  ev("country-na-copa-brasil-x-escocia", "2026-06-24", "17h", "Country na Copa · Brasil x Escócia", "Festa", "Praia", STOCK.copa, "Telão para o jogo do Brasil e show com Laís Arantes.", { programacao: ["17h · Show Laís Arantes", "Brasil x Escócia"] }),
-  ev("festival-do-rock-na-praia", "2026-07-18", "16h", "Festival do Rock na Praia", "Show", "Praia", STOCK.rock, "Três bandas em uma tarde inteira de rock na areia da Lagoa.", { destaque: true, programacao: ["16h · Peu Faria", "18h30 · 32 Dentes", "21h · Pato Rocco"] }),
-  ev("35-colonia-de-ferias", "2026-07-27", "12h30 às 17h", "35ª Colônia de Férias", "Família", "Country Clube de Formiga", STOCK.criancas, "De 27 a 31 de julho, para crianças de 3 a 11 anos. Inscrições de 01 a 17 de julho pelo app.", { obs: "27 a 31/07/2026 · Inscrições 01–17/07 pelo app" }),
-  ev("36-copa-country-de-futebol", "2026-09-29", "Início", "36ª Copa Country de Futebol", "Esportes", "Campos de Futebol", STOCK.futebol2, "Categorias 40+ e Livre (15+). Inscrições de 01 a 19 de agosto; início em 29 de setembro.", { destaque: true, obs: "Inscrições 01–19/08 · Categorias 40+ e Livre (15+)" }),
+  ev("36-copa-country-de-futebol", "2026-09-29", "Início da competição", "36ª Copa Country de Futebol", "Esportes", "Campos de Futebol", STOCK.futebol2, "A 36ª Copa Country de Futebol reunirá associados e atletas em uma disputa marcada pela integração, espírito esportivo e competitividade. Categorias 40+ e Livre (acima de 15 anos).", { destaque: true, programacao: ["Inscrições: 01 a 19 de agosto", "Categorias: 40+ e Livre (acima de 15 anos)", "Início: 29 de setembro"], fonte: `${SITE_ATUAL}/programacao-esportiva` }),
 ];
 
-export const EVENTOS_ORDENADOS = [...EVENTOS].sort((a, b) => a.data.localeCompare(b.data));
+/** Eventos publicados como notícias datadas no site atual (real.json › eventos). */
+const EVENTOS_SITE: Evento[] = REAL.eventos.map((e) => ({ ...e, img: e.img ? local(e.img) : STOCK.evento, obs: e.obs || undefined, programacao: e.programacao.length ? e.programacao : undefined }));
 
-/* ---------- Notícias (CONTENT.md) ---------------------------------------- */
-export const NOTICIAS: Noticia[] = [
-  { id: "amistoso-formiga-tenis-clube", tag: "Esportes", titulo: "Amistoso de Futebol vs. Formiga Tênis Clube", data: "03 out 2026 · 8h30", img: STOCK.futebol, resumo: "Nossa equipe recebe o Formiga Tênis Clube nos campos da Lagoa. Venha torcer." },
-  { id: "amistoso-futebol-infantil", tag: "Esportes", titulo: "Amistoso de Futebol Infantil", data: "26 set 2026 · 8h30", img: STOCK.criancas, resumo: "As categorias de base da escolinha entram em campo em um amistoso na manhã de sábado." },
-  { id: "torneio-relampago-futebol", tag: "Esportes", titulo: "Torneio Relâmpago de Futebol", data: "20 set 2026", img: STOCK.futebol2, resumo: "Um dia inteiro de jogos rápidos entre os times do clube nos campos society." },
-  { id: "estatuto-2026", tag: "Comunicado", titulo: "Estatuto 2026 disponível para consulta", data: "Maio 2026", img: STOCK.secretaria, resumo: "A versão consolidada do Estatuto do clube já pode ser baixada em PDF na página Estatuto." },
-];
+export const EVENTOS: Evento[] = [...EVENTOS_CALENDARIO, ...EVENTOS_SITE];
+export const EVENTOS_ORDENADOS = [...EVENTOS].sort((a, b) => a.data.localeCompare(b.data) || a.nome.localeCompare(b.nome));
 
-/* ---------- FAQ (a confirmar com o texto do site atual) ------------------- */
+/* ---------- Notícias / comunicados (site atual) --------------------------- */
+export const NOTICIAS: Noticia[] = [...REAL.comunicados]
+  .sort((a, b) => Number(a.somenteImagem) - Number(b.somenteImagem))
+  .map((c) => ({ ...c, img: c.img ? local(c.img) : STOCK.secretaria, data: c.data || "lagoanossa.com.br" }));
+export const NOTICIAS_HOME = NOTICIAS.slice(0, 4);
+
+/* ---------- FAQ (perguntas do site atual) --------------------------------- */
+const FAQ_CAT = (q: string) => /hor[áa]rio|esportiv/i.test(q) ? "Esportes" : /sal[ãa]o|evento/i.test(q) ? "Eventos" : "Associado";
 export const FAQ: FaqItem[] = [
-  { cat: "Associado", q: "Como atualizo meus dados cadastrais?", a: "Você pode atualizar seus dados pelo app Country Clube de Formiga, pela Secretaria Web ou diretamente na Secretaria do clube." },
-  { cat: "Associado", q: "Como emito a segunda via do boleto?", a: "O boleto está disponível no app e na Secretaria Web. Em caso de vencimento atrasado, procure a Secretaria." },
-  { cat: "Reservas", q: "Como reservo uma churrasqueira?", a: "Pelo app, na aba Reservas, ou na Secretaria. As reservas seguem o regulamento interno e a disponibilidade do dia." },
-  { cat: "Reservas", q: "Posso levar convidados ao clube?", a: "Sim. Cada associado pode levar convidados conforme as regras e tarifas vigentes. O cadastro do convidado é feito na portaria." },
-  { cat: "Esportes", q: "Como me inscrevo nas modalidades?", a: "As inscrições são feitas na Secretaria de Esportes ou pelo app. Consulte a página de cada modalidade para horários e público." },
-  { cat: "Esportes", q: "A academia exige avaliação física?", a: "Sim. A primeira sessão é uma avaliação com a equipe técnica. Traga roupa confortável e uma toalha." },
-  { cat: "Eventos", q: "Como acompanho a agenda do clube?", a: "Pela página Agenda de Eventos, pelo app e pelas redes sociais do Country (@countryclubedeformiga)." },
-  { cat: "Eventos", q: "Posso alugar um espaço para uma festa privada?", a: "Sim, mediante reserva e pagamento da taxa de cessão. Fale com a Secretaria de Eventos (eventoslagoanossa@hotmail.com)." },
-  { cat: "Acessos", q: "Quais são os horários de funcionamento?", a: "Consulte a página Funcionamento — cada área do clube tem o seu horário." },
-  { cat: "Acessos", q: "Preciso da carteirinha para entrar?", a: "O app é a sua carteirinha digital. A versão física continua sendo aceita na portaria." },
+  ...REAL.faq.map((f) => ({ cat: FAQ_CAT(f.q), q: f.q, a: f.a })),
+  { cat: "Acessos", q: "Quais são os horários de funcionamento do clube?", a: "Segunda, das 14h às 21h; terça a sábado, das 7h às 21h30; domingo, das 7h às 19h. Os horários de cada atividade estão na página Funcionamento." },
+  { cat: "Eventos", q: "Como acompanho a agenda do clube?", a: "Pela página Agenda de Eventos, pelo app Country Clube de Formiga e pelas redes sociais do clube." },
 ];
 
 /* ---------- Diretoria 2026/2027 (CONTENT.md) ----------------------------- */
@@ -161,44 +198,16 @@ export const CONSELHEIROS = [
   "Rosilene Cristina Terra Gualberto", "Mariana de Oliveira Veloso Muniz", "Nalvo de Oliveira Azevedo",
 ];
 
-/* ---------- Convênios (a confirmar com o site atual) ----------------------- */
+/* ---------- Convênios (site atual › /convenios) --------------------------- */
 export const CONVENIOS: Convenio[] = [
-  { nome: "Hospital São Vicente", cat: "Saúde", beneficio: "15% em consultas e exames" },
-  { nome: "Drogaria Pacheco", cat: "Saúde", beneficio: "10% em medicamentos" },
-  { nome: "Restaurante Sabor da Lagoa", cat: "Gastronomia", beneficio: "20% no almoço executivo" },
-  { nome: "Pousada Vista da Serra", cat: "Hospedagem", beneficio: "12% em diárias" },
-  { nome: "Auto Escola Formiga", cat: "Educação", beneficio: "15% em pacotes" },
-  { nome: "Academia Corpo & Mente", cat: "Saúde", beneficio: "Acesso recíproco" },
-  { nome: "Sicoob Credicom", cat: "Financeiro", beneficio: "Tarifa zero por 6 meses" },
-  { nome: "Ótica Visão Real", cat: "Saúde", beneficio: "20% em armações" },
-  { nome: "Posto Centroeste", cat: "Mobilidade", beneficio: "Desconto no litro do etanol" },
-  { nome: "Floricultura Bela Vista", cat: "Bem-estar", beneficio: "10% em arranjos" },
+  { nome: REAL.paginas.convenio.nome, cat: "Clube conveniado", beneficio: "Acesso recíproco de associados, conforme o Instrumento Particular de Convênio", endereco: REAL.paginas.convenio.endereco, site: REAL.paginas.convenio.site, instrumento: REAL.paginas.convenio.instrumento },
 ];
 
-/* ---------- Galeria (álbuns do site atual: galeria-1 … galeria-11) -------- */
-const fotosDe = (...keys: string[]) => keys;
-export const GALERIA: Album[] = [
-  { id: "fotos-oficiais-do-evento", titulo: "Fotos oficiais do evento já estão disponíveis", data: "2026", qt: 6, cover: STOCK.aniversario, fotos: fotosDe(STOCK.aniversario, STOCK.evento, STOCK.show, STOCK.familia, STOCK.praia, STOCK.lagoaSunset) },
-  { id: "galeria-11", titulo: "Galeria 11", data: "2026", qt: 6, cover: STOCK.rock, fotos: fotosDe(STOCK.rock, STOCK.show, STOCK.evento, STOCK.praia, STOCK.deck, STOCK.entardecer) },
-  { id: "galeria-10", titulo: "Galeria 10", data: "2026", qt: 6, cover: STOCK.festaJunina, fotos: fotosDe(STOCK.festaJunina, STOCK.evento, STOCK.familia, STOCK.criancas, STOCK.quiosque, STOCK.praia) },
-  { id: "galeria-9", titulo: "Galeria 9", data: "2025", qt: 6, cover: STOCK.academia2, fotos: fotosDe(STOCK.academia2, STOCK.academia, STOCK.musculacao, STOCK.funcional, STOCK.localizada, STOCK.praia) },
-  { id: "galeria-8", titulo: "Galeria 8", data: "2025", qt: 6, cover: STOCK.beachTenis, fotos: fotosDe(STOCK.beachTenis, STOCK.futevolei, STOCK.volei, STOCK.praia, STOCK.tenis, STOCK.tenis2) },
-  { id: "galeria-7", titulo: "Galeria 7", data: "2025", qt: 6, cover: STOCK.futebol2, fotos: fotosDe(STOCK.futebol2, STOCK.futebol, STOCK.copa, STOCK.criancas, STOCK.ginasio, STOCK.quadraCoberta) },
-  { id: "galeria-6", titulo: "Galeria 6", data: "2025", qt: 6, cover: STOCK.piscina, fotos: fotosDe(STOCK.piscina, STOCK.natacao, STOCK.hidro, STOCK.familia, STOCK.parquinho, STOCK.sauna) },
-  { id: "galeria-5", titulo: "Galeria 5", data: "2024", qt: 6, cover: STOCK.lagoaSunset, fotos: fotosDe(STOCK.lagoaSunset, STOCK.lagoa, STOCK.deck, STOCK.entardecer, STOCK.praia, STOCK.quiosque) },
-  { id: "galeria-4", titulo: "Galeria 4", data: "2024", qt: 6, cover: STOCK.churrasco, fotos: fotosDe(STOCK.churrasco, STOCK.churrasco2, STOCK.restaurante, STOCK.bar, STOCK.familia, STOCK.quiosque) },
-  { id: "galeria-3", titulo: "Galeria 3", data: "2024", qt: 6, cover: STOCK.salao, fotos: fotosDe(STOCK.salao, STOCK.casamento, STOCK.evento, STOCK.show, STOCK.familia, STOCK.aniversario) },
-  { id: "galeria-2", titulo: "Galeria 2", data: "2023", qt: 6, cover: STOCK.evento, fotos: fotosDe(STOCK.evento, STOCK.show, STOCK.rock, STOCK.festaJunina, STOCK.praia, STOCK.familia) },
-  { id: "galeria-1", titulo: "Galeria 1", data: "2023", qt: 6, cover: OFICIAL.historia1, fotos: fotosDe(OFICIAL.historia1, OFICIAL.historia2, OFICIAL.historia3, OFICIAL.historia4, OFICIAL.historia5, OFICIAL.historia6) },
-];
+/* ---------- Galeria (álbuns do site atual) -------------------------------- */
+export const GALERIA: Album[] = REAL.albuns.map((a) => ({ ...a, data: a.data || "Acervo do clube", cover: local(a.cover), fotos: a.fotos.map(local) }));
 
-/* ---------- História (texto oficial — usar literalmente) ------------------ */
-export const HISTORIA_TEXTO = [
-  "Em 6 de maio de 1934 o Country Clube foi fundado. Conta-se que algumas famílias tradicionais da cidade, sem ter espaço para o lazer, descobriram na “Lagoa do Fundão” a possibilidade de se criar um local apropriado ao descanso e à diversão. Tais famílias seriam as de Carlos Camarão, Tarcísio Cardoso, Zé Cuca, Omar Soares, Edmundo Lins, Lauro Coelho e João Pautilho Silva.",
-  "O acesso à lagoa praticamente não existia. Havia apenas uma trilha no meio da mata. O passo inicial foi providenciar a abertura da estrada. Depois, a limpeza das margens do lago, a construção de um barracão que serviria de abrigo contra a chuva e o sol forte e a colocação do primeiro trampolim de madeira.",
-  "Logo, o lugar já era ponto de encontro para vários formiguenses durante os finais de semana. Surgiu, então, a necessidade de ampliar as suas instalações. Assim, o clube foi fundado oficialmente no sistema de sociedade por cotas. Daí para frente, as benfeitorias foram aumentando e, consequentemente, o número de associados.",
-  "Durante todos esses anos, a Lagoa não parou de crescer. A cada gestão, são traçadas novas diretrizes. Grandes nomes passaram pela administração do clube e deixaram sua parcela de progresso. Eles são lembrados em placas que dão nome às instalações do clube.",
-];
+/* ---------- História (texto oficial, literal) ----------------------------- */
+export const HISTORIA_TEXTO: string[] = REAL.paginas.historia;
 
 /** Linha do tempo reduzida aos marcos confirmados pelo texto oficial + Academia (2025). */
 export const HISTORIA_TIMELINE = [
@@ -231,40 +240,14 @@ export const ESTATUTO_CAPITULOS = [
   { num: "VIII", titulo: "Das Disposições Finais", desc: "Vigência, revisões periódicas e foro para questões litigiosas." },
 ];
 
-/* ---------- Funcionamento (a confirmar com lagoanossa.com.br/funcionamento) */
-export const FUNCIONAMENTO = [
-  { area: "Portaria · Acesso Geral", seg: "6h – 22h", sab: "6h – 22h", dom: "6h – 22h" },
-  { area: "Praia", seg: "6h – 22h", sab: "6h – 22h", dom: "6h – 22h" },
-  { area: "Piscinas", seg: "6h – 21h", sab: "7h – 20h", dom: "7h – 19h" },
-  { area: "Academia", seg: "5h30 – 22h", sab: "7h – 14h", dom: "Fechado" },
-  { area: "Quadra de Tênis", seg: "7h – 22h", sab: "7h – 21h", dom: "7h – 20h" },
-  { area: "Quadra Poliesportiva", seg: "7h – 23h", sab: "7h – 22h", dom: "7h – 21h" },
-  { area: "Campos de Futebol", seg: "7h – 23h", sab: "7h – 22h", dom: "7h – 21h" },
-  { area: "Restaurante", seg: "11h – 22h", sab: "11h – 23h", dom: "9h – 19h" },
-  { area: "Bares", seg: "10h – 22h", sab: "9h – 23h", dom: "9h – 21h" },
-  { area: "Secretaria", seg: "8h – 18h", sab: "8h – 12h", dom: "Fechado" },
-  { area: "Saunas", seg: "Sob consulta", sab: "Sob consulta", dom: "Sob consulta" },
-];
+/* ---------- Funcionamento (site atual › /funcionamento e /horarios) ------- */
+export const FUNCIONAMENTO: { dia: string; horario: string }[] = REAL.paginas.funcionamento;
+export const FUNCIONAMENTO_RESUMO = FUNCIONAMENTO.map((f) => `${f.dia}: ${f.horario}`).join(" · ");
+export const HORARIOS_ATIVIDADES: Tabela[] = REAL.paginas.horarios.map((h) => ({ titulo: h.atividade, colunas: h.colunas, linhas: h.linhas, nota: h.nota }));
 
-/* ---------- Direitos e Deveres (texto literal a coletar de /direitos e /deveres) */
-export const DIREITOS = [
-  "Frequentar as dependências do clube e utilizar suas instalações, observadas as normas do Estatuto e do regulamento interno.",
-  "Participar das atividades sociais, esportivas e culturais promovidas pelo clube.",
-  "Inscrever-se nas modalidades esportivas e escolinhas oferecidas, conforme vagas e regulamento de cada atividade.",
-  "Reservar churrasqueiras e espaços do clube, na forma prevista pelo regulamento.",
-  "Trazer convidados, respeitando os limites e as tarifas estabelecidos pela diretoria.",
-  "Votar e ser votado nas assembleias, nos termos do Estatuto.",
-  "Apresentar sugestões, elogios e reclamações pela Ouvidoria e receber resposta da diretoria.",
-];
-export const DEVERES = [
-  "Cumprir e fazer cumprir o Estatuto, os regulamentos e as decisões da diretoria e das assembleias.",
-  "Manter em dia as contribuições e taxas devidas ao clube.",
-  "Zelar pelo patrimônio do clube, respondendo por danos causados por si, seus dependentes e convidados.",
-  "Apresentar a carteirinha (física ou digital) sempre que solicitado pela portaria ou pela administração.",
-  "Manter conduta compatível com o ambiente familiar do clube, respeitando associados, funcionários e convidados.",
-  "Comunicar à Secretaria qualquer alteração de dados cadastrais e de dependentes.",
-  "Respeitar os horários de funcionamento e as normas específicas de cada área.",
-];
+/* ---------- Direitos e Deveres (Estatuto, arts. 27 e 28 — site atual) ----- */
+export const DIREITOS: Regras = REAL.paginas.direitos;
+export const DEVERES: Regras = REAL.paginas.deveres;
 
 /* ---------- Números do clube ---------------------------------------------- */
 export const NUMEROS = { anos: "92", familias: "4.000+", modalidades: String(MODALIDADES.length), area: "200K" };

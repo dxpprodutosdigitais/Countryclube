@@ -1,21 +1,30 @@
 /**
  * Mapa de imagens do site.
  *
- * - `OFICIAL`: URLs reais em lagoanossa.com.br (fotos de História e logo).
- * - `STOCK`: placeholders (Unsplash) usados onde a foto real ainda não foi
- *   coletada. Ver CONTEUDO-PENDENTE.md — substituir por fotos do clube
- *   (`public/images/modalidades/<slug>.jpg`, `public/images/infraestrutura/<slug>.jpg`).
+ * - `OFICIAL`: logo e fotos de História (cópias locais em public/images/historia,
+ *   baixadas de lagoanossa.com.br pelo scraper).
+ * - `REAL`: fotos reais do clube coletadas do site atual (scripts/scrape-lagoanossa.mjs
+ *   → scripts/build-content.mjs → src/data/real.json › fotos), servidas de public/images.
+ * - `STOCK`: Unsplash — usado apenas como último recurso para chaves sem foto real.
  */
+import realJson from "./real.json";
+
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+/* Prévia estática (Artifact): o visualizador bloqueia imagens externas, então
+   NEXT_PUBLIC_LOCAL_PLACEHOLDERS=1 troca as fotos remotas por SVGs ilustrativos locais. */
+const LOCAL = process.env.NEXT_PUBLIC_LOCAL_PLACEHOLDERS === "1";
+
 export const OFICIAL = {
-  logo: "/logo-country-clube-formiga.png",
+  logo: `${BASE}/logo-country-clube-formiga.png`,
   logoRemoto: "https://lagoanossa.com.br/wp-content/uploads/2021/02/logo-Country-Clube-de-Formiga.png",
-  historia1: "https://lagoanossa.com.br/wp-content/uploads/2021/03/foto_historia1.jpg",
-  historia2: "https://lagoanossa.com.br/wp-content/uploads/2021/03/foto_historia2.jpg",
-  historia3: "https://lagoanossa.com.br/wp-content/uploads/2021/03/foto_historia3.jpg",
-  historia4: "https://lagoanossa.com.br/wp-content/uploads/2021/03/foto_historia4.jpg",
-  historia5: "https://lagoanossa.com.br/wp-content/uploads/2021/03/foto_historia5.jpg",
-  historia6: "https://lagoanossa.com.br/wp-content/uploads/2021/03/foto_historia6.jpg",
+  historia1: `${BASE}/images/historia/foto_historia1.jpg`,
+  historia2: `${BASE}/images/historia/foto_historia2.jpg`,
+  historia3: `${BASE}/images/historia/foto_historia3.jpg`,
+  historia4: `${BASE}/images/historia/foto_historia4.jpg`,
+  historia5: `${BASE}/images/historia/foto_historia5.jpg`,
+  historia6: `${BASE}/images/historia/foto_historia6.jpg`,
 } as const;
+export const FOTOS = OFICIAL;
 
 const U = (id: string, w = 1400) => `https://images.unsplash.com/${id}?w=${w}&q=80&auto=format&fit=crop`;
 
@@ -78,17 +87,19 @@ export const STOCK = {
 
 export type StockKey = keyof typeof STOCK;
 
-/* Prévia estática (Artifact): o visualizador bloqueia imagens externas, então
-   NEXT_PUBLIC_LOCAL_PLACEHOLDERS=1 troca todas as fotos por SVGs ilustrativos locais. */
-const LOCAL = process.env.NEXT_PUBLIC_LOCAL_PLACEHOLDERS === "1";
-const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-export const IMG = (LOCAL
-  ? Object.fromEntries(Object.keys(STOCK).map((k) => [k, `${BASE}/images/placeholder/${k}.svg`]))
-  : STOCK) as Record<StockKey, string>;
-/** Fotos de História: usa a cópia local (public/images/historia) quando o scraper já baixou. */
-const HISTORIA_LOCAL = process.env.NEXT_PUBLIC_HISTORIA_LOCAL === "1";
-export const FOTOS = (HISTORIA_LOCAL && !LOCAL
-  ? { ...OFICIAL, ...Object.fromEntries([1, 2, 3, 4, 5, 6].map((i) => [`historia${i}`, `${BASE}/images/historia/foto_historia${i}.jpg`])) }
-  : LOCAL
-  ? { ...OFICIAL, ...Object.fromEntries([1, 2, 3, 4, 5, 6].map((i) => [`historia${i}`, `${BASE}/images/placeholder/historia${i}.svg`])) }
-  : OFICIAL) as typeof OFICIAL;
+/** Fotos reais do clube (caminhos em public/images), por chave de STOCK. */
+export const REAL = realJson.fotos as Partial<Record<StockKey, string>>;
+
+/** Caminho público de uma imagem local (respeita o basePath da prévia). */
+export const local = (path: string) => (path ? `${BASE}${path}` : "");
+
+/**
+ * Imagem final por chave: foto real do clube quando existe; senão Unsplash
+ * (ou SVG local na prévia estática).
+ */
+export const IMG = Object.fromEntries(
+  (Object.keys(STOCK) as StockKey[]).map((k) => [k, REAL[k] ? local(REAL[k]!) : LOCAL ? `${BASE}/images/placeholder/${k}.svg` : STOCK[k]]),
+) as Record<StockKey, string>;
+
+/** Chaves que ainda dependem de foto externa (sem imagem real do clube). */
+export const SEM_FOTO_REAL = (Object.keys(STOCK) as StockKey[]).filter((k) => !REAL[k]);

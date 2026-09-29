@@ -3,7 +3,7 @@ import { Icon } from "@/components/ui/Icon";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { Card, Container, Eyebrow, SectionTitle } from "@/components/ui/Primitives";
-import { EVENTOS_ORDENADOS, INFRA, INFRA_HOME, MODALIDADES, MODALIDADES_HOME, NOTICIAS, NUMEROS } from "@/data/content";
+import { EVENTOS_ORDENADOS, INFRA, INFRA_HOME, MODALIDADES, MODALIDADES_HOME, NOTICIAS_HOME, NUMEROS } from "@/data/content";
 import { IMG as STOCK } from "@/data/images";
 import { SITE } from "@/lib/site";
 import styles from "./Home.module.css";
@@ -181,7 +181,7 @@ function AgendaPreview() {
                   <div className={styles.evBody}>
                     <Badge tone="areia" size="sm">{e.cat}</Badge>
                     <h4 className={styles.evTitle}>{e.nome}</h4>
-                    <div className={styles.evMeta}><Icon name="clock" size={12} /> {e.hora} · {e.local}</div>
+                    <div className={styles.evMeta}><Icon name="clock" size={12} /> {[e.hora, e.local].filter(Boolean).join(" · ")}</div>
                   </div>
                 </Card>
               </Link>
@@ -230,7 +230,7 @@ function NoticiasGrid() {
           <SectionTitle eyebrow="Diário da Lagoa" title="Por dentro do clube" sub="Comunicados, amistosos, torneios e novidades para os associados." />
         </div>
         <div className={styles.newsGrid}>
-          {NOTICIAS.map((n) => (
+          {NOTICIAS_HOME.map((n) => (
             <Card key={n.id} interactive as="article" className={styles.newsCard}>
               <div className={styles.newsImg} style={{ backgroundImage: `url(${n.img})` }} />
               <div className={styles.newsBody}>

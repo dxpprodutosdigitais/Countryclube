@@ -39,8 +39,10 @@ src/
     site/                 # Header, Footer, Home, Splash, ScrollTop, pages/*
     admin/                # shell e primitivos do painel
   data/
-    content.ts            # TODO o conteúdo do site (modalidades, infra, eventos, FAQ, diretoria…)
-    images.ts             # mapa de imagens (oficiais + placeholders)
+    content.ts            # TODO o conteúdo do site, montado a partir de real.json (+ listas base do handoff)
+    real.json             # conteúdo estruturado coletado do site atual (gerado por scripts/build-content.mjs)
+    scraped.json          # coleta bruta do site atual (gerado por scripts/scrape-lagoanossa.mjs)
+    images.ts             # mapa de imagens (fotos reais em public/images + Unsplash como último recurso)
     admin.ts              # mock do painel
   lib/site.ts             # contato oficial, links, CNPJ, Maps embed
 ```
@@ -56,12 +58,24 @@ src/
 | Associado | `/associado` · `/associado/direitos` · `/associado/deveres` · `/secretaria` (aviso → Secretaria Web) |
 | Admin | `/admin` (+ `/admin/login`, eventos, notícias, galeria, faq, modalidades, infraestrutura, diretoria, convênios, ouvidoria, associados, configurações) |
 
+## Conteúdo real (scraping do site atual)
+
+```
+npm run scrape                     # baixa textos e fotos de lagoanossa.com.br → src/data/scraped.json, public/images/**
+node scripts/compress-images.mjs   # comprime as fotos (sharp)
+node scripts/build-content.mjs     # gera src/data/real.json (modalidades, infra, eventos, comunicados, álbuns, FAQ, páginas, fotos)
+```
+
+Modalidades (textos, tabelas de horários, professores, retratos), infraestrutura (textos + galerias),
+agenda, comunicados, galeria, FAQ, funcionamento/horários das atividades, convênio, direitos/deveres
+e história vêm literalmente do site atual. O que ainda não existe lá está em `CONTEUDO-PENDENTE.md`.
+
 ## Prévia estática (Artifact)
 
 `npm run preview:export` gera em `out/` uma exportação estática do site e do painel pronta para
 a hospedagem de Artifacts do claude.ai, onde o site fica sob um prefixo de caminho desconhecido:
 
-- as fotos são trocadas por placeholders SVG locais (o visualizador bloqueia imagens externas);
+- as fotos reais do clube são servidas localmente; as poucas chaves ainda sem foto real usam SVGs locais (o visualizador bloqueia imagens externas);
 - os assets ficam em `n/_next` (nomes iniciados por `_` são reservados na hospedagem);
 - `scripts/preview-export.mjs` torna as referências relativas, injeta `<base>` em cada página e faz
   o roteador do Next descobrir o prefixo em tempo de execução (`self.__ccBasePath`).
@@ -70,10 +84,10 @@ A prévia atual está em https://claude.ai/artifact/YWM7kjG1qRwqLbotPE2V9w.
 
 ## Conteúdo pendente
 
-Veja **[CONTEUDO-PENDENTE.md](./CONTEUDO-PENDENTE.md)** — lista do que ainda precisa ser coletado do site atual (textos literais e fotos de modalidades/infraestrutura) e das decisões a confirmar com o clube.
+Veja **[CONTEUDO-PENDENTE.md](./CONTEUDO-PENDENTE.md)** — fotos que não existem no site atual (a gerar no Gamma, prompts em `scripts/gamma-prompts.json`) e decisões a confirmar com o clube.
 
 ## Próximos passos sugeridos
 
-1. Substituir as fotos placeholder (Unsplash) pelas fotos reais em `public/images/...` e atualizar `src/data/images.ts`.
+1. Gerar no Gamma as 6 fotos que não existem no site atual (futevôlei, peteca, tênis, restaurante, academia, saunas) e apontá-las em `scripts/build-content.mjs`.
 2. Conectar os formulários (Ouvidoria e Contato) a um endpoint/e-mail (hoje validam e mostram a mensagem de sucesso no cliente).
 3. Painel: ligar a um backend com autenticação e CRUD (Next.js + Prisma/Supabase ou um headless CMS que exponha os mesmos modelos de `src/data/admin.ts`).

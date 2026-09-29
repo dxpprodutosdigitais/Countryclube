@@ -6,7 +6,7 @@ import { Icon } from "@/components/ui/Icon";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { Card, Container, EmptyState, Eyebrow, FilterPills, IconTile, PageHeader, SectionTitle } from "@/components/ui/Primitives";
-import { EVENTOS_ORDENADOS, GALERIA, INFRA, MODALIDADES, type Album, type Evento, type Modalidade } from "@/data/content";
+import { EVENTOS_ORDENADOS, GALERIA, INFRA, MODALIDADES, type Album, type Evento, type Modalidade, type Tabela } from "@/data/content";
 import { IMG as STOCK } from "@/data/images";
 import { SITE } from "@/lib/site";
 import s from "./Vida.module.css";
@@ -108,8 +108,35 @@ export function Modalidades() {
 }
 
 /* ============================ MODALIDADE (detalhe) ============================ */
+function TabelaHorarios({ t }: { t: Tabela }) {
+  const cols = t.colunas.length || Math.max(...t.linhas.map((l) => l.length), 1);
+  return (
+    <div className={s.tabela}>
+      {t.titulo && <h4 className={s.tabelaTitulo}>{t.titulo}</h4>}
+      <div className={s.tabelaGrid} role="table" aria-label={t.titulo || "Horários"}>
+        {t.colunas.length > 0 && (
+          <div className={s.tabelaHead} role="row" style={{ gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))` }}>
+            {t.colunas.map((c, i) => <div key={i} role="columnheader">{c}</div>)}
+          </div>
+        )}
+        {t.linhas.map((l, i) => (
+          <div key={i} className={s.tabelaRow} role="row" style={{ gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))` }}>
+            {Array.from({ length: cols }).map((_, j) => <div key={j} role="cell" data-label={t.colunas[j] ?? ""}>{l[j] ?? ""}</div>)}
+          </div>
+        ))}
+      </div>
+      {t.nota && <p className={s.tabelaNota}>{t.nota}</p>}
+    </div>
+  );
+}
+
 export function ModalidadeDetalhe({ m }: { m: Modalidade }) {
   const related = MODALIDADES.filter((x) => x.cat === m.cat && x.id !== m.id).slice(0, 3);
+  const sobre = m.sobre.length ? m.sobre : [
+    `${m.desc} Nossas instalações são pensadas pra cada nível — do iniciante curioso ao atleta competitivo.`,
+    "Inscrições e horários atualizados na Secretaria de Esportes, pelo app Country Clube de Formiga ou pelos canais de contato do clube.",
+  ];
+  const temProgramacao = m.tabelas.length > 0 || m.notas.length > 0 || m.professores.length > 0;
   return (
     <>
       <PageHeader eyebrow={m.cat} title={m.nome} sub={m.desc} breadcrumb={[{ label: "Modalidades", href: "/modalidades" }, { label: m.nome }]} image={m.img} />
@@ -123,8 +150,8 @@ export function ModalidadeDetalhe({ m }: { m: Modalidade }) {
                   { label: "Horário", value: m.horario, icon: "clock" },
                   { label: "Público", value: m.publico, icon: "user" },
                   { label: "Categoria", value: m.cat, icon: "flag" },
-                  { label: "Professor", value: m.professor ?? "Consulte a Secretaria de Esportes", icon: "users" },
-                  { label: "Inscrição", value: "Secretaria de Esportes ou app", icon: "mail" },
+                  { label: m.professores.length > 1 ? m.profTitulo : "Professor(a)", value: m.professor ?? "Consulte a Secretaria de Esportes", icon: "users" },
+                  { label: "Inscrição", value: m.inscricao || "Secretaria de Esportes ou app", icon: "mail" },
                 ].map((row) => (
                   <div key={row.label} className={s.infoRow}>
                     <IconTile name={row.icon} size={32} icon={15} />
@@ -133,15 +160,36 @@ export function ModalidadeDetalhe({ m }: { m: Modalidade }) {
                 ))}
               </div>
               <div style={{ marginTop: 16 }}><Button href="/contato" variant="primary" full iconRight={<Icon name="arrow-right" size={14} />}>Inscrever-se</Button></div>
+              {m.retrato && (
+                <figure className={s.retrato}>
+                  <img src={m.retrato} alt={`${m.profTitulo} de ${m.nome}: ${m.professores.join(", ") || m.nome}`} loading="lazy" />
+                  <figcaption>{m.professores.length ? `${m.profTitulo}: ${m.professores.join(", ")}` : m.nome}</figcaption>
+                </figure>
+              )}
             </div>
             <div>
               <Eyebrow>Sobre</Eyebrow>
               <h2 className={s.detailTitle}>Por que praticar {m.nome.toLowerCase()} aqui na Lagoa.</h2>
-              {(m.sobre ?? [
-                `${m.desc} Nossas instalações são pensadas pra cada nível — do iniciante curioso ao atleta competitivo.`,
-                "Inscrições e horários atualizados na Secretaria de Esportes, pelo app Country Clube de Formiga ou pelos canais de contato do clube.",
-              ]).map((t, i) => <p key={i} className={s.detailText}>{t}</p>)}
-              {m.pendente && <p className={p.noticeText} style={{ fontSize: 12.5 }}>Texto e foto oficiais desta modalidade serão publicados a partir de {SITE.siteAtual}/modalidades/{m.id}/.</p>}
+              {sobre.map((t, i) => <p key={i} className={s.detailText}>{t}</p>)}
+              {temProgramacao && (
+                <div className={s.programacao}>
+                  <Eyebrow>Programação</Eyebrow>
+                  {m.tabelas.map((t, i) => <TabelaHorarios key={i} t={t} />)}
+                  {m.notas.map((n, i) => <p key={i} className={s.tabelaNota}>{n}</p>)}
+                  {m.professores.length > 0 && (
+                    <div className={s.profs}>
+                      <span className={s.profsLabel}>{m.profTitulo}</span>
+                      {m.professores.map((n) => <span key={n} className={s.prof}><Icon name="user" size={12} /> {n}</span>)}
+                    </div>
+                  )}
+                </div>
+              )}
+              {m.galeria.length > 1 && (
+                <div className={s.miniGal}>
+                  {m.galeria.slice(0, 4).map((g, i) => <img key={g} src={g} alt={`${m.nome} — foto ${i + 1}`} loading="lazy" />)}
+                </div>
+              )}
+              <p className={s.fonte}>Texto e horários publicados pelo clube em <a href={m.fonte} target="_blank" rel="noopener noreferrer">lagoanossa.com.br</a>. Confirme vagas e valores na Secretaria de Esportes.</p>
             </div>
           </div>
         </Container>
@@ -240,7 +288,7 @@ export function Agenda() {
                             <p className={s.evDesc}>{e.desc}</p>
                           </div>
                           <div className={s.evSide}>
-                            <div className={s.evTime}><Icon name="clock" size={13} /> {e.hora}</div>
+                            <div className={s.evTime}><Icon name="clock" size={13} /> {e.hora || "Horário a confirmar"}</div>
                             <div className={s.evPlace}><Icon name="map-pin" size={13} /> {e.local}</div>
                           </div>
                         </Card>
@@ -289,33 +337,34 @@ export function Agenda() {
 }
 
 /* ============================ EVENTO (detalhe) ============================ */
+const quando = (e: Evento) => `${e.dia} de ${e.mesNome.toLowerCase()}${e.hora ? ` · ${e.hora}` : ""}`;
 function icsFor(e: Evento) {
   const d = e.data.replace(/-/g, "");
-  const body = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Country Clube de Formiga//Agenda//PT", "BEGIN:VEVENT", `UID:${e.id}@countryclubedeformiga`, `DTSTART;VALUE=DATE:${d}`, `SUMMARY:${e.nome}`, `DESCRIPTION:${e.desc.replace(/\n/g, " ")} (${e.hora})`, `LOCATION:${e.local} - Country Clube de Formiga`, "END:VEVENT", "END:VCALENDAR"].join("\r\n");
+  const body = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Country Clube de Formiga//Agenda//PT", "BEGIN:VEVENT", `UID:${e.id}@countryclubedeformiga`, `DTSTART;VALUE=DATE:${d}`, `SUMMARY:${e.nome}`, `DESCRIPTION:${e.desc.replace(/\n/g, " ")}${e.hora ? ` (${e.hora})` : ""}`, `LOCATION:${e.local} - Country Clube de Formiga`, "END:VEVENT", "END:VCALENDAR"].join("\r\n");
   return `data:text/calendar;charset=utf-8,${encodeURIComponent(body)}`;
 }
 
 export function EventoDetalhe({ e }: { e: Evento }) {
   return (
     <>
-      <PageHeader eyebrow={`${e.dia} de ${e.mesNome.toLowerCase()} · ${e.hora}`} title={e.nome} sub={e.desc} breadcrumb={[{ label: "Agenda", href: "/agenda" }, { label: e.nome }]} image={e.img} />
+      <PageHeader eyebrow={quando(e)} title={e.nome} sub={e.desc} breadcrumb={[{ label: "Agenda", href: "/agenda" }, { label: e.nome }]} image={e.img} />
       <section className="section section--tight">
         <Container size="lg">
           <div className={p.splitWide}>
             <div>
               <Eyebrow>Sobre o evento</Eyebrow>
-              <p style={{ fontSize: 17, lineHeight: 1.7, color: "var(--color-fg)", margin: "14px 0 24px" }}>{e.desc}</p>
+              {(e.texto?.length ? e.texto : [e.desc]).map((t, i) => <p key={i} style={{ fontSize: i === 0 ? 17 : 16, lineHeight: 1.7, color: i === 0 ? "var(--color-fg)" : "var(--color-fg-muted)", margin: i === 0 ? "14px 0 16px" : "0 0 16px" }}>{t}</p>)}
               {e.programacao && (
                 <>
                   <Eyebrow>Programação</Eyebrow>
                   <ul className={s.program}>{e.programacao.map((x) => <li key={x}>{x}</li>)}</ul>
                 </>
               )}
-              <p style={{ fontSize: 16, lineHeight: 1.7, color: "var(--color-fg-muted)", marginTop: 24 }}>Inscrições e reservas pelo app Country Clube de Formiga ou diretamente na Secretaria. Dúvidas: <a href={`mailto:${SITE.emailEventos}`}>{SITE.emailEventos}</a>.</p>
+              <p style={{ fontSize: 16, lineHeight: 1.7, color: "var(--color-fg-muted)", marginTop: 24 }}>Inscrições e reservas pelo app Country Clube de Formiga ou diretamente na Secretaria. Dúvidas: <a href={`mailto:${SITE.emailEventos}`}>{SITE.emailEventos}</a>.{e.fonte && <> Publicado em <a href={e.fonte} target="_blank" rel="noopener noreferrer">lagoanossa.com.br</a>.</>}</p>
             </div>
             <div>
               <div className={s.aside}>
-                <div className={s.asideRow}><IconTile name="calendar" size={36} icon={18} /><div><div className={s.asideLabel}>Quando</div><div className={s.asideValue}>{e.obs ?? `${e.dia} de ${e.mesNome.toLowerCase()} · ${e.hora}`}</div></div></div>
+                <div className={s.asideRow}><IconTile name="calendar" size={36} icon={18} /><div><div className={s.asideLabel}>Quando</div><div className={s.asideValue}>{e.obs ?? quando(e)}</div></div></div>
                 <div className={s.asideRow}><IconTile name="map-pin" size={36} icon={18} /><div><div className={s.asideLabel}>Onde</div><div className={s.asideValue}>{e.local}</div></div></div>
                 <div className={s.asideRow}><IconTile name="flag" size={36} icon={18} /><div><div className={s.asideLabel}>Categoria</div><div className={s.asideValue}>{e.cat}</div></div></div>
                 <div style={{ paddingTop: 8 }}>

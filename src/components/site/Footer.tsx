@@ -86,7 +86,7 @@ export function Footer() {
             <span className={styles.contactIcon}><Icon name="clock" size={18} /></span>
             <div>
               <div className={styles.contactLabel}>Funcionamento</div>
-              <div className={styles.contactValue}>Todos os dias<br />6h às 22h · <Link href="/funcionamento" className={styles.dim}>ver por área</Link></div>
+              <div className={styles.contactValue}>Seg 14h–21h · Ter–Sáb 7h–21h30<br />Dom 7h–19h · <Link href="/funcionamento" className={styles.dim}>horários das atividades</Link></div>
             </div>
           </div>
         </div>
