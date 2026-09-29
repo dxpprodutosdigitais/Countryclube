@@ -2,7 +2,7 @@ import { Icon } from "@/components/ui/Icon";
 import { Button } from "@/components/ui/Button";
 import { Container, Eyebrow, IconTile, PageHeader } from "@/components/ui/Primitives";
 import { CONSELHEIROS, DIRETORIA, ESTATUTO_CAPITULOS, GESTAO, HISTORIA_FOTOS, HISTORIA_TEXTO, HISTORIA_TIMELINE } from "@/data/content";
-import { OFICIAL, STOCK } from "@/data/images";
+import { FOTOS as OFICIAL, IMG as STOCK } from "@/data/images";
 import { SITE } from "@/lib/site";
 import s from "./Pages.module.css";
 

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { Card, Container, Eyebrow, SectionTitle } from "@/components/ui/Primitives";
 import { EVENTOS_ORDENADOS, INFRA, INFRA_HOME, MODALIDADES, MODALIDADES_HOME, NOTICIAS, NUMEROS } from "@/data/content";
-import { STOCK } from "@/data/images";
+import { IMG as STOCK } from "@/data/images";
 import { SITE } from "@/lib/site";
 import styles from "./Home.module.css";
 

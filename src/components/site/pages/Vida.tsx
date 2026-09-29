@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { Card, Container, EmptyState, Eyebrow, FilterPills, IconTile, PageHeader, SectionTitle } from "@/components/ui/Primitives";
 import { EVENTOS_ORDENADOS, GALERIA, INFRA, MODALIDADES, type Album, type Evento, type Modalidade } from "@/data/content";
-import { STOCK } from "@/data/images";
+import { IMG as STOCK } from "@/data/images";
 import { SITE } from "@/lib/site";
 import s from "./Vida.module.css";
 import p from "./Pages.module.css";

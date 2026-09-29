@@ -56,6 +56,13 @@ src/
 | Associado | `/associado` · `/associado/direitos` · `/associado/deveres` · `/secretaria` (aviso → Secretaria Web) |
 | Admin | `/admin` (+ `/admin/login`, eventos, notícias, galeria, faq, modalidades, infraestrutura, diretoria, convênios, ouvidoria, associados, configurações) |
 
+## Prévia estática (Artifact)
+
+`npm run preview:export` gera em `out/` uma exportação estática do site e do painel com
+placeholders SVG locais no lugar das fotos (o visualizador de Artifacts do claude.ai bloqueia
+imagens externas) e com os assets em `/n/_next` (nomes iniciados por `_` são reservados lá).
+A prévia atual está em https://claude.ai/artifact/YWM7kjG1qRwqLbotPE2V9w.
+
 ## Conteúdo pendente
 
 Veja **[CONTEUDO-PENDENTE.md](./CONTEUDO-PENDENTE.md)** — lista do que ainda precisa ser coletado do site atual (textos literais e fotos de modalidades/infraestrutura) e das decisões a confirmar com o clube.

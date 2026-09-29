@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "preview:export": "PREVIEW_EXPORT=1 NEXT_PUBLIC_LOCAL_PLACEHOLDERS=1 next build && mkdir -p out/n && mv out/_next out/n/_next"
   },
   "dependencies": {
     "next": "15.5.4",

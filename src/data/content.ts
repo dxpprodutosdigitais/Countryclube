@@ -4,7 +4,7 @@
  * descrição provisória e devem ser substituídos pelo texto literal do site
  * atual (ver CONTEUDO-PENDENTE.md).
  */
-import { OFICIAL, STOCK } from "./images";
+import { FOTOS as OFICIAL, IMG as STOCK } from "./images";
 
 /* ---------- Tipos --------------------------------------------------------- */
 export interface Modalidade {

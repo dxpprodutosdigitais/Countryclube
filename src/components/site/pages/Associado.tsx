@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Container, Eyebrow, IconTile, PageHeader } from "@/components/ui/Primitives";
 import { AppCTA } from "@/components/site/Home";
 import { DEVERES, DIREITOS } from "@/data/content";
-import { STOCK } from "@/data/images";
+import { IMG as STOCK } from "@/data/images";
 import { SITE } from "@/lib/site";
 import s from "./Servicos.module.css";
 import p from "./Pages.module.css";

@@ -77,3 +77,13 @@ export const STOCK = {
 } as const;
 
 export type StockKey = keyof typeof STOCK;
+
+/* Prévia estática (Artifact): o visualizador bloqueia imagens externas, então
+   NEXT_PUBLIC_LOCAL_PLACEHOLDERS=1 troca todas as fotos por SVGs ilustrativos locais. */
+const LOCAL = process.env.NEXT_PUBLIC_LOCAL_PLACEHOLDERS === "1";
+export const IMG = (LOCAL
+  ? Object.fromEntries(Object.keys(STOCK).map((k) => [k, `/images/placeholder/${k}.svg`]))
+  : STOCK) as Record<StockKey, string>;
+export const FOTOS = (LOCAL
+  ? { ...OFICIAL, ...Object.fromEntries([1, 2, 3, 4, 5, 6].map((i) => [`historia${i}`, `/images/placeholder/historia${i}.svg`])) }
+  : OFICIAL) as typeof OFICIAL;
