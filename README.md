@@ -74,9 +74,10 @@ e história vêm literalmente do site atual. O que ainda não existe lá está e
 
 ## Publicação em countryclube.dxp.dev.br
 
-`npm run build:static` gera `out/` (site + painel em `/admin`) para servir na raiz do domínio. Configurações prontas em
-`deploy/` (Caddy, Nginx, Docker, `.htaccess` para Apache/cPanel) e deploy automático por SSH ou FTP em
-`.github/workflows/deploy.yml`. Passo a passo em **`deploy/DEPLOY.md`**.
+Hospedagem recomendada: **Firebase Hosting** (`firebase.json` pronto). `npm run deploy` gera o build estático
+(`out/`, site + painel em `/admin`) e publica; `npm run deploy:preview` cria uma URL temporária para o cliente avaliar.
+Deploy automático em `.github/workflows/deploy.yml` (main → domínio, PR → prévia). Alternativas para servidor próprio
+(Caddy, Nginx, Docker, `.htaccess`) em `deploy/`. Passo a passo, custos e configuração do domínio em **`deploy/DEPLOY.md`**.
 
 ## Prévia estática (Artifact)
 

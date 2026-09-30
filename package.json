@@ -8,6 +8,8 @@
     "build": "next build",
     "start": "next start",
     "build:static": "STATIC_EXPORT=1 next build",
+    "deploy": "npm run build:static && npx firebase-tools deploy --only hosting",
+    "deploy:preview": "npm run build:static && npx firebase-tools hosting:channel:deploy cliente --expires 30d",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "preview:export": "PREVIEW_EXPORT=1 NEXT_PUBLIC_LOCAL_PLACEHOLDERS=1 NEXT_PUBLIC_BASE_PATH=/__BASE__ next build && node scripts/preview-export.mjs",

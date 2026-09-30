@@ -1,17 +1,21 @@
-# Publica o site + painel em https://countryclube.dxp.dev.br a cada push na main (ou manualmente).
+# Publica site + painel no Firebase Hosting (https://countryclube.dxp.dev.br).
+#   - push na main  → canal "live" (o domínio público)
+#   - pull request  → canal de prévia temporário (URL comentada no PR, ótima para o cliente avaliar)
 #
 # Configure em Settings → Secrets and variables → Actions:
-#   Variable  DEPLOY_METHOD = ssh | ftp
-#   SSH: secrets DEPLOY_HOST, DEPLOY_USER, DEPLOY_SSH_KEY (chave privada), DEPLOY_PATH (ex.: /var/www/countryclube), opcional DEPLOY_PORT
-#   FTP: secrets FTP_SERVER, FTP_USERNAME, FTP_PASSWORD, opcional FTP_DIR (ex.: /public_html/)
+#   Variable FIREBASE_PROJECT_ID  = id do projeto no console do Firebase
+#   Secret   FIREBASE_SERVICE_ACCOUNT = JSON da conta de serviço (Firebase console → Configurações → Contas de serviço → Gerar nova chave)
+#
+# Alternativa para hospedagem própria (VPS/cPanel): defina a variable DEPLOY_METHOD = ssh | ftp e os secrets de deploy/DEPLOY.md.
 name: Deploy
 
 on:
   push:
     branches: [main]
+  pull_request:
   workflow_dispatch:
 
-concurrency: deploy-countryclube
+concurrency: deploy-${{ github.ref }}
 
 jobs:
   build:
@@ -28,9 +32,26 @@ jobs:
       - uses: actions/upload-artifact@v4
         with: { name: site, path: out, retention-days: 3 }
 
+  firebase:
+    needs: build
+    if: vars.FIREBASE_PROJECT_ID != '' && (vars.DEPLOY_METHOD == '' || vars.DEPLOY_METHOD == 'firebase')
+    runs-on: ubuntu-latest
+    permissions: { contents: read, pull-requests: write, checks: write }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: { name: site, path: out }
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          projectId: ${{ vars.FIREBASE_PROJECT_ID }}
+          channelId: ${{ github.event_name == 'pull_request' && '' || 'live' }}
+          expires: 30d
+
   deploy-ssh:
     needs: build
-    if: vars.DEPLOY_METHOD == 'ssh'
+    if: github.event_name != 'pull_request' && vars.DEPLOY_METHOD == 'ssh'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v4
@@ -48,7 +69,7 @@ jobs:
 
   deploy-ftp:
     needs: build
-    if: vars.DEPLOY_METHOD == 'ftp'
+    if: github.event_name != 'pull_request' && vars.DEPLOY_METHOD == 'ftp'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v4

@@ -1,46 +1,76 @@
 # Publicar em countryclube.dxp.dev.br
 
-O DNS já aponta `countryclube.dxp.dev.br` (registro A) para `185.158.133.1`. Site e painel são o **mesmo build**:
-o site fica na raiz e o painel em `/admin` (login em `/admin/login`). Falta apenas colocar os arquivos no servidor e ativar o HTTPS.
+Site e painel são o **mesmo build estático**: o site na raiz e o painel em `/admin` (login em `/admin/login`).
+Hospedagem recomendada: **Firebase Hosting** (conta já existente), que atende tanto a prévia para o cliente quanto
+a hospedagem definitiva. As opções de servidor próprio (Caddy/Nginx/cPanel/Docker) ficam ao final.
 
-## 1. Gerar o build de produção
+## Por que Firebase Hosting
+
+| | Plano Spark (grátis) | Plano Blaze (pago por uso) |
+|---|---|---|
+| Armazenamento do site | 10 GB | US$ 0,026/GB-mês além dos 10 GB |
+| Tráfego | 360 MB/dia (~10 GB/mês) | US$ 0,15/GB além do grátis |
+| Domínio próprio + SSL | incluso, renovação automática | incluso |
+| Storage para fotos/eventos | 5 GB grátis (Cloud Storage) | US$ 0,026/GB-mês |
+| Banco (Firestore) para o painel | 1 GiB + 50 mil leituras/dia grátis | centavos acima disso |
+
+O build do site tem ~40 MB. Para um clube de cidade média, o custo mensal fica entre zero e poucos dólares, muito abaixo
+da mensalidade de R$ 300. Um projeto Firebase por cliente mantém dados, fotos e domínio isolados por contrato.
+
+## 1. Primeira publicação (uma vez, no seu computador)
 
 ```bash
 npm ci
-NEXT_PUBLIC_SITE_URL=https://countryclube.dxp.dev.br npm run build:static   # gera out/
+npx firebase-tools login                  # abre o navegador para autorizar a conta do Firebase
+npx firebase-tools use --add              # escolha o projeto e dê o apelido "default" (grava em .firebaserc)
+npm run deploy                            # build estático + firebase deploy --only hosting
 ```
 
-`out/` contém HTML estático + JS/CSS (`/_next/`), imagens (`/images/`), `robots.txt`, `sitemap.xml` e um `.htaccess` (usado só no Apache).
+Ao final o CLI mostra a URL provisória `https://<projeto>.web.app`. Já dá para o cliente abrir.
 
-## 2. Enviar para o servidor (escolha um)
+## 2. Domínio countryclube.dxp.dev.br
+
+1. Console do Firebase → **Hosting → Adicionar domínio personalizado** → `countryclube.dxp.dev.br`.
+2. O Firebase mostra um registro **TXT** (verificação) e os registros **A** dele.
+3. No painel do registro.br do domínio `dxp.dev.br`, edite a zona:
+   - troque o registro **A** de `countryclube` (hoje `185.158.133.1`) pelos IPs que o Firebase mostrou;
+   - adicione o **TXT** de verificação.
+4. Aguarde a propagação (minutos a algumas horas). O certificado SSL é emitido sozinho.
+
+Quando o cliente aprovar e quiser o domínio definitivo dele (ex.: `countryclubeformiga.com.br`), basta repetir o passo 2 com o
+novo domínio: nada muda no projeto.
+
+## 3. Publicação automática (GitHub Actions)
+
+`.github/workflows/deploy.yml` já está pronto. Em **Settings → Secrets and variables → Actions** do repositório:
+
+- Variable `FIREBASE_PROJECT_ID` = id do projeto (o mesmo do `.firebaserc`).
+- Secret `FIREBASE_SERVICE_ACCOUNT` = conteúdo do JSON gerado em *Configurações do projeto → Contas de serviço → Gerar nova chave privada*.
+
+Depois disso:
+- cada **push na `main`** publica no domínio;
+- cada **pull request** ganha uma URL de prévia temporária (30 dias), comentada no próprio PR: ideal para o cliente comentar antes de ir ao ar.
+
+Prévia manual sem PR: `npm run deploy:preview` (canal `cliente`, expira em 30 dias).
+
+## 4. Próximo passo para o painel (após aprovação)
+
+O painel ainda guarda as edições no navegador (localStorage) e o login não autentica. Com o Firebase o caminho natural é:
+**Authentication** (login dos administradores), **Firestore** (modalidades, turmas, professores, eventos, notícias) e
+**Cloud Storage** (fotos). O site estático passa a ler esses dados, ou é republicado automaticamente a cada alteração.
+
+---
+
+## Alternativa: servidor próprio
+
+`npm run build:static` gera `out/`. Envie o conteúdo para a raiz do domínio:
 
 | Hospedagem | O que fazer |
 |---|---|
-| **VPS com Caddy** (mais simples, HTTPS automático) | `apt install caddy`; copie `deploy/Caddyfile` para `/etc/caddy/Caddyfile`; envie `out/*` para `/var/www/countryclube`; `systemctl reload caddy`. |
-| **VPS com Nginx** | Copie `deploy/nginx.conf` para `/etc/nginx/sites-available/countryclube`, ative, envie `out/*` para `/var/www/countryclube`, rode `certbot --nginx -d countryclube.dxp.dev.br`. |
-| **cPanel / Hostinger / Apache** | Envie o conteúdo de `out/` (inclusive o `.htaccess`) para a pasta do domínio (`public_html` ou a pasta do subdomínio). Ative o SSL (Let's Encrypt/AutoSSL) no painel. |
-| **Docker** | `docker compose -f deploy/docker-compose.yml up -d` (Next em Node + Caddy com HTTPS). |
+| **VPS com Caddy** | `deploy/Caddyfile` em `/etc/caddy/Caddyfile`; `out/*` em `/var/www/countryclube`; `systemctl reload caddy`. HTTPS automático. |
+| **VPS com Nginx** | `deploy/nginx.conf` em `sites-available`; `out/*` em `/var/www/countryclube`; `certbot --nginx -d countryclube.dxp.dev.br`. |
+| **cPanel / Hostinger / Apache** | Envie `out/` (inclusive o `.htaccess`) para a pasta do domínio e ative o SSL no painel. |
+| **Docker** | `docker compose -f deploy/docker-compose.yml up -d` (Next em Node + Caddy). |
 
-Enviar manualmente por SSH:
-
-```bash
-rsync -az --delete out/ usuario@185.158.133.1:/var/www/countryclube/
-```
-
-## 3. Deploy automático (GitHub Actions)
-
-`.github/workflows/deploy.yml` faz build e publica a cada push na `main`. Em **Settings → Secrets and variables → Actions**:
-
-- Variable `DEPLOY_METHOD` = `ssh` ou `ftp`.
-- SSH: secrets `DEPLOY_HOST` (`185.158.133.1`), `DEPLOY_USER`, `DEPLOY_SSH_KEY` (chave privada cuja pública está no `~/.ssh/authorized_keys` do servidor), `DEPLOY_PATH` (`/var/www/countryclube`), opcional `DEPLOY_PORT`.
-- FTP: secrets `FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWORD`, opcional `FTP_DIR`.
-
-Depois, **Actions → Deploy → Run workflow** publica na hora.
-
-## 4. Conferir
-
-- https://countryclube.dxp.dev.br — site
-- https://countryclube.dxp.dev.br/admin — painel (bloqueado para buscadores no `robots.txt`)
-- https://countryclube.dxp.dev.br/sitemap.xml
-
-> O painel ainda não tem backend: as edições ficam no navegador de quem edita (localStorage). O login não autentica de verdade; antes de divulgar o endereço do `/admin`, proteja-o (ex.: senha básica no Caddy/Nginx) ou aguarde a integração com backend.
+Deploy automático por SSH ou FTP: variable `DEPLOY_METHOD` = `ssh` ou `ftp` e os secrets `DEPLOY_HOST`, `DEPLOY_USER`,
+`DEPLOY_SSH_KEY`, `DEPLOY_PATH` (SSH) ou `FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWORD`, `FTP_DIR` (FTP).
