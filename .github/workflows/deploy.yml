@@ -1,0 +1,83 @@
+# Publica site + painel no Firebase Hosting (https://countryclube.dxp.dev.br).
+#   - push na main  → canal "live" (o domínio público)
+#   - pull request  → canal de prévia temporário (URL comentada no PR, ótima para o cliente avaliar)
+#
+# Configure em Settings → Secrets and variables → Actions:
+#   Variable FIREBASE_PROJECT_ID  = id do projeto no console do Firebase
+#   Secret   FIREBASE_SERVICE_ACCOUNT = JSON da conta de serviço (Firebase console → Configurações → Contas de serviço → Gerar nova chave)
+#
+# Alternativa para hospedagem própria (VPS/cPanel): defina a variable DEPLOY_METHOD = ssh | ftp e os secrets de deploy/DEPLOY.md.
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency: deploy-${{ github.ref }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - run: npm run typecheck && npm run lint
+      - run: npm run build:static
+        env:
+          NEXT_PUBLIC_SITE_URL: https://countryclube.dxp.dev.br
+      - uses: actions/upload-artifact@v4
+        with: { name: site, path: out, retention-days: 3 }
+
+  firebase:
+    needs: build
+    if: vars.FIREBASE_PROJECT_ID != '' && (vars.DEPLOY_METHOD == '' || vars.DEPLOY_METHOD == 'firebase')
+    runs-on: ubuntu-latest
+    permissions: { contents: read, pull-requests: write, checks: write }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: { name: site, path: out }
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          projectId: ${{ vars.FIREBASE_PROJECT_ID }}
+          channelId: ${{ github.event_name == 'pull_request' && '' || 'live' }}
+          expires: 30d
+
+  deploy-ssh:
+    needs: build
+    if: github.event_name != 'pull_request' && vars.DEPLOY_METHOD == 'ssh'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with: { name: site, path: out }
+      - name: Chave SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p "${{ secrets.DEPLOY_PORT || 22 }}" -H "${{ secrets.DEPLOY_HOST }}" >> ~/.ssh/known_hosts
+      - name: rsync para o servidor
+        run: |
+          rsync -az --delete -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.DEPLOY_PORT || 22 }}" \
+            out/ "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}/"
+
+  deploy-ftp:
+    needs: build
+    if: github.event_name != 'pull_request' && vars.DEPLOY_METHOD == 'ftp'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with: { name: site, path: out }
+      - uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: out/
+          server-dir: ${{ secrets.FTP_DIR || '/public_html/' }}
