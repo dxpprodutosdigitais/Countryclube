@@ -20,9 +20,9 @@ function Logo({ small = false }: { small?: boolean }) {
   );
 }
 
-function MegaPanel({ group, onClose }: { group: NavGroup; onClose: () => void }) {
+function MegaPanel({ group, onClose, onEnter }: { group: NavGroup; onClose: () => void; onEnter: () => void }) {
   return (
-    <div className={[styles.mega, group.items.length > 3 ? styles.megaTwoCols : ""].join(" ")} role="menu" onMouseLeave={onClose}>
+    <div className={[styles.mega, group.items.length > 3 ? styles.megaTwoCols : ""].join(" ")} role="menu" onMouseEnter={onEnter}>
       {group.items.map((it) => (
         <Link
           key={it.href}
@@ -48,6 +48,12 @@ export function Header() {
   const pathname = usePathname() ?? "/";
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState<string | null>(null);
+  /* Fecha o mega-menu com um pequeno atraso, para o cursor cruzar o espaço entre o botão e o painel. */
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const cancelClose = () => { if (closeTimer.current) { clearTimeout(closeTimer.current); closeTimer.current = null; } };
+  const scheduleClose = () => { cancelClose(); closeTimer.current = setTimeout(() => setOpen(null), 220); };
+  const openGroup = (id: string) => { cancelClose(); setOpen(id); };
+  useEffect(() => () => cancelClose(), []);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileExpand, setMobileExpand] = useState<string | null>(null);
   const navRef = useRef<HTMLDivElement>(null);
@@ -82,12 +88,12 @@ export function Header() {
       <header className={[styles.desktop, scrolled ? styles.scrolled : ""].join(" ")}>
         <nav className={styles.pill} aria-label="Navegação principal" ref={navRef}>
           <Logo />
-          <div className={styles.groups} onMouseLeave={() => setOpen(null)}>
+          <div className={styles.groups} onMouseLeave={scheduleClose} onMouseEnter={cancelClose}>
             {NAV_GROUPS.map((g) => {
               const active = activeGroupId === g.id;
               const isOpen = open === g.id;
               return (
-                <div key={g.id} className={styles.group} onMouseEnter={() => setOpen(g.id)}>
+                <div key={g.id} className={styles.group} onMouseEnter={() => openGroup(g.id)}>
                   <button
                     type="button"
                     className={[styles.groupBtn, active ? styles.groupActive : "", isOpen ? styles.groupOpen : ""].join(" ")}
@@ -98,7 +104,7 @@ export function Header() {
                     {g.label}
                     <span className={[styles.chev, isOpen ? styles.chevOpen : ""].join(" ")}><Icon name="chevron-down" size={12} stroke={2} /></span>
                   </button>
-                  {isOpen && <MegaPanel group={g} onClose={() => setOpen(null)} />}
+                  {isOpen && <MegaPanel group={g} onClose={() => setOpen(null)} onEnter={cancelClose} />}
                 </div>
               );
             })}

@@ -50,34 +50,7 @@ function Hero() {
           </div>
         </div>
       </Container>
-      <div className={styles.scrollCue} aria-hidden><div>Explorar</div><div className={styles.scrollLine} /></div>
     </section>
-  );
-}
-
-/* ============================ QUICK RIBBON ============================ */
-function QuickRibbon() {
-  const items = [
-    { icon: "calendar", label: "Agenda", sub: "Próximos eventos", href: "/agenda" },
-    { icon: "dumbbell", label: "Modalidades", sub: "Esportes e fitness", href: "/modalidades" },
-    { icon: "utensils", label: "Reservas", sub: "Churrasqueiras e salões", href: "/secretaria" },
-    { icon: "image", label: "Galeria", sub: "Memórias da família", href: "/galeria" },
-    { icon: "help-circle", label: "Dúvidas", sub: "Perguntas frequentes", href: "/faq" },
-  ];
-  return (
-    <Container className={styles.ribbon}>
-      <div className={styles.ribbonGrid}>
-        {items.map((it) => (
-          <Link key={it.label} href={it.href} className={styles.ribbonCard}>
-            <span className="icon-tile" style={{ width: 40, height: 40, borderRadius: 12 }}><Icon name={it.icon} size={20} /></span>
-            <span>
-              <span className={styles.ribbonLabel}>{it.label}</span>
-              <span className={styles.ribbonSub}>{it.sub}</span>
-            </span>
-          </Link>
-        ))}
-      </div>
-    </Container>
   );
 }
 
@@ -285,7 +258,6 @@ export function Home() {
   return (
     <>
       <Hero />
-      <QuickRibbon />
       <HistoriaBand />
       <ModalidadesPreview />
       <AgendaPreview />
