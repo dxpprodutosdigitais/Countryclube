@@ -1,0 +1,62 @@
+# Publica o site + painel em https://countryclube.dxp.dev.br a cada push na main (ou manualmente).
+#
+# Configure em Settings → Secrets and variables → Actions:
+#   Variable  DEPLOY_METHOD = ssh | ftp
+#   SSH: secrets DEPLOY_HOST, DEPLOY_USER, DEPLOY_SSH_KEY (chave privada), DEPLOY_PATH (ex.: /var/www/countryclube), opcional DEPLOY_PORT
+#   FTP: secrets FTP_SERVER, FTP_USERNAME, FTP_PASSWORD, opcional FTP_DIR (ex.: /public_html/)
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency: deploy-countryclube
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - run: npm run typecheck && npm run lint
+      - run: npm run build:static
+        env:
+          NEXT_PUBLIC_SITE_URL: https://countryclube.dxp.dev.br
+      - uses: actions/upload-artifact@v4
+        with: { name: site, path: out, retention-days: 3 }
+
+  deploy-ssh:
+    needs: build
+    if: vars.DEPLOY_METHOD == 'ssh'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with: { name: site, path: out }
+      - name: Chave SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p "${{ secrets.DEPLOY_PORT || 22 }}" -H "${{ secrets.DEPLOY_HOST }}" >> ~/.ssh/known_hosts
+      - name: rsync para o servidor
+        run: |
+          rsync -az --delete -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.DEPLOY_PORT || 22 }}" \
+            out/ "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}/"
+
+  deploy-ftp:
+    needs: build
+    if: vars.DEPLOY_METHOD == 'ftp'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with: { name: site, path: out }
+      - uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: out/
+          server-dir: ${{ secrets.FTP_DIR || '/public_html/' }}

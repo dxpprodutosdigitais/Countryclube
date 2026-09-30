@@ -72,6 +72,12 @@ Modalidades (textos, tabelas de horários, professores, retratos), infraestrutur
 agenda, comunicados, galeria, FAQ, funcionamento/horários das atividades, convênio, direitos/deveres
 e história vêm literalmente do site atual. O que ainda não existe lá está em `CONTEUDO-PENDENTE.md`.
 
+## Publicação em countryclube.dxp.dev.br
+
+`npm run build:static` gera `out/` (site + painel em `/admin`) para servir na raiz do domínio. Configurações prontas em
+`deploy/` (Caddy, Nginx, Docker, `.htaccess` para Apache/cPanel) e deploy automático por SSH ou FTP em
+`.github/workflows/deploy.yml`. Passo a passo em **`deploy/DEPLOY.md`**.
+
 ## Prévia estática (Artifact)
 
 `npm run preview:export` gera em `out/` uma exportação estática do site e do painel pronta para

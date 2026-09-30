@@ -7,6 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "build:static": "STATIC_EXPORT=1 next build",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "preview:export": "PREVIEW_EXPORT=1 NEXT_PUBLIC_LOCAL_PLACEHOLDERS=1 NEXT_PUBLIC_BASE_PATH=/__BASE__ next build && node scripts/preview-export.mjs",

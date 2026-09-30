@@ -1,5 +1,7 @@
 /** Dados institucionais oficiais (CONTENT.md › Contato oficial). */
 export const SITE = {
+  /** URL pública do site (sem barra final). Painel em `${url}/admin`. */
+  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://countryclube.dxp.dev.br").replace(/\/+$/, ""),
   nome: "Country Clube de Formiga",
   apelido: "a Lagoa",
   slogan: "Muito lazer e diversão para toda a família — o ano todo.",
