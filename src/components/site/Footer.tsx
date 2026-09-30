@@ -97,6 +97,7 @@ export function Footer() {
             <Link href="/estatuto">Estatuto</Link>
             <Link href="/ouvidoria">Ouvidoria</Link>
             <Link href="/contato">Contato</Link>
+            <Link href="/admin/login">Painel</Link>
           </div>
         </div>
       </Container>
