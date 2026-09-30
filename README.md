@@ -8,7 +8,8 @@ Redesign do site **lagoanossa.com.br** (Country Clube de Formiga, Formiga/MG —
 - Estilo: **CSS Modules** + tokens do design system como CSS custom properties (`src/app/globals.css`)
 - Fontes: Cormorant (display) + Montserrat (texto) via `next/font/google`
 - Ícones: conjunto Lucide inline (`src/components/ui/Icon.tsx`)
-- Sem backend: o site é estático (conteúdo em `src/data/`) e o painel usa dados mock em memória.
+- Sem backend: o site é estático (conteúdo em `src/data/`) e o painel usa dados mock. Modalidades, turmas e professores
+  (`src/data/admin-esportes.ts`) são editáveis no painel e persistidos no `localStorage` do navegador (`src/components/admin/esportes-store.tsx`).
 
 ## Rodando
 
@@ -44,6 +45,7 @@ src/
     scraped.json          # coleta bruta do site atual (gerado por scripts/scrape-lagoanossa.mjs)
     images.ts             # mapa de imagens (fotos reais em public/images + Unsplash como último recurso)
     admin.ts              # mock do painel
+    admin-esportes.ts     # modelo de esportes: professores, modalidades, turmas → grade derivada
   lib/site.ts             # contato oficial, links, CNPJ, Maps embed
 ```
 
@@ -56,7 +58,7 @@ src/
 | Vida no Clube | `/infraestrutura` · `/modalidades` · `/modalidades/:id` · `/agenda` · `/agenda/:id` · `/galeria` |
 | Serviços | `/funcionamento` · `/convenios` · `/faq` · `/oportunidade` · `/ouvidoria` · `/contato` |
 | Associado | `/associado` · `/associado/direitos` · `/associado/deveres` · `/secretaria` (aviso → Secretaria Web) |
-| Admin | `/admin` (+ `/admin/login`, eventos, notícias, galeria, faq, modalidades, infraestrutura, diretoria, convênios, ouvidoria, associados, configurações) |
+| Admin | `/admin` (+ `/admin/login`, eventos, notícias, galeria, faq, modalidades, professores, grade de horários, infraestrutura, diretoria, convênios, ouvidoria, associados, configurações) |
 
 ## Conteúdo real (scraping do site atual)
 
@@ -90,4 +92,4 @@ Veja **[CONTEUDO-PENDENTE.md](./CONTEUDO-PENDENTE.md)** — fotos que não exist
 
 1. Gerar no Gamma as 6 fotos que não existem no site atual (futevôlei, peteca, tênis, restaurante, academia, saunas) e apontá-las em `scripts/build-content.mjs`.
 2. Conectar os formulários (Ouvidoria e Contato) a um endpoint/e-mail (hoje validam e mostram a mensagem de sucesso no cliente).
-3. Painel: ligar a um backend com autenticação e CRUD (Next.js + Prisma/Supabase ou um headless CMS que exponha os mesmos modelos de `src/data/admin.ts`).
+3. Painel: ligar a um backend com autenticação e CRUD (Next.js + Prisma/Supabase ou um headless CMS que exponha os mesmos modelos de `src/data/admin.ts` e `src/data/admin-esportes.ts`). Com o backend, a página pública `/funcionamento` e as páginas de modalidade passam a ler a mesma grade derivada das turmas (`gradeSemanal`).

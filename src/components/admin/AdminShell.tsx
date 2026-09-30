@@ -31,6 +31,8 @@ const NAV: NavGroup[] = [
     label: "Estrutura do clube",
     items: [
       { href: "/admin/modalidades", label: "Modalidades", icon: "dumbbell" },
+      { href: "/admin/professores", label: "Professores", icon: "user" },
+      { href: "/admin/horarios", label: "Grade de horários", icon: "clock" },
       { href: "/admin/infraestrutura", label: "Infraestrutura", icon: "building" },
       { href: "/admin/diretoria", label: "Diretoria", icon: "briefcase" },
       { href: "/admin/convenios", label: "Convênios", icon: "handshake" },
@@ -55,6 +57,8 @@ const PAGES: Record<string, { title: string; breadcrumb: string[] }> = {
   "/admin/galeria": { title: "Galeria de fotos", breadcrumb: ["Conteúdo"] },
   "/admin/faq": { title: "Perguntas frequentes", breadcrumb: ["Conteúdo"] },
   "/admin/modalidades": { title: "Modalidades", breadcrumb: ["Estrutura do clube"] },
+  "/admin/professores": { title: "Professores", breadcrumb: ["Estrutura do clube"] },
+  "/admin/horarios": { title: "Grade de horários das atividades", breadcrumb: ["Estrutura do clube"] },
   "/admin/infraestrutura": { title: "Infraestrutura", breadcrumb: ["Estrutura do clube"] },
   "/admin/diretoria": { title: "Diretoria", breadcrumb: ["Estrutura do clube"] },
   "/admin/convenios": { title: "Convênios e parcerias", breadcrumb: ["Estrutura do clube"] },

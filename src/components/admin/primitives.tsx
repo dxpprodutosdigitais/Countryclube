@@ -22,6 +22,8 @@ const STATUS_MAP: Record<string, { cls: string; label: string }> = {
   respondida: { cls: s.statusGreen, label: "Respondida" },
   rascunho: { cls: s.statusGray, label: "Rascunho" },
   suspenso: { cls: s.statusGray, label: "Suspenso" },
+  inativo: { cls: s.statusGray, label: "Inativo" },
+  pausada: { cls: s.statusAmber, label: "Pausada" },
   arquivada: { cls: s.statusGray, label: "Arquivada" },
   agendado: { cls: s.statusMaresia, label: "Agendado" },
   "em-analise": { cls: s.statusAmber, label: "Em análise" },
@@ -253,8 +255,8 @@ export function CardHeader({ title, sub, action, flat }: { title: ReactNode; sub
 }
 
 /* ============================ DRAWER ============================ */
-export function Drawer({ open, onClose, title, subtitle, wide, children, footer }: {
-  open: boolean; onClose: () => void; title: ReactNode; subtitle?: ReactNode; wide?: boolean; children: ReactNode; footer?: ReactNode;
+export function Drawer({ open, onClose, title, subtitle, wide, xl, children, footer }: {
+  open: boolean; onClose: () => void; title: ReactNode; subtitle?: ReactNode; wide?: boolean; xl?: boolean; children: ReactNode; footer?: ReactNode;
 }) {
   useEffect(() => {
     if (!open) return;
@@ -272,7 +274,7 @@ export function Drawer({ open, onClose, title, subtitle, wide, children, footer 
   return (
     <>
       <button type="button" className={s.overlay} aria-label="Fechar painel" onClick={onClose} />
-      <aside className={cx(s.drawer, wide && s.drawerWide)} role="dialog" aria-modal="true">
+      <aside className={cx(s.drawer, wide && s.drawerWide, xl && s.drawerXl)} role="dialog" aria-modal="true">
         <div className={s.drawerHead}>
           <div style={{ flex: 1, minWidth: 0 }}>
             {subtitle && <div className={s.drawerEyebrow}>{subtitle}</div>}

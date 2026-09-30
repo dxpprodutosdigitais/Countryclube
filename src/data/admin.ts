@@ -9,26 +9,11 @@ import { SITE } from "@/lib/site";
 /* Tipos                                                               */
 /* ------------------------------------------------------------------ */
 export type StatusConteudo = "publicado" | "rascunho" | "agendado";
-export type StatusModalidade = "ativa" | "rascunho";
 export type StatusInfra = "publicada" | "rascunho";
 export type StatusConvenio = "ativo" | "expirando" | "suspenso";
 export type StatusManifestacao = "pendente" | "em-analise" | "respondida" | "arquivada";
 export type StatusAssociado = "ativo" | "inadimplente" | "suspenso";
 export type TipoManifestacao = "Reclamação" | "Sugestão" | "Elogio";
-
-export interface Modalidade {
-  id: string;
-  nome: string;
-  cat: string;
-  img: string;
-  desc: string;
-  horario: string;
-  publico: string;
-  professor: string;
-  vagas: number | null;
-  inscritos: number;
-  status: StatusModalidade;
-}
 
 export interface Infra {
   id: string;
@@ -325,34 +310,8 @@ export const ADMIN_NOTICIAS: Noticia[] = [
 
 export const NOTICIA_CATEGORIAS = ["Avisos", "Comunicado", "Obras", "Esportes", "Country 92", "Eventos"];
 
-/* ------------------------------------------------------------------ */
-/* Modalidades (21 — lista real do clube)                               */
-/* ------------------------------------------------------------------ */
-export const ADMIN_MODALIDADES: Modalidade[] = [
-  { id: "ballet-jazz", nome: "Ballet/Jazz", cat: "Dança", img: ADMIN_IMG.ballet, desc: "Turmas de ballet clássico e jazz por faixa etária.", horario: "Seg/Qua 17h–19h", publico: "A partir de 4 anos", professor: "Lívia Andrade", vagas: 40, inscritos: 34, status: "ativa" },
-  { id: "basquete", nome: "Basquete", cat: "Esportes", img: ADMIN_IMG.basquete, desc: "Escolinha e treinos no ginásio poliesportivo.", horario: "Ter/Qui 18h–20h", publico: "A partir de 8 anos", professor: "Marcelo Reis", vagas: 30, inscritos: 22, status: "ativa" },
-  { id: "beach-tenis", nome: "Beach Tenis", cat: "Praia", img: ADMIN_IMG.beachTenis, desc: "Quadras de areia à beira da Lagoa.", horario: "Seg–Sáb 7h–21h", publico: "A partir de 8 anos", professor: "Lucas Pereira", vagas: 80, inscritos: 62, status: "ativa" },
-  { id: "fisioterapia", nome: "Fisioterapia", cat: "Bem-estar", img: ADMIN_IMG.fisioterapia, desc: "Atendimento no Estúdio de Pilates e Fisioterapia.", horario: "Seg–Sex 8h–18h (agendamento)", publico: "Todas as idades", professor: "Dra. Renata Campos", vagas: null, inscritos: 48, status: "ativa" },
-  { id: "futebol", nome: "Futebol", cat: "Esportes", img: ADMIN_IMG.futebol, desc: "Escolinha e categorias de base nos campos do clube.", horario: "Seg–Sex 17h–20h", publico: "A partir de 6 anos", professor: "Paulo Henrique", vagas: 160, inscritos: 142, status: "ativa" },
-  { id: "futevolei", nome: "Futevôlei", cat: "Praia", img: ADMIN_IMG.futevolei, desc: "Aulas na areia com professor titulado.", horario: "Ter/Qui/Sáb 17h–20h", publico: "A partir de 12 anos", professor: "Rodrigo Salles", vagas: 32, inscritos: 24, status: "ativa" },
-  { id: "futsal", nome: "Futsal", cat: "Esportes", img: ADMIN_IMG.futsal, desc: "Treinos no ginásio, turmas por idade.", horario: "Seg/Qua/Sex 18h–21h", publico: "A partir de 6 anos", professor: "Rafael Lima", vagas: 60, inscritos: 51, status: "ativa" },
-  { id: "ginastica-funcional", nome: "Ginástica Funcional", cat: "Fitness", img: ADMIN_IMG.funcional, desc: "Circuitos funcionais na academia e ao ar livre.", horario: "Seg–Sex 6h, 8h, 18h, 19h", publico: "A partir de 16 anos", professor: "Camila Tavares", vagas: 60, inscritos: 58, status: "ativa" },
-  { id: "ginastica-localizada", nome: "Ginástica Localizada", cat: "Fitness", img: ADMIN_IMG.localizada, desc: "Aulas coletivas de fortalecimento e resistência.", horario: "Seg/Qua/Sex 7h e 19h", publico: "A partir de 16 anos", professor: "Camila Tavares", vagas: 40, inscritos: 29, status: "ativa" },
-  { id: "hidroginastica", nome: "Hidroginástica", cat: "Aquáticos", img: ADMIN_IMG.hidro, desc: "Aulas dinâmicas na piscina com foco em mobilidade.", horario: "Seg/Qua/Sex 9h, 10h, 18h", publico: "A partir de 18 anos", professor: "Beatriz Coelho", vagas: 90, inscritos: 78, status: "ativa" },
-  { id: "jiu-jitsu", nome: "Jiu jitsu", cat: "Artes marciais", img: ADMIN_IMG.jiujitsu, desc: "Escola de artes marciais — turmas infantil e adulto.", horario: "Ter/Qui 19h–21h", publico: "A partir de 5 anos", professor: "Anderson Braga", vagas: 40, inscritos: 36, status: "ativa" },
-  { id: "karate", nome: "Karatê", cat: "Artes marciais", img: ADMIN_IMG.karate, desc: "Karatê tradicional com graduação oficial.", horario: "Seg/Qua 18h–20h", publico: "A partir de 5 anos", professor: "Sensei Hiroshi Tanaka", vagas: 40, inscritos: 27, status: "ativa" },
-  { id: "liberacao-miofascial", nome: "Liberação Miofascial, Drenagem e Ventosaterapia", cat: "Bem-estar", img: ADMIN_IMG.massagem, desc: "Terapias manuais no estúdio, com agendamento.", horario: "Seg–Sex 9h–18h (agendamento)", publico: "A partir de 18 anos", professor: "Fernanda Duarte", vagas: null, inscritos: 31, status: "ativa" },
-  { id: "massagem-feminina", nome: "Massagem Feminina", cat: "Bem-estar", img: ADMIN_IMG.massagem, desc: "Massagem relaxante e terapêutica para associadas.", horario: "Ter/Qui 9h–17h (agendamento)", publico: "Mulheres a partir de 18 anos", professor: "Fernanda Duarte", vagas: null, inscritos: 19, status: "ativa" },
-  { id: "musculacao", nome: "Musculação", cat: "Fitness", img: ADMIN_IMG.musculacao, desc: "Academia completa com acompanhamento da equipe técnica.", horario: "Seg–Sex 5h30–22h · Sáb 7h–14h", publico: "A partir de 14 anos", professor: "Equipe técnica", vagas: null, inscritos: 412, status: "ativa" },
-  { id: "natacao", nome: "Natação", cat: "Aquáticos", img: ADMIN_IMG.natacao, desc: "Turmas por faixa etária e nível nas piscinas do clube.", horario: "Seg–Sex 6h–21h", publico: "A partir de 3 anos", professor: "Cláudia Resende", vagas: 240, inscritos: 186, status: "ativa" },
-  { id: "peteca", nome: "Peteca", cat: "Esportes", img: ADMIN_IMG.peteca, desc: "Tradição mineira nas quadras do clube.", horario: "Seg–Dom 7h–22h", publico: "Todas as idades", professor: "—", vagas: null, inscritos: 44, status: "ativa" },
-  { id: "pilates", nome: "Pilates", cat: "Fitness", img: ADMIN_IMG.pilates, desc: "Pilates de solo e aparelhos no estúdio.", horario: "Seg–Sex 7h–20h", publico: "A partir de 16 anos", professor: "Dra. Renata Campos", vagas: 48, inscritos: 45, status: "ativa" },
-  { id: "tenis", nome: "Tênis", cat: "Esportes", img: ADMIN_IMG.tenis, desc: "Quadras iluminadas e aulas para todas as idades.", horario: "Seg–Sex 7h–22h · Sáb 7h–18h", publico: "A partir de 6 anos", professor: "Marcos Andrade", vagas: 96, inscritos: 84, status: "ativa" },
-  { id: "volei", nome: "Vôlei", cat: "Esportes", img: ADMIN_IMG.volei, desc: "Treinos no ginásio e ligas internas.", horario: "Ter/Qui 19h–21h", publico: "A partir de 10 anos", professor: "Rafael Lima", vagas: 36, inscritos: 28, status: "ativa" },
-  { id: "yoga", nome: "Yoga", cat: "Fitness", img: ADMIN_IMG.yoga, desc: "Turmas com vista para a Lagoa. Vagas limitadas.", horario: "Ter/Qui 7h e 19h", publico: "A partir de 16 anos", professor: "Camila Tavares", vagas: 30, inscritos: 26, status: "ativa" },
-];
+/* Modalidades, turmas e professores: ver `admin-esportes.ts`. */
 
-export const MODALIDADE_CATEGORIAS = ["Esportes", "Praia", "Aquáticos", "Fitness", "Artes marciais", "Dança", "Bem-estar"];
 
 /* ------------------------------------------------------------------ */
 /* Infraestrutura (18 — lista real do clube)                            */

@@ -1,0 +1,159 @@
+/* Telas de Esportes do painel: Modalidades, Professores e Grade de horários. */
+
+/* ---------- Avatar / pilha ---------------------------------------------- */
+.avatar { border-radius: 999px; object-fit: cover; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; background: var(--c-lagoa-100); vertical-align: middle; }
+.avatarIni { font-family: var(--font-heading); font-weight: 700; letter-spacing: 0.02em; color: var(--color-brand); background: var(--c-lagoa-100); text-transform: uppercase; }
+.avatarNew { background: var(--c-eletrico-100); color: var(--color-accent-strong); }
+.stack { display: inline-flex; align-items: center; }
+.stackItem { display: inline-flex; border-radius: 999px; box-shadow: 0 0 0 2px var(--color-surface); margin-left: -8px; }
+.stackItem:first-child { margin-left: 0; }
+.stackMore { background: var(--color-bg-alt); color: var(--color-fg-muted); font-family: var(--font-heading); font-size: 11px; font-weight: 600; align-items: center; justify-content: center; }
+.semProf { font-family: var(--font-body); font-size: 12px; color: var(--color-fg-subtle); font-style: italic; }
+
+/* ---------- Seletor de professores -------------------------------------- */
+.picker { display: flex; flex-direction: column; gap: 10px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; min-height: 32px; }
+.chipsEmpty { font-family: var(--font-body); font-size: 12.5px; color: var(--color-fg-subtle); }
+.chipProf { display: inline-flex; align-items: center; gap: 8px; padding: 4px 10px 4px 4px; border-radius: 999px; border: 1px solid var(--color-border); background: var(--color-surface); font-family: var(--font-heading); font-size: 12.5px; font-weight: 600; color: var(--color-fg-strong); cursor: pointer; transition: border-color 0.15s var(--ease-out), background 0.15s var(--ease-out); }
+.chipProf:hover { border-color: var(--color-danger); background: #fff5f5; }
+.chipProf:hover svg { color: var(--color-danger); }
+.chipProf svg { color: var(--color-fg-subtle); }
+.chipAdd { display: inline-flex; align-items: center; gap: 5px; padding: 6px 11px; border-radius: 999px; border: 1px dashed var(--color-border-strong); background: transparent; font-family: var(--font-heading); font-size: 12px; font-weight: 600; color: var(--color-brand); cursor: pointer; }
+.chipAdd:hover { background: var(--c-lagoa-50); border-color: var(--color-brand); }
+.pickerList { border: 1px solid var(--color-border); border-radius: 12px; padding: 12px; background: var(--color-bg-alt); display: flex; flex-direction: column; gap: 10px; }
+.pickerOptions { display: flex; flex-direction: column; gap: 4px; max-height: 240px; overflow-y: auto; }
+.opt { display: flex; align-items: center; gap: 10px; padding: 7px 10px; border-radius: 9px; border: 1px solid transparent; background: var(--color-surface); text-align: left; cursor: pointer; width: 100%; color: var(--color-fg-muted); transition: border-color 0.15s var(--ease-out); }
+.opt:hover { border-color: var(--color-border-brand); color: var(--color-brand); }
+.optCreate { border-style: dashed; border-color: var(--color-border-strong); }
+.optText { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.optName { font-family: var(--font-heading); font-size: 13px; font-weight: 600; color: var(--color-fg-strong); }
+.optSub { font-family: var(--font-body); font-size: 11.5px; color: var(--color-fg-subtle); line-height: 1.35; }
+.pickerHint { font-family: var(--font-body); font-size: 12px; color: var(--color-fg-subtle); padding: 6px 4px; }
+.linkBtn { align-self: flex-end; background: none; border: 0; padding: 0; font-family: var(--font-heading); font-size: 12px; font-weight: 600; color: var(--color-brand); cursor: pointer; }
+
+/* ---------- Dias da semana ---------------------------------------------- */
+.dias { display: flex; gap: 6px; flex-wrap: wrap; }
+.dia { width: 44px; height: 36px; border-radius: 9px; border: 1px solid var(--color-border); background: var(--color-surface); font-family: var(--font-heading); font-size: 12px; font-weight: 600; color: var(--color-fg-muted); cursor: pointer; transition: all 0.15s var(--ease-out); }
+.dia:hover { border-color: var(--color-border-brand); color: var(--color-brand); }
+.diaOn { background: var(--color-brand); border-color: var(--color-brand); color: #fff; }
+.diasAtalhos { display: flex; gap: 4px 10px; flex-wrap: wrap; margin-top: 8px; }
+.diasAtalhos button { background: none; border: 0; padding: 0; font-family: var(--font-body); font-size: 11.5px; color: var(--color-fg-subtle); cursor: pointer; text-decoration: underline dotted; text-underline-offset: 3px; }
+.diasAtalhos button:hover { color: var(--color-brand); }
+
+/* ---------- Upload de foto ---------------------------------------------- */
+.photo { display: flex; gap: 16px; align-items: center; }
+.photoDrop { width: 120px; height: 120px; border-radius: 12px; border: 2px dashed var(--color-border-strong); background: var(--color-bg-alt); cursor: pointer; overflow: hidden; padding: 0; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; transition: border-color 0.15s var(--ease-out); }
+.photoDrop:hover { border-color: var(--color-brand); }
+.photoRound .photoDrop { border-radius: 999px; }
+.photoWide .photoDrop { width: 100%; max-width: 320px; height: 150px; }
+.photoWide { flex-wrap: wrap; }
+.photoImg { width: 100%; height: 100%; object-fit: cover; display: block; }
+.photoEmpty { display: flex; flex-direction: column; align-items: center; gap: 6px; font-family: var(--font-heading); font-size: 11.5px; font-weight: 600; color: var(--color-fg-subtle); padding: 8px; text-align: center; }
+.photoInput { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.photoSide { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.photoHint { font-family: var(--font-body); font-size: 12px; color: var(--color-fg-subtle); line-height: 1.45; }
+.photoBtns { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* ---------- Seções do drawer -------------------------------------------- */
+.section { padding: 22px 0; border-top: 1px solid var(--color-divider); }
+.section:first-child { padding-top: 0; border-top: 0; }
+.sectionHead { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; margin-bottom: 16px; }
+.sectionTitle { font-family: var(--font-display); font-size: 17px; font-weight: 600; color: var(--color-fg-strong); letter-spacing: -0.01em; }
+.sectionSub { font-family: var(--font-body); font-size: 12.5px; color: var(--color-fg-muted); margin-top: 3px; line-height: 1.45; }
+
+/* ---------- Banner ------------------------------------------------------ */
+.banner { display: flex; gap: 12px; align-items: flex-start; padding: 12px 16px; border-radius: 12px; background: var(--c-lagoa-50); border: 1px solid var(--c-lagoa-100); color: var(--color-brand); font-family: var(--font-body); font-size: 13px; line-height: 1.5; margin-bottom: 18px; }
+.banner svg { flex-shrink: 0; margin-top: 2px; }
+.banner strong { font-family: var(--font-heading); font-weight: 600; }
+.bannerGreen { background: var(--c-mata-100); border-color: rgba(46,125,79,0.20); color: var(--c-mata-700); }
+
+/* ---------- Turmas (editor) --------------------------------------------- */
+.turmas { display: flex; flex-direction: column; gap: 14px; }
+.turma { border: 1px solid var(--color-border); border-radius: 14px; background: var(--color-surface); overflow: hidden; }
+.turmaHead { display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: var(--color-bg-alt); border-bottom: 1px solid var(--color-divider); }
+.turmaNum { width: 26px; height: 26px; border-radius: 8px; background: var(--color-brand); color: #fff; font-family: var(--font-heading); font-size: 12px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.turmaTitle { flex: 1; min-width: 0; font-family: var(--font-heading); font-size: 13px; font-weight: 600; color: var(--color-fg-strong); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.turmaResumo { font-family: var(--font-body); font-size: 12px; color: var(--color-fg-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.turmaBody { padding: 18px 16px 6px; }
+.turmaActions { display: flex; gap: 2px; }
+.horaRow { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.modoHorario { display: inline-flex; border: 1px solid var(--color-border); border-radius: 9px; overflow: hidden; margin-bottom: 10px; }
+.modoHorario button { padding: 7px 12px; border: 0; background: var(--color-surface); font-family: var(--font-heading); font-size: 12px; font-weight: 600; color: var(--color-fg-muted); cursor: pointer; }
+.modoHorario button + button { border-left: 1px solid var(--color-border); }
+.modoOn { background: var(--c-lagoa-100) !important; color: var(--color-brand) !important; }
+.addTurma { margin-top: 4px; }
+
+/* ---------- Prévia da grade (no drawer) --------------------------------- */
+.previa { border-radius: 12px; border: 1px solid var(--color-border); overflow: hidden; }
+.previaHead { display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: var(--c-lagoa-900); color: #fff; font-family: var(--font-heading); font-size: 12px; font-weight: 600; letter-spacing: 0.04em; }
+.previaHead svg { color: var(--color-accent-light); }
+.previaTable { width: 100%; border-collapse: collapse; }
+.previaTable th, .previaTable td { padding: 8px 14px; text-align: left; font-family: var(--font-body); font-size: 12.5px; border-top: 1px solid var(--color-divider); vertical-align: top; }
+.previaTable th { font-family: var(--font-heading); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-fg-subtle); background: var(--color-bg-alt); border-top: 0; }
+.previaTable td strong { font-family: var(--font-heading); font-weight: 600; color: var(--color-fg-strong); }
+.previaEmpty { padding: 14px; font-family: var(--font-body); font-size: 12.5px; color: var(--color-fg-subtle); }
+
+/* ---------- Lista de modalidades ---------------------------------------- */
+.modThumb { width: 44px; height: 44px; border-radius: 10px; object-fit: cover; flex-shrink: 0; background: var(--color-bg-alt); }
+.horChips { display: flex; flex-wrap: wrap; gap: 4px; }
+.horChip { font-family: var(--font-body); font-size: 11.5px; color: var(--color-fg-muted); background: var(--color-bg-alt); border-radius: 6px; padding: 3px 7px; white-space: nowrap; }
+.horChip b { font-family: var(--font-heading); font-weight: 600; color: var(--color-fg-strong); }
+.horMore { font-family: var(--font-heading); font-size: 11px; font-weight: 600; color: var(--color-brand); padding: 3px 4px; }
+
+/* ---------- Professores (cards) ----------------------------------------- */
+.profGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+.profCard { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 12px; text-align: left; cursor: pointer; transition: border-color 0.15s var(--ease-out), box-shadow 0.15s var(--ease-out), transform 0.15s var(--ease-out); position: relative; }
+.profCard:hover { border-color: var(--color-border-brand); box-shadow: var(--shadow-md); transform: translateY(-1px); }
+.profTop { display: flex; align-items: center; gap: 12px; }
+.profName { font-family: var(--font-display); font-size: 17px; font-weight: 600; color: var(--color-fg-strong); line-height: 1.2; }
+.profSub { font-family: var(--font-body); font-size: 12px; color: var(--color-fg-muted); margin-top: 2px; }
+.profMods { display: flex; flex-wrap: wrap; gap: 5px; }
+.profMod { font-family: var(--font-heading); font-size: 11px; font-weight: 600; color: var(--color-brand); background: var(--c-lagoa-50); border: 1px solid var(--c-lagoa-100); padding: 3px 8px; border-radius: 999px; }
+.profNone { font-family: var(--font-body); font-size: 12px; color: var(--color-fg-subtle); font-style: italic; }
+.profInativo { opacity: 0.55; }
+.profBadge { position: absolute; top: 12px; right: 12px; }
+.profFoot { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-family: var(--font-body); font-size: 12px; color: var(--color-fg-subtle); border-top: 1px solid var(--color-divider); padding-top: 10px; }
+.profFoot span { display: inline-flex; align-items: center; gap: 5px; }
+
+/* ---------- Grade de horários ------------------------------------------- */
+.toolbar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+.toolbarGrow { flex: 1; min-width: 200px; }
+.semana { display: grid; grid-template-columns: repeat(7, minmax(150px, 1fr)); gap: 10px; overflow-x: auto; padding-bottom: 6px; }
+.col { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 12px; min-width: 150px; display: flex; flex-direction: column; overflow: hidden; }
+.colHead { padding: 10px 12px; background: var(--c-lagoa-900); color: #fff; font-family: var(--font-heading); font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; }
+.colHead small { font-weight: 500; opacity: 0.7; letter-spacing: 0; text-transform: none; }
+.colBody { display: flex; flex-direction: column; gap: 6px; padding: 8px; flex: 1; }
+.slot { border-radius: 9px; padding: 8px 10px; background: var(--color-bg-alt); border-left: 3px solid var(--color-brand); cursor: pointer; text-align: left; border-top: 0; border-right: 0; border-bottom: 0; width: 100%; transition: background 0.15s var(--ease-out); }
+.slot:hover { background: var(--c-lagoa-50); }
+.slotHora { font-family: var(--font-heading); font-size: 11.5px; font-weight: 700; color: var(--color-brand); }
+.slotNome { font-family: var(--font-heading); font-size: 12.5px; font-weight: 600; color: var(--color-fg-strong); line-height: 1.3; margin-top: 2px; }
+.slotSub { font-family: var(--font-body); font-size: 11px; color: var(--color-fg-muted); margin-top: 3px; line-height: 1.35; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.slotFutura { border-left-color: var(--color-warning); }
+.slotEncerrada { border-left-color: var(--c-pedra-300); opacity: 0.6; }
+.colEmpty { font-family: var(--font-body); font-size: 12px; color: var(--color-fg-subtle); padding: 10px 6px; text-align: center; }
+.catCores { --cor: var(--color-brand); }
+.porMod { display: flex; flex-direction: column; gap: 12px; }
+.modBloco { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 14px; overflow: hidden; }
+.modBlocoHead { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--color-divider); }
+.modBlocoNome { flex: 1; min-width: 0; font-family: var(--font-display); font-size: 17px; font-weight: 600; color: var(--color-fg-strong); }
+.modBlocoNome small { display: block; font-family: var(--font-body); font-size: 12px; color: var(--color-fg-muted); font-weight: 400; margin-top: 1px; }
+.modTable { width: 100%; border-collapse: collapse; }
+.modTable th, .modTable td { padding: 9px 16px; text-align: left; font-family: var(--font-body); font-size: 13px; border-top: 1px solid var(--color-divider); vertical-align: middle; }
+.modTable tr:first-child td { border-top: 0; }
+.modTable th { font-family: var(--font-heading); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-fg-subtle); background: var(--color-bg-alt); border-top: 0; }
+.modTable td strong { font-family: var(--font-heading); font-weight: 600; color: var(--color-fg-strong); }
+.vig { display: inline-flex; align-items: center; gap: 4px; font-family: var(--font-heading); font-size: 10.5px; font-weight: 600; padding: 2px 7px; border-radius: 999px; background: var(--c-mata-100); color: var(--c-mata-700); white-space: nowrap; }
+.vigFutura { background: rgba(217,119,6,0.12); color: #92400e; }
+.vigEncerrada { background: var(--c-pedra-100); color: var(--color-fg-subtle); }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 18px; }
+.stat { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 12px; padding: 14px 16px; }
+.statV { font-family: var(--font-display); font-size: 26px; font-weight: 600; color: var(--color-fg-strong); line-height: 1; }
+.statL { font-family: var(--font-heading); font-size: 11.5px; font-weight: 500; color: var(--color-fg-muted); margin-top: 6px; }
+.saved { font-family: var(--font-body); font-size: 12px; color: var(--color-fg-subtle); display: inline-flex; align-items: center; gap: 6px; }
+
+@media (max-width: 768px) {
+  .horaRow { grid-template-columns: 1fr; gap: 0; }
+  .photo { align-items: flex-start; }
+  .semana { display: flex; }
+  .col { min-width: 210px; }
+}

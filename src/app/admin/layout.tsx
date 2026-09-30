@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { AdminShell } from "@/components/admin/AdminShell";
+import { EsportesProvider } from "@/components/admin/esportes-store";
 
 export const metadata: Metadata = {
   title: { default: "Painel · Country Clube de Formiga", template: "%s · Painel · Country Clube" },
@@ -11,5 +12,5 @@ export const viewport: Viewport = { themeColor: "#001F3F", width: "device-width"
 
 /** Layout do painel: sem header/rodapé do site público. Fontes e globals.css vêm do root layout. */
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
-  return <AdminShell>{children}</AdminShell>;
+  return <EsportesProvider><AdminShell>{children}</AdminShell></EsportesProvider>;
 }
