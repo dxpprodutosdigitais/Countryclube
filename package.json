@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "build:static": "STATIC_EXPORT=1 next build",
+    "build:pages": "STATIC_EXPORT=1 NEXT_PUBLIC_BASE_PATH=/Countryclube NEXT_PUBLIC_SITE_URL=https://dxpprodutosdigitais.github.io/Countryclube next build && touch out/.nojekyll",
     "deploy": "npm run build:static && npx firebase-tools deploy --only hosting",
     "deploy:preview": "npm run build:static && npx firebase-tools hosting:channel:deploy cliente --expires 30d",
     "lint": "next lint",
