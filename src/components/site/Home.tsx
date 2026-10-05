@@ -4,50 +4,87 @@ import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { Card, Container, Eyebrow, SectionTitle } from "@/components/ui/Primitives";
 import { EVENTOS_ORDENADOS, INFRA, INFRA_HOME, MODALIDADES, MODALIDADES_HOME, NOTICIAS_HOME, NUMEROS } from "@/data/content";
-import { IMG as STOCK } from "@/data/images";
+import { IMG, IMG as STOCK, local } from "@/data/images";
 import { SITE } from "@/lib/site";
 import styles from "./Home.module.css";
 
-/* ============================ HERO — Concrete ============================ */
+/* ============================ HERO — Imersiva ============================ */
+/* Foto real da Lagoa do Fundão (píer e serra), a imagem mais identitária do clube. */
+const HERO_FOTO = local("/images/infraestrutura/praia-3.jpg");
+
 function Hero() {
-  const mosaic = [
-    { src: STOCK.praia, label: "Praia da Lagoa", sub: "Vôlei · Beach tênis · Decks" },
-    { src: STOCK.tenis2, label: "Quadras", sub: "Tênis · Coberta · Society" },
-    { src: STOCK.evento, label: "Eventos", sub: "Festas · Shows · Casamentos" },
-    { src: STOCK.lagoaSunset, label: "O entardecer", sub: "92 anos de domingos" },
+  const proximo = EVENTOS_ORDENADOS[0];
+  const atalhos = [
+    { href: "/infraestrutura", img: IMG.praia, label: "Praia" },
+    { href: "/infraestrutura", img: IMG.piscina, label: "Piscinas" },
+    { href: "/modalidades", img: IMG.tenis2, label: "Quadras" },
+    { href: "/agenda", img: IMG.evento, label: "Eventos" },
+  ];
+  const stats = [
+    { v: NUMEROS.anos, l: "anos de tradição" },
+    { v: NUMEROS.modalidades, l: "modalidades" },
+    { v: NUMEROS.familias, l: "famílias" },
+    { v: "200 mil m²", l: "à beira da Lagoa" },
   ];
   return (
-    <section className={styles.hero}>
+    <section className={styles.hero} aria-labelledby="hero-title">
+      <div className={styles.heroMedia} aria-hidden>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={HERO_FOTO} alt="" className={styles.heroImg} fetchPriority="high" decoding="async" />
+        <div className={styles.heroShade} />
+        <div className={styles.heroGrain} />
+      </div>
+
       <Container size="2xl" className={styles.heroContainer}>
-        <div className={styles.heroGrid}>
+        <div className={styles.heroBody}>
           <div className={styles.heroText}>
-            <div className={styles.heroEyebrow}><span className={styles.hairline} /><span>Desde 1934 · Formiga / MG</span></div>
-            <h1 className={styles.heroTitle}>
-              Praia, quadras e família.<br />
-              <em>A nossa Lagoa.</em>
+            <div className={[styles.heroEyebrow, styles.reveal].join(" ")} style={{ "--i": 0 } as React.CSSProperties}>
+              <span className={styles.hairline} /><span>Desde 1934 · <span className={styles.eyebrowExtra}>Lagoa do Fundão · </span>Formiga / MG</span>
+            </div>
+            <h1 id="hero-title" className={styles.heroTitle}>
+              <span className={styles.reveal} style={{ "--i": 1 } as React.CSSProperties}>Praia, quadras</span>
+              <span className={styles.reveal} style={{ "--i": 2 } as React.CSSProperties}>e família.</span>
+              <em className={styles.reveal} style={{ "--i": 3 } as React.CSSProperties}>A nossa Lagoa.</em>
             </h1>
-            <p className={styles.heroSub}>Mais de vinte modalidades esportivas, agenda generosa, churrasqueiras reserváveis e 200 mil m² de tradição à beira da Lagoa do Fundão.</p>
-            <div className={styles.heroCtas}>
-              <Link href="/infraestrutura" className={[styles.heroCta, styles.heroCtaSolid].join(" ")}>Conheça o clube <Icon name="arrow-right" size={14} /></Link>
-              <Link href="/agenda" className={[styles.heroCta, styles.heroCtaOutline].join(" ")}>Ver agenda</Link>
-            </div>
-            <div className={styles.heroStats}>
-              {[{ v: NUMEROS.anos, l: "anos de tradição" }, { v: NUMEROS.modalidades, l: "modalidades" }, { v: NUMEROS.familias, l: "famílias" }].map((s) => (
-                <div key={s.l}><div className={styles.statValue}>{s.v}</div><div className={styles.statLabel}>{s.l}</div></div>
-              ))}
+            <p className={[styles.heroSub, styles.reveal].join(" ")} style={{ "--i": 4 } as React.CSSProperties}>
+              Vinte e uma modalidades, praia de água doce, churrasqueiras reserváveis e noventa e dois anos de domingos em família, a dez minutos do centro de Formiga.
+            </p>
+            <div className={[styles.heroCtas, styles.reveal].join(" ")} style={{ "--i": 5 } as React.CSSProperties}>
+              <Link href="/infraestrutura" className={[styles.heroCta, styles.heroCtaSolid].join(" ")}>Conheça o clube <Icon name="arrow-right" size={15} /></Link>
+              <Link href="/agenda" className={[styles.heroCta, styles.heroCtaGhost].join(" ")}><Icon name="calendar" size={15} /> Ver agenda</Link>
             </div>
           </div>
-          <div className={styles.mosaic} aria-label="Mosaico de fotos do clube">
-            {mosaic.map((m, i) => (
-              <div key={m.label} className={[styles.cell, i === 0 ? styles.cellBig : ""].join(" ")}>
-                <div className={styles.cellImg} style={{ backgroundImage: `url(${m.src})` }} role="img" aria-label={m.label} />
-                <div className={styles.cellOverlay}>
-                  <div className={styles.cellLabel}>{m.label}</div>
-                  <div className={styles.cellSub}>{m.sub}</div>
-                </div>
-              </div>
+
+          {proximo && (
+            <Link href={`/agenda/${proximo.id}`} className={[styles.heroEvent, styles.reveal].join(" ")} style={{ "--i": 6 } as React.CSSProperties}>
+              <span className={styles.heroEventKicker}><span className={styles.heroEventDot} />Próximo evento</span>
+              <span className={styles.heroEventRow}>
+                <span className={styles.heroEventDate}><b>{proximo.dia}</b><small>{proximo.mes}</small></span>
+                <span className={styles.heroEventInfo}>
+                  <span className={styles.heroEventName}>{proximo.nome}</span>
+                  <span className={styles.heroEventMeta}>{proximo.hora} · {proximo.local}</span>
+                </span>
+                <span className={styles.heroEventArrow}><Icon name="arrow-up-right" size={16} /></span>
+              </span>
+            </Link>
+          )}
+        </div>
+
+        <div className={[styles.heroFoot, styles.reveal].join(" ")} style={{ "--i": 7 } as React.CSSProperties}>
+          <dl className={styles.heroStats}>
+            {stats.map((s) => (
+              <div key={s.l} className={styles.heroStat}><dt className={styles.statLabel}>{s.l}</dt><dd className={styles.statValue}>{s.v}</dd></div>
             ))}
-          </div>
+          </dl>
+          <nav className={styles.heroChips} aria-label="Explore o clube">
+            {atalhos.map((a) => (
+              <Link key={a.label} href={a.href} className={styles.heroChip}>
+                <span className={styles.heroChipImg} style={{ backgroundImage: `url(${a.img})` }} aria-hidden />
+                <span>{a.label}</span>
+              </Link>
+            ))}
+          </nav>
+          <div className={styles.scrollCue} aria-hidden><span className={styles.scrollLine} /><span>Role</span></div>
         </div>
       </Container>
     </section>
@@ -258,8 +295,8 @@ export function Home() {
   return (
     <>
       <Hero />
-      <HistoriaBand />
       <ModalidadesPreview />
+      <HistoriaBand />
       <AgendaPreview />
       <InfraStrip />
       <NoticiasGrid />
