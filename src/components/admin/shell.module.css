@@ -1,0 +1,124 @@
+/* =========================================================================
+   Painel admin — shell (sidebar + topbar + área de conteúdo)
+   ========================================================================= */
+.app { display: flex; height: 100dvh; width: 100%; overflow: hidden; background: var(--color-bg); color: var(--color-fg); font-family: var(--font-body); }
+
+/* ---------- Sidebar ------------------------------------------------------ */
+.sidebar {
+  width: 240px; flex-shrink: 0; background: var(--c-lagoa-950); color: rgba(255,255,255,0.85);
+  display: flex; flex-direction: column; height: 100%; position: relative;
+  border-right: 1px solid rgba(255,255,255,0.06);
+  transition: width 0.32s var(--ease-out), transform 0.32s var(--ease-out);
+}
+.collapsed { width: 72px; }
+
+.brand { padding: 18px 18px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(255,255,255,0.08); height: 68px; text-decoration: none; color: inherit; }
+.collapsed .brand { padding: 18px 12px; justify-content: center; }
+.brandLogo { width: 34px; height: 34px; object-fit: contain; flex-shrink: 0; transition: width 0.22s var(--ease-out), height 0.22s var(--ease-out); }
+.collapsed .brandLogo { width: 36px; height: 36px; }
+.brandText { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.brandName, .brandTag { display: block; }
+.brandName { font-family: var(--font-display); font-size: 15px; font-weight: 600; color: #fff; letter-spacing: -0.01em; line-height: 1; white-space: nowrap; }
+.brandTag { font-family: var(--font-heading); font-size: 8.5px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--c-eletrico-300); margin-top: 4px; white-space: nowrap; }
+
+.nav { flex: 1; overflow-y: auto; overflow-x: hidden; padding: 14px 14px; display: flex; flex-direction: column; gap: 18px; scrollbar-width: thin; }
+.collapsed .nav { padding: 14px 10px; }
+.nav::-webkit-scrollbar-track { background: transparent; }
+.nav::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.14); }
+.groupLabel { font-family: var(--font-heading); font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.40); padding: 8px 12px 10px; white-space: nowrap; }
+.groupItems { display: flex; flex-direction: column; gap: 2px; }
+
+.item {
+  display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 0; background: transparent; color: rgba(255,255,255,0.72);
+  border-radius: 10px; cursor: pointer; font-family: var(--font-heading); font-size: 13.5px; font-weight: 500; width: 100%; text-align: left;
+  position: relative; text-decoration: none; transition: background 0.15s var(--ease-out), color 0.15s var(--ease-out);
+}
+.item:hover { background: rgba(255,255,255,0.05); color: #fff; }
+.itemActive, .itemActive:hover { background: rgba(255,255,255,0.10); color: #fff; }
+.itemActive::before { content: ""; position: absolute; left: -14px; top: 8px; bottom: 8px; width: 3px; background: var(--color-accent); border-radius: 0 4px 4px 0; }
+.collapsed .item { padding: 10px 14px; justify-content: center; }
+.collapsed .itemActive::before { left: -10px; }
+.itemIcon { display: inline-flex; flex-shrink: 0; }
+.itemLabel { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.badge { background: rgba(255,255,255,0.18); color: #fff; font-family: var(--font-heading); font-size: 10.5px; font-weight: 700; padding: 2px 7px; border-radius: 999px; min-width: 18px; text-align: center; line-height: 1.3; }
+.badgeAccent { background: var(--color-accent); }
+.collapsed .badge { position: absolute; top: 4px; right: 6px; padding: 1px 5px; font-size: 9px; min-width: 14px; }
+
+.user { padding: 14px 14px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 12px; }
+.collapsed .user { padding: 12px 10px; justify-content: center; }
+.avatar {
+  width: 38px; height: 38px; border-radius: 10px; flex-shrink: 0; position: relative;
+  background: linear-gradient(135deg, var(--c-eletrico-500), var(--c-eletrico-700)); color: #fff;
+  display: inline-flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 13px; font-weight: 700;
+}
+.online { position: absolute; bottom: -2px; right: -2px; width: 12px; height: 12px; border-radius: 999px; background: var(--color-success); border: 2px solid var(--c-lagoa-950); }
+.userText { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.userName, .userRole { display: block; }
+.userName { font-family: var(--font-heading); font-size: 13px; font-weight: 600; color: #fff; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.userRole { font-family: var(--font-body); font-size: 11px; color: rgba(255,255,255,0.55); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.logout { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 8px; color: rgba(255,255,255,0.55); flex-shrink: 0; transition: background 0.15s var(--ease-out), color 0.15s var(--ease-out); }
+.logout:hover { background: rgba(255,255,255,0.08); color: #fff; }
+
+.collapseBtn {
+  position: absolute; top: 28px; right: -12px; width: 24px; height: 24px; border-radius: 999px; background: #fff; color: var(--c-lagoa-950);
+  border: 1px solid var(--color-border); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; box-shadow: var(--shadow-sm); z-index: 10;
+  transition: background 0.15s var(--ease-out);
+}
+.collapseBtn:hover { background: var(--c-lagoa-50); }
+
+/* ---------- Main ------------------------------------------------------- */
+.main { flex: 1; display: flex; flex-direction: column; overflow: hidden; position: relative; min-width: 0; }
+.content { flex: 1; overflow: hidden; display: flex; position: relative; min-width: 0; }
+
+/* ---------- TopBar ------------------------------------------------------- */
+.topbar {
+  height: 68px; flex-shrink: 0; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border); display: flex; align-items: center; padding: 0 24px; gap: 16px; z-index: 20;
+}
+.topTitle { flex: 1; min-width: 0; }
+.crumb { display: flex; align-items: center; gap: 6px; margin-bottom: 2px; font-family: var(--font-heading); font-size: 11px; color: var(--color-fg-subtle); letter-spacing: 0.04em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.crumbSep { opacity: 0.45; }
+.title { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--color-fg-strong); letter-spacing: -0.01em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.search { position: relative; width: 240px; flex-shrink: 0; }
+.searchIcon { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); color: var(--color-fg-subtle); pointer-events: none; display: inline-flex; }
+.searchInput {
+  width: 100%; padding: 8px 14px 8px 34px; font-family: var(--font-body); font-size: 13px; background: var(--color-bg-alt);
+  border: 1px solid var(--color-border); border-radius: 9px; outline: none; color: var(--color-fg);
+  transition: background 0.15s var(--ease-out), border-color 0.15s var(--ease-out), box-shadow 0.15s var(--ease-out);
+}
+.searchInput:focus { background: #fff; border-color: var(--color-brand); box-shadow: 0 0 0 4px var(--c-lagoa-100); }
+.actions { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.iconBtn {
+  width: 36px; height: 36px; border-radius: 9px; border: 1px solid var(--color-border); background: var(--color-bg-alt); color: var(--color-fg-muted); cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center; position: relative; transition: background 0.15s var(--ease-out), color 0.15s var(--ease-out);
+}
+.iconBtn:hover { background: #fff; color: var(--color-brand); }
+.dot { position: absolute; top: 7px; right: 8px; width: 8px; height: 8px; border-radius: 999px; background: var(--color-accent); border: 2px solid var(--color-bg-alt); }
+.menuBtn { display: none; }
+.visitLabel { display: inline; }
+
+/* ---------- Backdrop (mobile) ------------------------------------------- */
+.backdrop { display: none; }
+
+/* ---------- Responsive --------------------------------------------------- */
+@media (max-width: 1023px) {
+  .sidebar { position: fixed; top: 0; left: 0; bottom: 0; z-index: 300; width: 260px; transform: translateX(-100%); box-shadow: none; }
+  .collapsed { width: 260px; }
+  .collapsed .brand { padding: 18px; justify-content: flex-start; }
+  .collapsed .nav { padding: 14px; }
+  .collapsed .item { padding: 10px 12px; justify-content: flex-start; }
+  .collapsed .itemActive::before { left: -14px; }
+  .collapsed .badge { position: static; padding: 2px 7px; font-size: 10.5px; min-width: 18px; }
+  .collapsed .user { padding: 14px; justify-content: flex-start; }
+  .sidebarOpen { transform: translateX(0); box-shadow: var(--shadow-xl); }
+  .collapseBtn { display: none; }
+  .backdrop { display: block; position: fixed; inset: 0; background: rgba(0,31,63,0.45); z-index: 299; border: 0; padding: 0; animation: fade-in 0.22s var(--ease-out); }
+  .menuBtn { display: inline-flex; }
+  .topbar { padding: 0 16px; gap: 10px; }
+  .search { width: 180px; }
+}
+@media (max-width: 640px) {
+  .search { display: none; }
+  .visitLabel { display: none; }
+  .title { font-size: 19px; }
+}

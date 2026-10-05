@@ -1,0 +1,24 @@
+# Apache / cPanel / Hostinger: sobe junto com o conteúdo de `out/` para a raiz do domínio.
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Força HTTPS
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  # /agenda → /agenda/ (rotas do export terminam em barra)
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^(.*[^/])$ /$1/ [L,R=308]
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  <FilesMatch "\.(js|css|woff2)$">
+    ExpiresDefault "access plus 1 year"
+  </FilesMatch>
+  <FilesMatch "\.(jpg|jpeg|png|svg|webp)$">
+    ExpiresDefault "access plus 7 days"
+  </FilesMatch>
+</IfModule>

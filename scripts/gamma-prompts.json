@@ -1,0 +1,51 @@
+{
+  "_uso": "Imagens a gerar no Gamma (generate_image, type=photo, sizePreset=banner) somente para itens SEM foto no site atual. Salvar em public/images/<pasta>/<slug>.jpg e apontar em src/data/scraped.json (campo imagemLocal).",
+  "estilo": "Fotografia realista, luz dourada de fim de tarde, cores quentes levemente saturadas (revista de viagem), clube de campo familiar às margens de uma lagoa em Minas Gerais, sem texto e sem logotipos.",
+  "modalidades": {
+    "ballet-jazz": "Sala de dança com barra e espelho, crianças em aula de ballet e jazz",
+    "basquete": "Quadra poliesportiva coberta de clube, jovens jogando basquete",
+    "beach-tenis": "Quadra de beach tênis na areia à beira da lagoa, dupla jogando",
+    "fisioterapia": "Estúdio de fisioterapia claro, atendimento em maca com equipamentos",
+    "futebol": "Campo de futebol society iluminado de clube, jogo entre associados",
+    "futevolei": "Quadra de futevôlei na areia com rede, jogadores em ação, lagoa ao fundo",
+    "futsal": "Escolinha de futsal em quadra coberta, crianças com bolas",
+    "ginastica-funcional": "Aula de ginástica funcional em grupo em academia moderna com vista para praia de lagoa",
+    "ginastica-localizada": "Aula de ginástica localizada com halteres e colchonetes",
+    "hidroginastica": "Aula de hidroginástica em piscina térmica coberta, adultos sorrindo",
+    "jiu-jitsu": "Tatame de jiu jitsu com alunos infantis e adultos de kimono",
+    "karate": "Aula de karatê em dojo, alunos em fila com kimonos brancos",
+    "liberacao-miofascial-drenagem-e-ventosaterapia": "Sala de terapias manuais tranquila com maca e ventosas",
+    "massagem-feminina": "Sala de massagem relaxante com luz suave e toalhas",
+    "musculacao": "Academia nova e ampla com aparelhos de musculação e janelas para a praia",
+    "natacao": "Escolinha de natação em piscina térmica coberta, crianças com touca",
+    "peteca": "Quadra de peteca, jogadores mineiros em partida animada",
+    "pilates": "Estúdio de pilates com reformer e aula em turma pequena",
+    "tenis": "Quadra de tênis de saibro com iluminação, jogo em dupla",
+    "volei": "Ginásio coberto com partida de vôlei",
+    "yoga": "Aula de yoga ao ar livre em deck de madeira sobre a lagoa ao amanhecer"
+  },
+  "infraestrutura": {
+    "area-familiar": "Área familiar gramada com árvores, mesas e famílias em piquenique",
+    "praia": "Praia de areia natural à beira da lagoa com quiosques e guarda-sóis",
+    "secretaria": "Recepção moderna de clube com balcão de atendimento",
+    "bares": "Bar de praia de clube com balcão de madeira e bebidas geladas",
+    "quiosques": "Quiosques de palha na praia da lagoa com mesas",
+    "sinuca": "Salão de sinuca com mesas verdes e iluminação baixa",
+    "churrasqueira": "Churrasqueiras individuais cobertas com famílias reunidas",
+    "restaurante": "Restaurante de clube com varanda e vista para a lagoa",
+    "quadra-poliesportiva": "Quadra poliesportiva coberta vazia com marcações coloridas",
+    "quadra-de-tenis": "Quadras de tênis de saibro vistas do alto com iluminação noturna",
+    "escolas-de-artes-marciais": "Dojo de artes marciais com tatame azul e kimonos",
+    "campos-de-futebol": "Campos de futebol society e gramado sintético iluminados ao entardecer",
+    "estudio-de-pilates": "Estúdio de pilates e fisioterapia claro com aparelhos",
+    "academia": "Academia nova e moderna com vista panorâmica para a praia",
+    "parquinho": "Parquinho infantil colorido sob árvores",
+    "ginasio": "Ginásio coberto de clube visto de dentro",
+    "saunas": "Sauna de madeira com vapor e iluminação quente",
+    "piscinas": "Piscinas de lazer e piscina térmica coberta de clube"
+  },
+  "home": {
+    "entardecer": "Entardecer dourado sobre a Lagoa do Fundão com decks de madeira e reflexos na água",
+    "evento": "Festa ao ar livre em espaço multiuso de clube com luzes e show ao vivo"
+  }
+}
