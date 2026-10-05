@@ -4,6 +4,17 @@ Site e painel são o **mesmo build estático**: o site na raiz e o painel em `/a
 Hospedagem recomendada: **Firebase Hosting** (conta já existente), que atende tanto a prévia para o cliente quanto
 a hospedagem definitiva. As opções de servidor próprio (Caddy/Nginx/cPanel/Docker) ficam ao final.
 
+## Prévia pública imediata (GitHub Pages, grátis)
+
+Sem servidor e sem conta extra: a cada push neste branch (ou na `main`) o workflow `.github/workflows/pages.yml`
+publica o build em **https://dxpprodutosdigitais.github.io/Countryclube/** (painel em `/Countryclube/admin/`).
+É uma prévia para o cliente avaliar: o `robots.txt` bloqueia indexação nesse endereço.
+
+**Ativação (uma vez, pelo dono do repositório):** o token do workflow não consegue criar o site do Pages. Abra
+https://github.com/dxpprodutosdigitais/Countryclube/settings/pages e em **Build and deployment → Source** escolha
+**GitHub Actions**. Depois rode **Actions → "Pages (prévia)" → Run workflow** (ou faça qualquer push). Em 1 a 2 minutos
+o link acima fica no ar e passa a se atualizar sozinho a cada push.
+
 ## Por que Firebase Hosting
 
 | | Plano Spark (grátis) | Plano Blaze (pago por uso) |

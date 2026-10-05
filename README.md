@@ -74,6 +74,8 @@ e história vêm literalmente do site atual. O que ainda não existe lá está e
 
 ## Publicação em countryclube.dxp.dev.br
 
+Prévia pública gratuita (GitHub Pages, publicada a cada push): https://dxpprodutosdigitais.github.io/Countryclube/ — `npm run build:pages`.
+
 Hospedagem recomendada: **Firebase Hosting** (`firebase.json` pronto). `npm run deploy` gera o build estático
 (`out/`, site + painel em `/admin`) e publica; `npm run deploy:preview` cria uma URL temporária para o cliente avaliar.
 Deploy automático em `.github/workflows/deploy.yml` (main → domínio, PR → prévia). Alternativas para servidor próprio
