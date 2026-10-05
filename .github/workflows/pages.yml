@@ -26,14 +26,25 @@ jobs:
         with: { node-version: 22, cache: npm }
       - run: npm ci
       - run: npm run build:pages
-      - uses: actions/configure-pages@v5
+      # O token do workflow não consegue CRIAR o site do Pages; isso é feito uma vez em
+      # Settings → Pages → Source: GitHub Actions. Até lá, este passo avisa e o deploy é pulado,
+      # sem marcar o PR como falho.
+      - id: pages
+        uses: actions/configure-pages@v5
+        continue-on-error: true
         with:
           enablement: true
-      - uses: actions/upload-pages-artifact@v3
+      - if: steps.pages.outcome != 'success'
+        run: echo "::warning title=Pages não ativado::Ative em Settings → Pages → Source 'GitHub Actions' e rode o workflow de novo."
+      - if: steps.pages.outcome == 'success'
+        uses: actions/upload-pages-artifact@v3
         with: { path: out }
+    outputs:
+      pronto: ${{ steps.pages.outcome }}
 
   deploy:
     needs: build
+    if: needs.build.outputs.pronto == 'success'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
